@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+text {
+    font-family: 'Roboto', sans-serif;
+}
+
 button {
     background: #43A047;
     border: none;
@@ -198,36 +202,8 @@ button:hover {
     background: #aaaaaa;
     border-radius: 5px;
 }
-
-text {
-    font-family: 'Roboto', sans-serif;
-}
-
-.display{
-    font-size: 42pt;
-    font-weight: bold;
-}
-
-h1{
-    font-size: 34pt;
-    font-weight: 34pt;
-}
-
-h2{
-    font-size: 27px;
-    font-weight: 500;
-}
-
-h3{
-    font-size: 21px;
-    font-weight: 500;
-}
-
-h4{
-    font-size: 17px;
-    font-weight: 400;
-}
-
+ 
+ 
 .light {
     font-weight: 300;
 }
@@ -239,4 +215,13 @@ h4{
 
 .logo{
     width: 50%;
+}
+
+input{
+    width: 358px;
+    height: 45px;
+    padding: 10px;
+    border: 3px solid #F3F3F3;
+    box-sizing: border-box;
+    border-radius: 5px;
 }

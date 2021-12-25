@@ -1,4 +1,18 @@
 .middle{
-    justify-self: start;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.ma-29{
+    margin: 29px;
+}
+
+.mt-64{
+    margin-top: 64px;
+}
+
+.mt-34{
+    margin-top: 34px;
 }

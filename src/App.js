@@ -1,48 +1,25 @@
 import './style.css';
-<<<<<<< HEAD
-import './Components/Login/Login.css'
+import './Components/Login/Login.css';
 
 function App() {
   return (
     <div>
-      <container className="middle">
+      <div className="middle">
         <img src="..\Aeests\img\logo.png" className="logo" />
         <p className="light">Make your resturant easier</p>
-      </container>
-=======
-import './App.css';
-import './style.css'
-
-function App() {
-  return (
-    <div className="App">
-      <div className='stayle'>
-        <button className='smallButton'> 
-          smallButton
-        </button>
-        <button class="button button1">
-          middleButton
-        </button>
-        <button class="button button2">
-          largeButton
-        </button>
-        <button class="button button3">
-          +
-        </button>
-        <button class="button button4">
-          -
-        </button>
-        <button class="button button5">
-          +
-        </button>
-        <button class="button button6">
-          Log Out
-        </button>
-        <button class="button button7">
-          Remove Menu
-        </button>
+      </div>
+      <div className="middle">      
+        <input className="ma-29" type='text' name='Username' />
+        <input className="ma-29" type='text' next='Passward' />
+      </div>
+      <div className="middle">
+        <div class="mt-64">
+          <button class="button2">Log in!</button>
         </div>
->>>>>>> 1245b3c267a960815caef541db4584f92d27ebed
+        <div className="mt-34">
+          <p>Or no have User ID? Register new one!</p>
+        </div>
+      </div>
     </div>
   );
 }
