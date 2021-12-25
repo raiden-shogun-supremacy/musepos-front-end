@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 text {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
 .display{
@@ -34,4 +36,8 @@ h4{
 .caption {
     font-size: 10pt;
     font-weight: 400;
+}
+
+.logo{
+    width: 50%;
 }
