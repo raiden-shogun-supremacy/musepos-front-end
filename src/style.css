@@ -26,7 +26,30 @@ button:hover {
     border-radius: 5px;
 }
 
-.button1 {
+.buttonSmall {
+    background: #43A047;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 169px;
+    height: 45px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 400;
+    margin: 4px 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.buttonSmall:hover {
+    background: #388E3C;
+    border-radius: 5px;
+}
+
+.buttonMiddle {
     background: #43A047;
     border: none;
     border-radius: 5px;
@@ -44,12 +67,12 @@ button:hover {
     cursor: pointer;
 }
 
-.button1:hover {
+.buttonMiddle:hover {
     background: #388E3C;
     border-radius: 5px;
 }
 
-.button2 {
+.buttonLarge {
     background: #43A047;
     border: none;
     border-radius: 5px;
@@ -67,12 +90,12 @@ button:hover {
     cursor: pointer;
 }
 
-.button2:hover {
+.buttonLarge:hover {
     background: #388E3C;
     border-radius: 5px;
 }
 
-.button3 {
+.buttonCircle {
     background: #43A047;
     border: none;
     border-radius: 50%;
@@ -90,7 +113,7 @@ button:hover {
     cursor: pointer;
 }
 
-.button3:hover {
+.buttonCircle:hover {
     background: #388E3C;
     border: none;
     border-radius: 50%;
@@ -100,7 +123,7 @@ button:hover {
     padding: 10px;
 }
 
-.button4 {
+.buttontMidleSoft {
     background: #ffffff;
     border: 1px solid #43A047;
     box-sizing: border-box;
@@ -119,7 +142,7 @@ button:hover {
     cursor: pointer;
 }
 
-.button4:hover {
+.buttonMiddleSoft:hover {
     background: #43A047;
     border: 1px solid #43A047;
     box-sizing: border-box;
@@ -127,7 +150,7 @@ button:hover {
     color: #ffffff;
 }
 
-.button5 {
+.buttonMiddleNegSoft:hover {
     background: #43A047;
     border: 1px solid #43A047;
     box-sizing: border-box;
@@ -146,7 +169,7 @@ button:hover {
     cursor: pointer;
 }
 
-.button5:hover {
+.buttonMiddleNegSoft:hover {
     background: #ffffff;
     border: 1px solid #43A047;
     box-sizing: border-box;
@@ -154,7 +177,7 @@ button:hover {
     color: #43A047;
 }
 
-.button6 {
+.buttonLargeRed {
     background: #ffffff;
     border: 1px solid #FF5252;
     box-sizing: border-box;
@@ -173,7 +196,7 @@ button:hover {
     cursor: pointer;
 }
 
-.button6:hover {
+.buttonLargeRed:hover {
     background: #FF5252;
     border: 3px solid #FF5252;
     box-sizing: border-box;
@@ -181,7 +204,7 @@ button:hover {
     color: #ffffff;
 }
 
-.button7 {
+.buttonLargeGray {
     background: #F3F3F3;
     border-radius: 5px;
     color: #C62828;
@@ -198,7 +221,7 @@ button:hover {
     cursor: pointer;
 }
 
-.button7:hover {
+.buttonLargeGray:hover {
     background: #aaaaaa;
     border-radius: 5px;
 }
