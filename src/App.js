@@ -5,17 +5,32 @@ import './style.css'
 function App() {
   return (
     <div className="App">
-      <header>
-        <p className="display">test display</p>
-        <button> 
-          
+      <div className='stayle'>
+        <button className='smallButton'> 
+          smallButton
         </button>
-        <button>
-          
+        <button class="button button1">
+          middleButton
         </button>
-        <p className="caption">caption</p>
-        
-      </header>
+        <button class="button button2">
+          largeButton
+        </button>
+        <button class="button button3">
+          +
+        </button>
+        <button class="button button4">
+          -
+        </button>
+        <button class="button button5">
+          +
+        </button>
+        <button class="button button6">
+          Log Out
+        </button>
+        <button class="button button7">
+          Remove Menu
+        </button>
+        </div>
     </div>
   );
 }
