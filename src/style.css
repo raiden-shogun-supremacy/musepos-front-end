@@ -1,0 +1,37 @@
+text {
+    font-family: 'Roboto';
+}
+
+.display{
+    font-size: 42pt;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 34pt;
+    font-weight: 34pt;
+}
+
+h2{
+    font-size: 27px;
+    font-weight: 500;
+}
+
+h3{
+    font-size: 21px;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.caption {
+    font-size: 10pt;
+    font-weight: 400;
+}
