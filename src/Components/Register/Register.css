@@ -1,0 +1,182 @@
+.username{
+    background-color: rgb(3, 11, 19);
+}
+
+.Re{
+position: absolute;
+width: 159px;
+height: 49px;
+left: 16px;
+top: 102px;
+}
+
+.Re{
+position: absolute;
+width: 159px;
+height: 49px;
+left: 16px;
+top: 102px;
+}
+.Le{
+position: absolute;
+width: 165px;
+height: 16px;
+left: 16px;
+top: 151px;
+
+/* Body regular */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+}
+
+.We{
+position: absolute;
+width: 116px;
+height: 16px;
+left: 16px;
+top: 247px;
+    
+/* Body regular */
+    
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+}
+
+.Fir{
+  
+position: absolute;
+width: 67px;
+height: 16px;
+left: 16px;
+top: 300px;
+    
+}
+
+#Firstname{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: absolute;
+width: 169px;
+height: 40px;
+left: 16px;
+top: 282px;
+
+border: 3px solid #F3F3F3;
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+#Lastname{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: absolute;
+width: 169px;
+height: 40px;
+left: 205px;
+top: 282px;
+
+border: 3px solid #F3F3F3;
+box-sizing: border-box;
+border-radius: 5px;
+
+}
+
+#PhoneNum{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+    
+position: absolute;
+width: 358px;
+height: 45px;
+left: 16px;
+top: 341px;
+    
+/* BG Variant */
+border: 3px solid #F3F3F3;
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+#Username{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+
+position: absolute;
+width: 358px;
+height: 45px;
+left: 16px;
+top: 405px;
+
+/* BG Variant */
+border: 3px solid #F3F3F3;
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+#Password{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+    
+position: absolute;
+width: 358px;
+height: 45px;
+left: 16px;
+top: 469px;
+    
+/* BG Variant */    
+border: 3px solid #F3F3F3;
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+#RegisBut{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+    position: absolute;
+    width: 358px;
+    height: 45px;
+    left: 16px;
+    top: 610px;
+    
+}
+
+.BG{
+position: absolute;
+width: 295px;
+height: 295px;
+left: -40px;
+top: 800px;
+}
+
+.BG2{
+position: absolute;
+width: 295px;
+height: 295px;
+left: 215px;
+top: -105px;
+}
