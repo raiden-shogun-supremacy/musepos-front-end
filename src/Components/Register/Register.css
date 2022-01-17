@@ -167,16 +167,16 @@ border-radius: 5px;
 
 .BG{
 position: absolute;
-width: 295px;
+width: 50%;
 height: 295px;
-left: -40px;
-top: 800px;
+left: 0px;
+margin-top: 741px;
 }
 
 .BG2{
 position: absolute;
-width: 295px;
+width: 50%;
 height: 295px;
 left: 215px;
-top: -105px;
+margin-top: -105px;
 }
