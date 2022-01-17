@@ -8,6 +8,7 @@ import './Components/navigationBar/navigationBar.css';
 import Login from './Components/Login/Login.js';
 import Register from './Components/Register/Register.js';
 import Order from './Components/Order/Order.js'
+import navigationBar from './Components/navigationBar/navigationBar.js'
 import NewShop from './Components/Shop/NewShop';
 
 
@@ -18,9 +19,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />} />
-          <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/NewShop" element={<NewShop />} />
-          <Route exact path="/Order" element={<Order />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/newShop" element={<NewShop />} />
+          <Route exact path="/order" element={<Order />} />
         </Routes>
       </BrowserRouter>
     </div>
