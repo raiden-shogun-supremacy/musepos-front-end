@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../style.css'
-import 'D:/SEPROJECT/New folder/musepos-front-end/src/Components/Register/Register.css'
+import './Register.css'
 
 /*import Login from '../Login/Login.js';*/
 
