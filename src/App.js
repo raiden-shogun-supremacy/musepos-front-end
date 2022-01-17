@@ -1,10 +1,6 @@
 import React from 'react';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import './style.css';
-import './Components/Login/Login.css';
-import './Components/Register/Register.css';
-import './Components/Order/Order.css';
-import './Components/navigationBar/navigationBar.css';
 import Login from './Components/Login/Login.js';
 import Register from './Components/Register/Register.js';
 import Order from './Components/Order/Order.js'
