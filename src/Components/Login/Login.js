@@ -1,10 +1,18 @@
-import '../../style.css'
+import '../../style.css';
 
 function Login() {
     return (
-        <div>
+        <div className="middle">
             <img src="..\Aeests\img\logo.png" className="logo" />
-            <p className="light">Make your resturant easier</p> 
+            <p className="light">Make your resturant easier</p>   
+            <input className="ma-29" type='text' name='Username' />
+            <input className="ma-29" type='text' next='Passward' />
+            <div class="mt-64">
+            <button class="button2">Log in!</button>
+            </div>
+            <div className="mt-34">
+            <p>Or no have User ID? Register new one!</p>
+            </div>
         </div>
     );
 }

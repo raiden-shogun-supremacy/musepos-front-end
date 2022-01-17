@@ -1,17 +1,13 @@
 import './style.css';
-import '../Components/Login/Login.css';
-import Register from '../Components/Register/Register.js';
-/*import Login from './Components/Login/Login.js';*/
+import Login from './Components/Login/Login';
 
 function App() {
   return (
     <div className="middle">
-    <Register />  
+    <Login />  
       
     </div>
     
-    
 );
 }
-
 export default App;

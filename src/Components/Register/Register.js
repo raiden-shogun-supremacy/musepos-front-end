@@ -1,10 +1,8 @@
 import React from 'react'
-import '../../style.css'
-import 'D:/musepos-front-end/src/Components/Register/Register.css'
+import './src/style.css';
+import './src/Components/Register/Register.css';
 
-/*import Login from '../Login/Login.js';*/
 
- 
 function Register() {
     
     return (
