@@ -248,3 +248,10 @@ input{
     box-sizing: border-box;
     border-radius: 5px;
 }
+
+.middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

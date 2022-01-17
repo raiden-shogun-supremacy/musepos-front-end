@@ -26,4 +26,32 @@ line-height: 16px;
 color: #000000;
 }
 
+.descript{
+position: absolute;
+width: 288px;
+height: 20px;
+margin-left: 35px;
+margin-top: 250px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 20px;
+color: #AAAAAA;
+}
 
+.border{
+width: 358px;
+height: 546px;
+left: 16px;
+margin-top: 223px;
+background: #FFFFFF;
+border: 2px solid #F3F3F3;
+box-sizing: border-box;
+border-radius: 15px 15px 0px 0px;
+}
+
+.mt-150{
+position: absolute;
+margin-top: 150px;
+}
