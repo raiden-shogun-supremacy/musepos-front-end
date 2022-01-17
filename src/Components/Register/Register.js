@@ -1,10 +1,7 @@
-import React from 'react'
-import './src/style.css';
+import '../src/style.css';
 import './src/Components/Register/Register.css';
 
-
 function Register() {
-    
     return (
         <div>
            
