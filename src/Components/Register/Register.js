@@ -1,15 +1,9 @@
-import React from 'react'
 import '../../style.css'
-import './Register.css'
-import 'C:/Users/chana/Desktop/CPE/CPE_2_2021/SE/musepos-front-end/src/Components/Register/Register.js'
-
-/*import Login from '../Login/Login.js';*/
-
  
 function Register() {
     
     return (
-        <div>
+        <div className='middel'>
            
            <h1 className='Re'> Register</h1> 
            <h5>

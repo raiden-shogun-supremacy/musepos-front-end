@@ -1,7 +1,4 @@
-import React from 'react'
 import '../../style.css'
-import './Order.css'
-import 'C:/Users/chana/Desktop/CPE/CPE_2_2021/SE/musepos-front-end/src/Components/Order/Order.js'
 
 function Order() {
     
