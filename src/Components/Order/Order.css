@@ -1,0 +1,29 @@
+.order{
+position: absolute;
+width: 106px;
+height: 49px;
+left: 17px;
+margin-top: 56px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 42px;
+line-height: 49px;
+color: #388E3C;
+}
+
+.text{
+position: absolute;
+width: 246px;
+height: 16px;
+left: 17px;
+margin-top: 105px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+color: #000000;
+}
+
+
