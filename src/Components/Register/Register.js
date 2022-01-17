@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../style.css'
-import 'D:/SEPROJECT/New folder/musepos-front-end/src/Components/Register/Register.css'
+import 'D:/musepos-front-end/src/Components/Register/Register.css'
 
 /*import Login from '../Login/Login.js';*/
 
@@ -17,38 +17,33 @@ function Register() {
                 <p className="We">Can we know you?</p> 
             </div>
             
-                 
-            
-            </h5>
-            
+            </h5> 
+
+            <div>
             <form>
                 <div>
-                    <input type="text"  id="Firstname" />
+                    <input type="text"  id="Firstname" placeholder='Firstname' />
                 </div>
-
                     <div>
-                        <input type="text"  id="Lastname" />
+                        <input type="text"  id="Lastname" placeholder='Lastname' />
                     </div>
-
                     <div>
-                        <input type="text"  id="PhoneNum" />
+                        <input type="text"  id="PhoneNum" placeholder='PhoneNum'/>
                     </div>
-
                     <div>
-                        <input type="text"  id="Username" />
+                        <input type="text"  id="Username" placeholder='Username'/>
                     </div>
-
                     <div>
-                        <input type="text"  id="Password" />
+                        <input type="text"  id="Password" placeholder='Password'/>
                     </div>
             </form>
+
+            </div>     
+            
             <button id="RegisBut">Register</button>
             
             <img src="..\Aeests\img\BG.png" className='BG'  />
-            <img src="..\Aeests\img\BG2.png" className='BG2'  />
-            
-            
-           
+            <img src="..\Aeests\img\BG2.png" className='BG2'  />            
         </div>
         
            
