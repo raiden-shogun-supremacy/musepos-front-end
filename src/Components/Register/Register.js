@@ -1,9 +1,9 @@
-import '../src/style.css';
-import './src/Components/Register/Register.css';
+import '../../style.css'
+
 
 function Register() {
     return (
-        <div>
+        <div className='middel'>
            
            <h1 className='Re'> Register</h1> 
            <h5>
