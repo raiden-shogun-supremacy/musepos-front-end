@@ -11,8 +11,10 @@ import navigationBar from'./Components/navigationBar/navigationBar.js'
 function App() {
   return (
     <div className="middle">
-    <Order />  
-      
+    <Login/>
+    {/* <Register/> */}
+    {/* <Order/>  */}
+    {/* <navigationBar/>  */}
     </div>
     
     
