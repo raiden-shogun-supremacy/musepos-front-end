@@ -18,13 +18,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />} />
-          <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/NewShop" element={<NewShop />} />
-          <Route exact path="/Order" element={<Order />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/newshop" element={<NewShop />} />
+          <Route exact path="/order" element={<Order />} />
         </Routes>
       </BrowserRouter>
     </div>
-    
+
 );
 }
 export default App;
