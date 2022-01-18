@@ -17,6 +17,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/newshop" element={<NewShop />} />
           <Route exact path="/order" element={<Order />} />
+    
         </Routes>
       </BrowserRouter>
     </div>
