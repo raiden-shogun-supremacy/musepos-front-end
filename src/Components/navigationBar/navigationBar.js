@@ -1,4 +1,5 @@
 import '../../style.css'
+import './navigationBar.css'
 
 function navigationBar() {
 

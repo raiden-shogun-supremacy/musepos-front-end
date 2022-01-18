@@ -4,6 +4,7 @@ import './style.css';
 import Login from './Components/Login/Login.js';
 import Register from './Components/Register/Register.js';
 import Order from './Components/Order/Order.js'
+import navigationBar from './Components/navigationBar/navigationBar.js'
 import NewShop from './Components/Shop/NewShop';
 import Stock from './Components/Stock/Stock';
 
