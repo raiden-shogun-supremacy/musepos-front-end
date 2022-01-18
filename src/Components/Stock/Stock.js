@@ -1,7 +1,7 @@
 import '../../style.css'
 import './Stock.css'
 import ProductCard from '../ProductCard/ProductCard';
-import dummy from '../../Data/dummy.json'
+import dummy from '../../dummy/dummy.json'
 
 function Stock() {
     const render_product_showcase = dummy.map((data, key) => {
