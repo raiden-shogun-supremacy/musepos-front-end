@@ -3,7 +3,7 @@ import './ProductCard.css'
 
 const  ProductCard = ({detail}) => {
     return (
-        <div className='product-card'>
+        <div className='card'>
             <img src={detail.img} alt={detail.Name} />
             <p>{detail.Name}</p>
         </div>

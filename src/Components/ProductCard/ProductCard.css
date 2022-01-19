@@ -1,3 +1,21 @@
-.product-card{
-    max-width: 100%;
+.card{
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    justify-content: start;
+    margin: 16px;
+    width: 50%;
+    height: 50%;
+}
+
+.card p {
+    position: absolute;
+    color: white;
+    margin-left: 5%;
+}
+
+.card img{
+    border-radius: 15px;
 }

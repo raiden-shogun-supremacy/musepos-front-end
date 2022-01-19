@@ -1,0 +1,7 @@
+.popup{
+    border-radius: 20px;
+    background-color: black;
+    max-height: calc(100vh-200px);
+    margin-left: auto;
+    margin-right: auto;
+}
