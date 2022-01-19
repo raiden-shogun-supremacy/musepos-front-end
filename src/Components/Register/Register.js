@@ -3,42 +3,39 @@ import './Register.css'
 
 function Register() {
     return (
-        <div className='middel'>
+        <div className='middle'>
            
-           <h1 className='Re'> Register</h1> 
+           <h1> Register</h1> 
            <h5>
             <div>
-                <p className="Le">Let's earn money together!</p> 
-                <p className="We">Can we know you?</p> 
+                <p className="">Let's earn money together!</p> 
+                <p className="">Can we know you?</p> 
             </div>
             
             </h5> 
 
-            <div>
-            <form>
-                <div>
-                    <input type="text"  id="Firstname" placeholder='Firstname' />
+            <div className='Form'>
+                <div >
+                    <input type="text"  id="" placeholder='Firstname' />
                 </div>
                     <div>
-                        <input type="text"  id="Lastname" placeholder='Lastname' />
+                        <input type="text"  id="" placeholder='Lastname' />
                     </div>
                     <div>
-                        <input type="text"  id="PhoneNum" placeholder='PhoneNum'/>
+                        <input type="text"  id="" placeholder='PhoneNum'/>
                     </div>
                     <div>
-                        <input type="text"  id="Username" placeholder='Username'/>
+                        <input type="text"  id="" placeholder='Username'/>
                     </div>
                     <div>
-                        <input type="text"  id="Password" placeholder='Password'/>
+                        <input type="text"  id="" placeholder='Password'/>
                     </div>
-            </form>
-
+                   
             </div>     
+            <button>Register</button>
             
-            <button id="RegisBut">Register</button>
             
-            <img src="..\Aeests\img\BG.png" className='BG'  />
-            <img src="..\Aeests\img\BG2.png" className='BG2'  />            
+                       
         </div>
         
            
