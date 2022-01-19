@@ -41,6 +41,7 @@ color: #AAAAAA;
 }
 
 .border{
+position: absolute;
 width: 358px;
 height: 546px;
 left: 16px;
@@ -53,5 +54,6 @@ border-radius: 15px 15px 0px 0px;
 
 .mt-150{
 position: absolute;
+left: 12px;
 margin-top: 150px;
 }
