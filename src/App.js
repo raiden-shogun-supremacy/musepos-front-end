@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
 // import components
-import Login from './Components/Login/Login.js';
-import Register from './Components/Register/Register.js';
-import Order from './Components/Order/Order.js'
+import Login from './Pages/Login/Login.js';
+import Register from './Pages/Register/Register.js';
+import Order from './Pages/Order/Order.js'
 import NavBar from './Components/NavBar/NavBar.js'
-import NewShop from './Components/Shop/NewShop.js';
-import StockPage from './Components/Stock/StockPage.js';
-import Dashboard from './Components/Dashboard/Dashboard';
+import NewShop from './Pages/Shop/NewShop.js';
+import StockPage from './Pages/Stock/StockPage.js';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 
 function App() {

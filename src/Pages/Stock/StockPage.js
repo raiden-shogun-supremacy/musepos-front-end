@@ -36,6 +36,27 @@ const Section = styled.div`
 
 const SectionGrid = styled(Section)`
     display : grid;
+    grid-template-columns: 1fr 1fr;
+`
+
+const Button = styled.button`
+    font-family: 'Roboto', sans-serif;
+    width: inherit;
+    height: 4em;
+    border-radius: 15px;
+    background-color: #F3F3F3;
+    color: #AAAAAA;
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    img {
+        width: 20px;
+        filter: opacity(.4);
+    }
 `
 
 const StupidCircle = styled.div`
@@ -68,9 +89,10 @@ const StockPage = () => {
                     <option>Food</option>
                 </select>
             </Section>
-            <Section>
+            <SectionGrid>
                 { stock_display }
-            </Section>
+            </SectionGrid>
+            <Button><img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/plus-circle-512.png" />add new menu</Button>
         </Content>
         <StupidCircle />
     </Container>
