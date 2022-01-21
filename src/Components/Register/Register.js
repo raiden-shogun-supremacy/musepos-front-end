@@ -1,4 +1,4 @@
-import '../../style.css'
+import '../style.css'
 import './Register.css'
 
 function Register() {
@@ -42,7 +42,7 @@ function Register() {
         </div>
         
            
-    )
+    );
 
 }
 

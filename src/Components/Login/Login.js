@@ -1,10 +1,10 @@
-import '../../style.css';
+import '../style.css';
 import './Login.css';
 
 function Login() {
     return (
         <div className="middle">
-            <img src="..\Asset\img\logo.png" className="logo" />
+            <img src="assets/logo/logo.png" className="logo" />
             <p className="light">Make your resturant easier</p>   
             <input className="ma-29" type='text' name='Username' />
             <input className="ma-29" type='text' next='Passward' />

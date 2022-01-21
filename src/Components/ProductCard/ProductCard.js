@@ -1,4 +1,4 @@
-import '../../style.css'
+import '../style.css'
 import './ProductCard.css'
 
 const  ProductCard = ({detail}) => {

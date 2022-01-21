@@ -4,27 +4,27 @@
         "Desc": "Desc",
         "PodID": "000001",
         "Price": 0,
-        "img": "/Asset/img/icetea.jpg"
+        "img": "/assets/img/icetea.jpg"
     },
     {
         "Name": "Americano",
         "Desc": "Desc",
         "PodID": "000002",
         "Price": 0,
-        "img": "/Asset/img/americano.jpg"
+        "img": "/assets/img/americano.jpg"
     },
     {
         "Name": "Latte",
         "Desc": "Desc",
         "PodID": "000003",
         "Price": 0,
-        "img": "/Asset/img/icetea.jpg"
+        "img": "/assets/img/icetea.jpg"
     },
     {
         "Name": "Iced Chocolate",
         "Desc": "Desc",
         "PodID": "000004",
         "Price": 0,
-        "img": "/Asset/img/chocolate.jpg"
+        "img": "/assets/img/chocolate.jpg"
     }
 ]
