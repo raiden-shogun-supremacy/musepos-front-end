@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Card = styled.div`
     border-radius : 15px;
     background-image : linear-gradient(0deg, rgba(0, 0, 0, 0.62) 0%, rgba(247, 25, 136, 0) 47%),url(${ props => props.bgImg });
-    background-size: 300px;
+    background-size: cover;
     background-position: center;
     background-repeat : none;
     width: auto;
@@ -24,7 +24,7 @@ const Overlay = styled.div`
   }
 `
 
-const ConfirmOrder = ({ data }) => {
+const MenuCard = ({ data }) => {
   return (
       <Card bgImg={data.img}>
         <Overlay>
@@ -34,4 +34,4 @@ const ConfirmOrder = ({ data }) => {
   );
 };
 
-export default ConfirmOrder;
+export default MenuCard;

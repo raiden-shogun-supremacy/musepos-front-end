@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // import data
 import dummy from '../../dummy/dummy.json';
-import StockCard from './ConfirmOrder';
+import MenuCard from './MenuCard.js';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -34,6 +34,7 @@ const Description = styled.p`
 const Content = styled.div`
     display : flex;
     flex-direction : column;
+    width: inherit;
 `
 
 const Section = styled.div`
@@ -46,21 +47,28 @@ const Section = styled.div`
 const SectionGrid = styled(Section)`
     display : grid;
     grid-template-columns: 1fr 1fr;
+    padding-bottom: 100px;
+`
+
+const SectionFloat = styled(Section)`
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 `
 
 const Button = styled.button`
     font-family: 'Roboto', sans-serif;
-    width: inherit;
+    position: fixed;
+    z-index: 999;
+    bottom: 10%;
+    width: 90%;
     height: 2.6em;
     border: none;
     border-radius: 5px;
     background-color: #43A047;
     color: #ffffff;
     margin: 4px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
     text-decoration: none;
 `
@@ -76,7 +84,7 @@ const StupidCircle = styled.div`
     right : -120px;
 `
 const menu_display = dummy.map((data) => {
-    return <StockCard data={data} />
+    return <MenuCard data={data} />
 });
 
 const StockPage = () => {
@@ -98,7 +106,9 @@ const StockPage = () => {
             <SectionGrid>
                 { menu_display }
             </SectionGrid>
+            <SectionFloat>
             <Button>add new menu</Button>
+            </SectionFloat>
         </Content>
         <StupidCircle />
     </Container>

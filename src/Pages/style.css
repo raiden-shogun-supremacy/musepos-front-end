@@ -262,7 +262,7 @@ input{
 
 select{
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    width: inherit;
     padding: 10px;
     border: 2px solid #F3F3F3;
     border-radius: 5px;

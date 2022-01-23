@@ -28,11 +28,18 @@
         "img": "/assets/img/cookieandcream.jpg"
     },
     {
-        "Name": "Latte",
+        "Name": "Lemon Iced Tea",
         "Desc": "Desc",
-        "PodID": "000003",
+        "PodID": "000001",
         "Price": 0,
-        "img": "/assets/img/latte.jpg"
+        "img": "/assets/img/icetea.jpg"
+    },
+    {
+        "Name": "Americano",
+        "Desc": "Desc",
+        "PodID": "000002",
+        "Price": 0,
+        "img": "/assets/img/americano.jpg"
     },
     {
         "Name": "Latte",
@@ -42,10 +49,38 @@
         "img": "/assets/img/latte.jpg"
     },
     {
+        "Name": "Cookie and Cream",
+        "Desc": "Desc",
+        "PodID": "000004",
+        "Price": 0,
+        "img": "/assets/img/cookieandcream.jpg"
+    },
+    {
+        "Name": "Lemon Iced Tea",
+        "Desc": "Desc",
+        "PodID": "000001",
+        "Price": 0,
+        "img": "/assets/img/icetea.jpg"
+    },
+    {
+        "Name": "Americano",
+        "Desc": "Desc",
+        "PodID": "000002",
+        "Price": 0,
+        "img": "/assets/img/americano.jpg"
+    },
+    {
         "Name": "Latte",
         "Desc": "Desc",
         "PodID": "000003",
         "Price": 0,
         "img": "/assets/img/latte.jpg"
+    },
+    {
+        "Name": "Cookie and Cream",
+        "Desc": "Desc",
+        "PodID": "000004",
+        "Price": 0,
+        "img": "/assets/img/cookieandcream.jpg"
     }
 ]
