@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// import data
+import dummy from '../../dummy/dummy.json';
+import StockCard from './ConfirmOrder';
+
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
     padding : 10px;
@@ -39,20 +43,9 @@ const Section = styled.div`
     margin : 5px 0px;
 `
 
-const Border = styled.div`
-    display : flex;
-    width: inherit;
-    height: 80vh;
-    left: 16px;
-    margin-top: 20px;
-    background: #FFFFFF;
-    border: 2px solid #F3F3F3;
-    color : #AAAAAA;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
+const SectionGrid = styled(Section)`
+    display : grid;
+    grid-template-columns: 1fr 1fr;
 `
 
 const Button = styled.button`
@@ -72,19 +65,44 @@ const Button = styled.button`
     text-decoration: none;
 `
 
-const Order = () => {
+const StupidCircle = styled.div`
+    z-index : -999;
+    background-color : #43A047;
+    width : 200px;
+    height : 200px;
+    position : fixed;
+    border-radius : 50%;
+    top : -120px;
+    right : -120px;
+`
+const menu_display = dummy.map((data) => {
+    return <StockCard data={data} />
+});
+
+const StockPage = () => {
   return (
     <Container>
         <Header>
-            <HeaderText>Order</HeaderText>
-            <Description>Check who going to sit in your resturant</Description>
+            <HeaderText>New Order</HeaderText>
+            <Description>Which one your customer wants to order?</Description>
         </Header>
         <Content>
-            <Button>+ New Order!</Button>
-            <Border>No customer sit in your resturant yet...</Border>
+            <Section>
+                <select>
+                    <option>- Choose you category -</option>
+                    <option>Beverage/Drink</option>
+                    <option>Dessert</option>
+                    <option>Food</option>
+                </select>
+            </Section>
+            <SectionGrid>
+                { menu_display }
+            </SectionGrid>
+            <Button>add new menu</Button>
         </Content>
+        <StupidCircle />
     </Container>
   );
 };
 
-export default Order;
+export default StockPage;
