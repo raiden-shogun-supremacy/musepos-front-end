@@ -107,7 +107,7 @@ const StockPage = () => {
                 { menu_display }
             </SectionGrid>
             <SectionFloat>
-            <Button>add new menu</Button>
+            <Button>Accept</Button>
             </SectionFloat>
         </Content>
         <StupidCircle />
