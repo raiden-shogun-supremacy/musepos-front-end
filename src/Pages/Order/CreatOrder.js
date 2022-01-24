@@ -157,17 +157,22 @@ const Background = styled.div`
     left: 0px;
     right: 0px;
     cursor: zoom-out;
+    overflow : scroll;
 `
     
 const BgContainer = styled.div`
     background-color: #f6f6f6;
     width: inherit;
-    height: 55vh;
+    height: initial;
     padding: 10px;
-    margin-top: 21vh;
+    margin-top: 25%;
     margin-left: 12px;
     margin-right: 12px;
+    margin-bottom: 25%;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const CreatOrder = ({ onBgClick }) => {

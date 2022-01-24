@@ -61,6 +61,7 @@ const Total = styled.p`
     line-height: 32px;
     width: 10vw;
     margin-top: 0px;
+    margin-bottom: 0px;
     color: #000000;
 `
 
@@ -101,6 +102,9 @@ const SectionGrid = styled(Section)`
     grid-template-columns: 100fr 0fr;
     margin-left: 5vw;
     margin-right: 3vw;
+    margin-bottom: 0vw;
+    overflow : scroll;
+    
 `
 
 const Content = styled.div`
@@ -117,7 +121,6 @@ const Button = styled.button`
     line-height: 20px;
     width: 50vw;
     height: 2.6em;
-    bottom: 20%;
     border: none;
     border-radius: 5px;
     background-color: #43A047;
@@ -129,8 +132,6 @@ const Button = styled.button`
     align-items: center;
     padding: 10px;
     text-decoration: none;
-    position: fixed;
-
 `
 
 const Post = styled.div`
@@ -153,17 +154,22 @@ const Background = styled.div`
     left: 0px;
     right: 0px;
     cursor: zoom-out;
+    overflow : scroll;
 `
     
 const BgContainer = styled.div`
     background-color: #f6f6f6;
     width: inherit;
-    height: 55vh;
+    height: initial;
     padding: 10px;
-    margin-top: 21vh;
+    margin-top: 25%;
     margin-left: 12px;
     margin-right: 12px;
+    margin-bottom: 25%;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const Border = styled.div`
@@ -195,6 +201,18 @@ const ConfirmOrder = ({ onBgClick }) => {
                         </Section>
                         <Section>
                             <SectionGrid>
+                                <P>Americano</P>
+                                <P>1</P>
+                                <P>Mocca</P>
+                                <P>2</P>
+                                <P>Americano</P>
+                                <P>1</P>
+                                <P>Mocca</P>
+                                <P>2</P>
+                                <P>Americano</P>
+                                <P>1</P>
+                                <P>Mocca</P>
+                                <P>2</P>
                                 <P>Americano</P>
                                 <P>1</P>
                                 <P>Mocca</P>

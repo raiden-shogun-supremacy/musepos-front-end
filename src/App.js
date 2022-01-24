@@ -5,6 +5,7 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login/Login.js';
 import Register from './Pages/Register/Register.js';
 import Order from './Pages/Order/Order.js'
+import Payment from './Pages/Order/Payment.js'
 import ConfirmOrder from './Pages/Order/ConfirmOrder.js'
 import CreatOrder from './Pages/Order/CreatOrder.js'
 import NewOrder from './Pages/Order/NewOrder.js'
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/order" element={<Order />} />
+          <Route exact path="/payment" element={<Payment />} />
           <Route exact path="/confirmorder" element={<ConfirmOrder />} />
           <Route exact path="/creatorder" element={<CreatOrder />} />
           <Route exact path="/neworder" element={<NewOrder />} />
