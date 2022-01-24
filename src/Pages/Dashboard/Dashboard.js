@@ -7,6 +7,7 @@ import { fakeProfit, fakeBill, fakePercent } from './fakeRandomNumber';
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
     padding : 10px;
+    padding-bottom: 100px;
 `
 
 const Header = styled.div``
