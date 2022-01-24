@@ -84,8 +84,8 @@ const Sit = styled.p`
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    margin-top: 0vh;
-    margin-left: 12vw;
+    margin-top: 15px;
+    margin-left: 30px;
     color: #000000;
     img {
         width: 11px;
@@ -99,8 +99,8 @@ const Take = styled.p`
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    margin-top: 0vh;
-    margin-left: 12vw;
+    margin-top: 15px;
+    margin-left: 30px;
     color: #000000;
     img {
         width: 11px;
@@ -175,7 +175,20 @@ const BgContainer = styled.div`
     align-items: center;
 `
 
-const CreatOrder = ({ onBgClick }) => {
+const Section = styled.div`
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    margin : 0px 5vw;
+`
+
+const SectionGrid = styled(Section)`
+    display : grid;
+    grid-row-gap: 0vh;
+    grid-template-columns: 0vw 1fr;
+`
+
+const CreateOrder = ({ onBgClick }) => {
   return (
     <Container>
         <Post>
@@ -190,8 +203,14 @@ const CreatOrder = ({ onBgClick }) => {
                             <input type="text"  placeholder='They are                                                    People' />
                         </Form>
                         <Description3>Are They?</Description3>
-                        <Sit><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-512.png"/> Sit in</Sit>
-                        <Take><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-512.png"/> Take away</Take>
+                        <Section>
+                            <SectionGrid>
+                                <input type="checkbox" id="horns" name="horns"></input>
+                                <Sit>Sit in</Sit>
+                                <input type="checkbox" id="horns" name="horns"></input>
+                                <Take>Take away</Take>
+                            </SectionGrid>
+                        </Section>
                         <Button>New Order</Button>
                     </Content>
                 </BgContainer>
@@ -201,4 +220,4 @@ const CreatOrder = ({ onBgClick }) => {
   );
 };
 
-export default CreatOrder;
+export default CreateOrder;
