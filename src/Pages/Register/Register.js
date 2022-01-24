@@ -15,7 +15,7 @@ const Head = styled.div`
 margin-top:102px;
 display:grid;
 flex-direction:column;
-margin-left:16px
+margin-left:16px;
 `
 const Regis = styled.h1`
 font-size: 42px;
