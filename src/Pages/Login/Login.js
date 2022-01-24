@@ -1,9 +1,35 @@
 import '../style.css';
-import './Login.css';
+import styled from 'styled-components';
+
+
+
+
+
+const Ma29 = styled.input`
+    margin: 29px;
+`
+const Mt64 = styled.div`
+margin-top: 64px;
+`
+const Detail = styled.param`
+font-weight: 300;
+`
+const Mt34 = styled.div`
+margin-top: 34px;
+`
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
+
+
 
 function Login() {
     return (
-        <div className="middle">
+              <div className="middle">
             <img src="assets/logo/logo.png" className="logo" />
             <p className="light">Make your resturant easier</p>   
             <input className="ma-29" type='text' name='Username' />
