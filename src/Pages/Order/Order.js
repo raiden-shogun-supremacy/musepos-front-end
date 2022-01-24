@@ -72,7 +72,7 @@ const Button = styled.button`
     text-decoration: none;
 `
 
-const Order = () => {
+const Order  = ({ onBgClick }) => {
   return (
     <Container>
         <Header>

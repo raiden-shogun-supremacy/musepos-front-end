@@ -16,18 +16,52 @@ const HeaderText = styled.h1`
     line-height: 40px;
     margin-top: 1.5vh;
     margin-left: 5vw;
-    color: #388E3C;
+    color: #000000;
 `
 
-const Description = styled.p`
+const Menu = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    width: 100%;
+    margin-top: 0px;
+    color: #000000;
+`
+
+const Amount = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    width: 10vw;
+    margin-top: 0px;
+    color: #000000;
+`
+
+const P = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 300;
     font-size: 14px;
     line-height: 16px;
-    margin-top: -20px;
-    margin-left: 5vw;
-    color: #4A4A4A;
+    width: 10vw;
+    margin-top: 0px;
+    color: #000000;
+`
+
+const Total = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 32px;
+    width: 10vw;
+    margin-top: 0px;
+    color: #000000;
 `
 
 const Back = styled.p`
@@ -45,67 +79,28 @@ const Back = styled.p`
     }
 `
 
-const Description2 = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 3vh;
+const Section = styled.div`
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+`
+
+const SectionGridHead = styled(Section)`
+    display : grid;
+    grid-column-gap: 30vw;
+    grid-row-gap: 0vh;
+    grid-template-columns: 100fr 0fr;
     margin-left: 5vw;
-    color: #000000;
+    margin-right: 5ex;
 `
 
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    input{
-        width: 80vw;
-        height: 3.5em;
-    }
-`
-
-const Description3 = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 4vh;
+const SectionGrid = styled(Section)`
+    display : grid;
+    grid-column-gap: 30vw;
+    grid-row-gap: 0vh;
+    grid-template-columns: 100fr 0fr;
     margin-left: 5vw;
-    color: #000000;
-`
-
-const Sit = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 0vh;
-    margin-left: 12vw;
-    color: #000000;
-    img {
-        width: 11px;
-        
-    }
-`
-
-const Take = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 0vh;
-    margin-left: 12vw;
-    color: #000000;
-    img {
-        width: 11px;
-        
-    }
+    margin-right: 3vw;
 `
 
 const Content = styled.div`
@@ -134,6 +129,7 @@ const Button = styled.button`
     align-items: center;
     padding: 10px;
     text-decoration: none;
+    position: fixed;
 
 `
 
@@ -170,7 +166,19 @@ const BgContainer = styled.div`
     border-radius: 15px;
 `
 
-const CreatOrder = ({ onBgClick }) => {
+const Border = styled.div`
+    width: inherit;
+    height: 0;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 10px;
+    margin-bottom: 3vh;
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    box-sizing: border-box;
+`
+
+const ConfirmOrder = ({ onBgClick }) => {
   return (
     <Container>
         <Post>
@@ -178,16 +186,29 @@ const CreatOrder = ({ onBgClick }) => {
                 <BgContainer>
                     <Content>
                         <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D"/>  Back</Back>
-                        <HeaderText>Before New Order</HeaderText>
-                        <Description>Please tell us about your customer</Description>
-                        <Description2>How many people are they?</Description2>
-                        <Form>
-                            <input type="text"  placeholder='They are                                                    People' />
-                        </Form>
-                        <Description3>Are They?</Description3>
-                        <Sit><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-512.png"/> Sit in</Sit>
-                        <Take><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-512.png"/> Take away</Take>
-                        <Button>New Order</Button>
+                        <HeaderText>Order ID: 000013</HeaderText>
+                        <Section>
+                            <SectionGridHead>
+                                <Menu>Product Name</Menu>
+                                <Amount>Amount</Amount>
+                            </SectionGridHead>
+                        </Section>
+                        <Section>
+                            <SectionGrid>
+                                <P>Americano</P>
+                                <P>1</P>
+                                <P>Mocca</P>
+                                <P>2</P>
+                            </SectionGrid>
+                        </Section>
+                        <Border></Border>
+                        <Section>
+                            <SectionGrid>
+                                <Total>Total Amount</Total>
+                                <Total>3</Total>
+                            </SectionGrid>
+                        </Section>
+                        <Button>Confirm</Button>
                     </Content>
                 </BgContainer>
             </Background>
@@ -196,4 +217,4 @@ const CreatOrder = ({ onBgClick }) => {
   );
 };
 
-export default CreatOrder;
+export default ConfirmOrder;
