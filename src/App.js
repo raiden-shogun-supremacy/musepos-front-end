@@ -9,6 +9,7 @@ import NavBar from './Components/NavBar/NavBar.js'
 import NewShop from './Pages/Shop/NewShop.js';
 import StockPage from './Pages/Stock/StockPage.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import LandingPage from './Pages/LandingPage/LandingPage.js';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/newshop" element={<NewShop />} />
           <Route exact path="/navBar" element={<NavBar />} />
           <Route exact path="/register" element={<Register />} />
+          <Route exact path="/landing" element={<LandingPage />} />
         </Routes>
       </BrowserRouter>    
   );
