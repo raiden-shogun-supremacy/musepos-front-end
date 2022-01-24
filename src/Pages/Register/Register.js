@@ -16,8 +16,13 @@ margin-left:16px;
 const Head = styled.div`
 margin-top:102px;
 display:grid;
+<<<<<<< HEAD
 justify-content: center;
 margin-left:16px
+=======
+flex-direction:column;
+margin-left:16px;
+>>>>>>> 117f9440f6a8c5688b892c2fb20ab4d6fafbbd2c
 `
 const Regis = styled.h1`
 font-size: 5vm;

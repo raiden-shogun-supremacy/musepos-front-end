@@ -24,6 +24,7 @@ const Description = styled.p`
     font-size: 14px;
     line-height: 16px;
     margin-top : -20px;
+    color: #000000;
 `
 
 const Content = styled.div`
@@ -71,7 +72,7 @@ const Button = styled.button`
     text-decoration: none;
 `
 
-const Order = () => {
+const Order  = ({ onBgClick }) => {
   return (
     <Container>
         <Header>

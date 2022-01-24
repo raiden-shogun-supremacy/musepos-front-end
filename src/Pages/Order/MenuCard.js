@@ -24,7 +24,7 @@ const Overlay = styled.div`
   }
 `
 
-const StockCard = ({ data }) => {
+const MenuCard = ({ data }) => {
   return (
       <Card bgImg={data.img}>
         <Overlay>
@@ -34,4 +34,4 @@ const StockCard = ({ data }) => {
   );
 };
 
-export default StockCard;
+export default MenuCard;

@@ -11,7 +11,7 @@ const Ma29 = styled.input`
 const Mt64 = styled.div`
 margin-top: 64px;
 `
-const Detail = styled.param`
+const Detail = styled.div`
 font-weight: 300;
 `
 const Mt34 = styled.div`
@@ -29,18 +29,18 @@ align-items: center;
 
 function Login() {
     return (
-              <div className="middle">
+            <Container>
             <img src="assets/logo/logo.png" className="logo" />
-            <p className="light">Make your resturant easier</p>   
-            <input className="ma-29" type='text' name='Username' />
-            <input className="ma-29" type='text' next='Passward' />
-            <div class="mt-64">
-            <button class="button2">Log in!</button>
-            </div>
-            <div className="mt-34">
+            <Detail>Make your resturant easier</Detail>   
+             <Ma29 type='text' name='Username' />
+             <Ma29 type='text' next='Password' />
+            <Mt64>
+             <button class="button2">Log in!</button>
+            </Mt64>
+            <Mt34>
             <p>Or no have User ID? Register new one!</p>
-            </div>
-        </div>
+            </Mt34>
+        </Container>
     );
 }
 
