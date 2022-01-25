@@ -200,14 +200,14 @@ const CreateOrder = ({ onBgClick }) => {
                         <Description>Please tell us about your customer</Description>
                         <Description2>How many people are they?</Description2>
                         <Form>
-                            <input type="text"  placeholder='They are                                                    People' />
+                            <input type="number"  placeholder='They are                                                    People' />
                         </Form>
                         <Description3>Are They?</Description3>
                         <Section>
                             <SectionGrid>
-                                <input type="checkbox" id="horns" name="horns"></input>
+                                <input type="radio" id="horns" name="horns"></input>
                                 <Sit>Sit in</Sit>
-                                <input type="checkbox" id="horns" name="horns"></input>
+                                <input type="radio" id="horns" name="horns"></input>
                                 <Take>Take away</Take>
                             </SectionGrid>
                         </Section>

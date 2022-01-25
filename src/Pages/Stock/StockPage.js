@@ -77,13 +77,13 @@ const StockPage = () => {
 
     const [selectedStockProductOpen, setSelectedStockProductOpen] = useState(null);
 
-    function onStockProductOpenClick(x) {
-        setSelectedStockProductOpen(x)
+    function onStockProductOpenClick(data) {
+        setSelectedStockProductOpen(data)
     }
 
     let stockProductPost = null;
     if (!!selectedStockProductOpen) {
-        stockProductPost = <StockProductPost />
+        stockProductPost = <StockProductPost detail={selectedStockProductOpen} />
     }
 
     const stock_display = dummy.map((data) => {
@@ -92,6 +92,7 @@ const StockPage = () => {
 
   return (
     <Container>
+        {stockProductPost}
         <Header>
             <HeaderText>Stock</HeaderText>
             <Description>Manage your menu</Description>
@@ -111,7 +112,6 @@ const StockPage = () => {
             <Button><img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/plus-circle-512.png" />add new menu</Button>
         </Content>
         <StupidCircle />
-        {stockProductPost}
     </Container>
   );
 };
