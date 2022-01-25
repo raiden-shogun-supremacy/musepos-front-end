@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useState } from 'react';
 // import data
 import dummy from '../../dummy/dummy.json';
 import StockCard from './StockCard';
+
+//import popup components
+import StockProductPost from './StockProductPost';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -69,11 +72,24 @@ const StupidCircle = styled.div`
     top : -120px;
     right : -120px;
 `
-const stock_display = dummy.map((data) => {
-    return <StockCard data={data} />
-});
 
 const StockPage = () => {
+
+    const [selectedStockProductOpen, setSelectedStockProductOpen] = useState(null);
+
+    function onStockProductOpenClick(x) {
+        setSelectedStockProductOpen(x)
+    }
+
+    let stockProductPost = null;
+    if (!!selectedStockProductOpen) {
+        stockProductPost = <StockProductPost />
+    }
+
+    const stock_display = dummy.map((data) => {
+        return <StockCard data={data} onStockProductClick={onStockProductOpenClick} />
+    });
+
   return (
     <Container>
         <Header>
@@ -95,6 +111,7 @@ const StockPage = () => {
             <Button><img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/plus-circle-512.png" />add new menu</Button>
         </Content>
         <StupidCircle />
+        {stockProductPost}
     </Container>
   );
 };
