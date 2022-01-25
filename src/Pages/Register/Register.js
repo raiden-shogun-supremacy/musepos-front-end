@@ -16,15 +16,10 @@ margin-left:16px;
 const Head = styled.div`
 margin-top:102px;
 display:grid;
-<<<<<<< HEAD
-justify-content: center;
-margin-left:16px
-=======
 flex-direction:column;
 margin-left:16px;
->>>>>>> 117f9440f6a8c5688b892c2fb20ab4d6fafbbd2c
 `
-const Regis = styled.h1`
+const RegisterF = styled.h1`
 font-size: 5vm;
 border-style: none;
 margin-bottom: -30px;
@@ -52,9 +47,10 @@ const Div1 = styled.div`
 display:flex;
 flex-direction:row;
 gap: 20px;
+width: 100%;
 `
 
-const Butt = styled.button`
+const ButtonnReg = styled.button`
 margin-left:16px;
 `
 const Div2 = styled.div`
@@ -63,30 +59,29 @@ flex-direction:column;
 gap: 19px;
 width: 100%;
 `
-
+const InputReg = styled.input`
+`
 
 
 
 function Register() {
     return (
         <Head>         
-            <Regis>Register</Regis> 
+            <RegisterF>Register</RegisterF> 
             <Let>Let's earn money together!</Let>  
             <Can>Can we know you?</Can> 
             <Form>
                 <Div1>
-                    <input type="text"  placeholder='Firstname' />
-                </Div1>
-                <Div1>
-                    <input type="text"  placeholder='Lastname' />
+                    <InputReg type="text"  placeholder='Firstname' ></InputReg>
+                    <InputReg type="text"  placeholder='Lastname' ></InputReg>
                 </Div1>
                 <Div2>
-                    <input type="text"  placeholder='Phone Number' />
-                    <input type="text"  placeholder='Username' />
-                    <input type="text"  placeholder='Password' />                
-                </Div2>                                
+                    <InputReg type="text"  placeholder='Phone Number' />
+                    <InputReg type="text"  placeholder='Username' />
+                    <InputReg type="text"  placeholder='Password' />                
+                </Div2>                               
             </Form>            
-            <Butt>Register</Butt>
+            <ButtonnReg>Register</ButtonnReg>
         </Head>        
     );
 
