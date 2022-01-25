@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -113,7 +113,17 @@ justify-content: center;
 align-items: center;
 `
 
-function StockProductPost({detail}) {
+function StockProductPost({ detail }) {
+
+    const [count, setCount] = useState(detail.Amt)
+
+    function decrementCount() {
+        setCount(prevCount => prevCount-1)
+    }
+    function incrementCount() {
+        setCount(prevCount => prevCount+1)
+    }
+
     return(
         <div>
     <Container>
@@ -122,9 +132,11 @@ function StockProductPost({detail}) {
                 <BgContainer>
                     <Content>
                         <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D"/>  Back</Back>
+                        <p>{detail.Name}</p>
+                        <p>In stock amount: {count}</p>
                         <Buttons>
-                            <ButtonM>-</ButtonM>
-                            <ButtonP>+</ButtonP>
+                            <ButtonM onClick={decrementCount}>-</ButtonM>
+                            <ButtonP onClick={incrementCount}>+</ButtonP>
                         </Buttons>
                     </Content>
                 </BgContainer>
