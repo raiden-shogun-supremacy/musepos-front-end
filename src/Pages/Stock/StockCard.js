@@ -26,7 +26,7 @@ const Overlay = styled.div`
 
 const StockCard = ({ data }) => {
   return (
-      <Card bgImg={data.img}>
+      <Card bgImg={data.img} onClick={() => onStockProductClick(data)}>
         <Overlay>
           <p>{data.Name}</p>
         </Overlay>

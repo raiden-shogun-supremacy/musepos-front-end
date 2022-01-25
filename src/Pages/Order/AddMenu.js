@@ -47,7 +47,7 @@ const Section = styled.div`
 const SectionGrid = styled(Section)`
     display : grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 100px;
+    padding-bottom: 25%;
 `
 
 const SectionFloat = styled(Section)`
@@ -87,7 +87,7 @@ const menu_display = dummy.map((data) => {
     return <MenuCard data={data} />
 });
 
-const StockPage = () => {
+const AddMenu = () => {
   return (
     <Container>
         <Header>
@@ -115,4 +115,4 @@ const StockPage = () => {
   );
 };
 
-export default StockPage;
+export default AddMenu;
