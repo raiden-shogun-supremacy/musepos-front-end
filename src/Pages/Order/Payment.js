@@ -20,7 +20,7 @@ const HeaderText = styled.h1`
     color: #000000;
 `
 
-const Menu = styled.p`
+const TitelBar = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -31,29 +31,7 @@ const Menu = styled.p`
     color: #000000;
 `
 
-const Amount = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 20px;
-    width: 10vw;
-    margin-top: 0px;
-    color: #000000;
-`
-
-const Price = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 20px;
-    width: 10vw;
-    margin-top: 0px;
-    color: #000000;
-`
-
-const P = styled.p`
+const Text = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -206,23 +184,23 @@ const Payment = () => {
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D"/>  Back</Back>
+                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <HeaderText>Order ID: 000013</HeaderText>
                         <Section>
                             <SectionGridHead>
-                                <Menu>Product Name</Menu>
-                                <Amount>Amount</Amount>
-                                <Price>Price</Price>
+                                <TitelBar>Product Name</TitelBar>
+                                <TitelBar>Amount</TitelBar>
+                                <TitelBar>Price</TitelBar>
                             </SectionGridHead>
                         </Section>
                         <Section>
                             <SectionGridMenu>
-                                <P>Americano</P>
-                                <P>1</P>
-                                <P>35THB</P>
-                                <P>Mocca</P>
-                                <P>2</P>
-                                <P>70THB</P>
+                                <Text>Americano</Text>
+                                <Text>1</Text>
+                                <Text>35THB</Text>
+                                <Text>Mocca</Text>
+                                <Text>2</Text>
+                                <Text>70THB</Text>
                             </SectionGridMenu>
                         </Section>
                         <Border></Border>

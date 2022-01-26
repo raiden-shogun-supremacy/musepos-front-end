@@ -19,24 +19,13 @@ const HeaderText = styled.h1`
     color: #000000;
 `
 
-const Menu = styled.p`
+const TitelBar = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
     line-height: 20px;
     width: 100%;
-    margin-top: 0px;
-    color: #000000;
-`
-
-const Amount = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 20px;
-    width: 10vw;
     margin-top: 0px;
     color: #000000;
 `
@@ -191,28 +180,16 @@ const ConfirmOrder = ({ onBgClick }) => {
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D"/>  Back</Back>
+                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <HeaderText>Order ID: 000013</HeaderText>
                         <Section>
                             <SectionGridHead>
-                                <Menu>Product Name</Menu>
-                                <Amount>Amount</Amount>
+                                <TitelBar>Product Name</TitelBar>
+                                <TitelBar>Amount</TitelBar>
                             </SectionGridHead>
                         </Section>
                         <Section>
                             <SectionGrid>
-                                <P>Americano</P>
-                                <P>1</P>
-                                <P>Mocca</P>
-                                <P>2</P>
-                                <P>Americano</P>
-                                <P>1</P>
-                                <P>Mocca</P>
-                                <P>2</P>
-                                <P>Americano</P>
-                                <P>1</P>
-                                <P>Mocca</P>
-                                <P>2</P>
                                 <P>Americano</P>
                                 <P>1</P>
                                 <P>Mocca</P>

@@ -131,7 +131,7 @@ function StockProductPost({ detail }) {
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D"/>  Back</Back>
+                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <p>{detail.Name}</p>
                         <p>In stock amount: {count}</p>
                         <Buttons>
