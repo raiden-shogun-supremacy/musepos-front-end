@@ -112,8 +112,20 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
+const PopImg = styled.img`
+    width: auto;
+`
 
-function StockProductPost({ detail }) {
+const Row = styled.div`
+display: flex;
+flex-direction: row;
+`
+
+const Col = styled.div`
+flex-direction: column;
+`
+
+function StockProductPost({ detail, onBackClick }) {
 
     const [count, setCount] = useState(detail.Amt)
 
@@ -131,8 +143,15 @@ function StockProductPost({ detail }) {
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D"/>  Back</Back>
-                        <p>{detail.Name}</p>
+                        <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D" onClick={()=> onBackClick(detail)}/>  Back</Back>
+                        <Row>
+                            <Col>
+                                <PopImg src={detail.img} />
+                            </Col>
+                            <Col>
+                                <h1>{detail.ProdId}</h1>
+                            </Col>
+                        </Row>
                         <p>In stock amount: {count}</p>
                         <Buttons>
                             <ButtonM onClick={decrementCount}>-</ButtonM>
