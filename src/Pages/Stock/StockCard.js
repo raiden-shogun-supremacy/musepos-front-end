@@ -12,7 +12,6 @@ const Card = styled.div`
     margin: 5px;
     padding: 5px;
     position: relative;
-
 `
 
 const Overlay = styled.div`

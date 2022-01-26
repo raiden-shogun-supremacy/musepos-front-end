@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState } from 'react';
+
 // import data
 import dummy from '../../dummy/dummy.json';
 import StockCard from './StockCard';
@@ -16,12 +17,20 @@ const Container = styled.div`
 const Header = styled.div``
 
 const HeaderText = styled.h1`
-    font-weight : 600;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 49px;
     color : #43A047;
 `
 
 const Description = styled.p`
-    font-size : 14px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
     margin-top : -20px;
 `
 
@@ -35,6 +44,7 @@ const Section = styled.div`
     justify-content : space-between;
     align-items : center;
     margin : 5px 0px;
+    width: 100%;
 `
 
 const SectionGrid = styled(Section)`
