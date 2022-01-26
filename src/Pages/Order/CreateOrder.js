@@ -67,17 +67,6 @@ const Form = styled.form`
     }
 `
 
-const Description3 = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 4vh;
-    margin-left: 5vw;
-    color: #000000;
-`
-
 const Sit = styled.p`
     font-family: Roboto;
     font-style: normal;
@@ -122,12 +111,11 @@ const Button = styled.button`
     line-height: 20px;
     width: 50vw;
     height: 2.6em;
-    bottom: 20%;
     border: none;
     border-radius: 5px;
     background-color: #43A047;
     color: #ffffff;
-    margin: 4vh 20vw;
+    margin: 2vh 20vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,19 +183,19 @@ const CreateOrder = ({ onBgClick }) => {
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn.iconfinder.com/stored_data/214946/128/png?token=1642961554-SksP5MQRBIWxepwSUHeN%2B2XeYbp6ovui3LdAgbAlKbw%3D"/>  Back</Back>
+                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <HeaderText>Before New Order</HeaderText>
                         <Description>Please tell us about your customer</Description>
                         <Description2>How many people are they?</Description2>
                         <Form>
-                            <input type="text"  placeholder='They are                                                    People' />
+                            <input type="number"  placeholder='Number of customer' />
                         </Form>
-                        <Description3>Are They?</Description3>
+                        <Description2>Are They?</Description2>
                         <Section>
                             <SectionGrid>
-                                <input type="checkbox" id="horns" name="horns"></input>
+                                <input type="radio" id="choice1" name="Sit in"></input>
                                 <Sit>Sit in</Sit>
-                                <input type="checkbox" id="horns" name="horns"></input>
+                                <input type="radio" id="choice2" name="Take away"></input>
                                 <Take>Take away</Take>
                             </SectionGrid>
                         </Section>

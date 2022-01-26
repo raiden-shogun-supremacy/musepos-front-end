@@ -1,7 +1,161 @@
-function StockProductPost({detail}) {
+import React, { useState } from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+margin : 0px 10px 20px 10px;
+padding : 10px;
+`
+
+const Header = styled.div``
+
+const Back = styled.p`
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+margin-top: 3vh;
+margin-left: 5vw;
+color: #43A047;
+img {
+    width: 10px;
+    filter: contrast(-100);
+}
+`
+
+const Content = styled.div`
+display : flex;
+flex-direction : column;
+`
+
+const ButtonP = styled.button`
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 20px;
+width: 30vw;
+height: 2.6em;
+bottom: 20%;
+border: none;
+border-radius: 5px;
+background-color: #43A047;
+color: #ffffff;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+text-decoration: none;
+`
+
+const ButtonM = styled.button`
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 20px;
+width: 30vw;
+height: 2.6em;
+bottom: 20%;
+border: none;
+border-radius: 5px;
+background-color: #ffffff;
+color: #43A047;
+stroke: #43A047;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+text-decoration: none;
+`
+const Buttons = styled.div`
+    display: flex;
+`
+
+
+const Post = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+top: 0px;
+bottom: 0px;
+left: 0px;
+right: 0px;
+z-index: 999;
+`
+
+const Background = styled.div`
+background-color: rgba(0, 0, 0, 0.6);
+position: absolute;
+top: 0px;
+bottom: 0px;
+left: 0px;
+right: 0px;
+cursor: zoom-out;
+overflow : scroll;
+`
+
+const BgContainer = styled.div`
+background-color: #f6f6f6;
+width: inherit;
+height: initial;
+padding: 10px;
+margin-top: 25%;
+margin-left: 12px;
+margin-right: 12px;
+margin-bottom: 25%;
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+`
+const PopImg = styled.img`
+    width: auto;
+`
+
+const Row = styled.div`
+display: flex;
+flex-direction: row;
+`
+
+const Col = styled.div`
+flex-direction: column;
+`
+
+function StockProductPost({ detail, onBackClick }) {
+
+    const [count, setCount] = useState(detail.Amt)
+
+    function decrementCount() {
+        setCount(prevCount => prevCount-1)
+    }
+    function incrementCount() {
+        setCount(prevCount => prevCount+1)
+    }
+
     return(
         <div>
-            <p>{detail.Name}</p>
+    <Container>
+        <Post>
+            <Background>
+                <BgContainer>
+                    <Content>
+                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
+                        <p>{detail.Name}</p>
+                        <p>In stock amount: {count}</p>
+                        <Buttons>
+                            <ButtonM onClick={decrementCount}>-</ButtonM>
+                            <ButtonP onClick={incrementCount}>+</ButtonP>
+                        </Buttons>
+                    </Content>
+                </BgContainer>
+            </Background>
+        </Post>
+    </Container>
+
         </div>
     );
 }
