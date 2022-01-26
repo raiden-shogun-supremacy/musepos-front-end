@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import CreateOrder from './CreateOrder';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -73,6 +75,23 @@ const Button = styled.button`
 `
 
 const Order  = ({ onBgClick }) => {
+
+    const [ newOrderPostOpen, setNewOrderPostOpen ] = useState('')
+
+    function onNewOrderClick(x) {
+        setNewOrderPostOpen(x)
+    }
+
+    let newOrderPost = null
+    switch(newOrderPostOpen) {
+        case 'open':
+            newOrderPost = <CreateOrder onBackClick={()=> onNewOrderClick('closed')} />
+            break;
+        case 'closed':
+            newOrderPost = null
+            break;
+    }
+
   return (
     <Container>
         <Header>
@@ -80,8 +99,9 @@ const Order  = ({ onBgClick }) => {
             <Description>Check who going to sit in your resturant</Description>
         </Header>
         <Content>
-            <Button>+ New Order!</Button>
+            <Button onClick={()=>onNewOrderClick('open')}>+ New Order!</Button>
             <Border>No customer sit in your resturant yet...</Border>
+        {newOrderPost}
         </Content>
     </Container>
   );

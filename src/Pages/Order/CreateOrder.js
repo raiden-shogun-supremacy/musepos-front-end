@@ -176,14 +176,14 @@ const SectionGrid = styled(Section)`
     grid-template-columns: 0vw 1fr;
 `
 
-const CreateOrder = ({ onBgClick }) => {
+const CreateOrder = ({ onBackClick }) => {
   return (
     <Container>
         <Post>
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
+                        <Back onClick={onBackClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <HeaderText>Before New Order</HeaderText>
                         <Description>Please tell us about your customer</Description>
                         <Description2>How many people are they?</Description2>
