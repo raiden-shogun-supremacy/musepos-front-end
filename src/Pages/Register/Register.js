@@ -51,7 +51,9 @@ width: 100%;
 `
 
 const ButtonnReg = styled.button`
-margin-left:16px;
+
+margin-right: 16px;
+width:inherit;
 `
 const Div2 = styled.div`
 display:flex;
@@ -61,8 +63,6 @@ width: 100%;
 `
 const InputReg = styled.input`
 `
-
-
 
 function Register() {
     return (
