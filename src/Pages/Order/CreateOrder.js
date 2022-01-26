@@ -67,22 +67,7 @@ const Form = styled.form`
     }
 `
 
-const Sit = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 15px;
-    margin-left: 30px;
-    color: #000000;
-    img {
-        width: 11px;
-        
-    }
-`
-
-const Take = styled.p`
+const Text = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -184,7 +169,7 @@ const CreateOrder = ({ onBackClick }) => {
                 <BgContainer>
                     <Content>
                         <Back onClick={onBackClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
-                        <HeaderText>Before New Order</HeaderText>
+                        <HeaderText>Create Order</HeaderText>
                         <Description>Please tell us about your customer</Description>
                         <Description2>How many people are they?</Description2>
                         <Form>
@@ -193,10 +178,10 @@ const CreateOrder = ({ onBackClick }) => {
                         <Description2>Are They?</Description2>
                         <Section>
                             <SectionGrid>
-                                <input type="radio" id="choice1" name="Sit in"></input>
-                                <Sit>Sit in</Sit>
-                                <input type="radio" id="choice2" name="Take away"></input>
-                                <Take>Take away</Take>
+                                <input type="radio" id="1" name="style" value="Sit in"/>
+                                <Text for="1">Sit in</Text>
+                                <input type="radio" id="2" name="style" value="Take away"/>
+                                <Text for="2">Take away</Text>
                             </SectionGrid>
                         </Section>
                         <Button>New Order</Button>

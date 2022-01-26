@@ -177,43 +177,40 @@ function StockProductPost({ detail, onBackClick }) {
     }
 
     return(
-        <div>
-    <Container>
-        <Post>
-            <Background>
-                <BgContainer>
-                    <Content>
-                        <Back onClick={()=> onBackClick(detail)}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png" />  Back</Back>
-                        <Section>
-                            <SectionCol>
-                                <PopImg src={detail.img} />
-                                <SectionRow>
-                                        <NameMenu>{detail.Name}</NameMenu>
-                                    <SectionColDes>
-                                        <Description>ID:</Description>
-                                        <Description>{detail.PodID}</Description>
-                                        <Description>Price:</Description>
-                                        <Description>{detail.Price} THB</Description>
-                                    </SectionColDes>
-                                </SectionRow>
-                            </SectionCol>
-                        </Section>
-                        <Section>
-                            <p>In stock amount: {count}</p>
-                        </Section>
-                        <Section>
-                            <SectionCol>
-                                <ButtonM onClick={decrementCount}>-</ButtonM>
-                                <ButtonP onClick={incrementCount}>+</ButtonP>
-                            </SectionCol>
-                        </Section>
-                    </Content>
-                </BgContainer>
-            </Background>
-        </Post>
-    </Container>
-
-        </div>
+        <Container>
+            <Post>
+                <Background>
+                    <BgContainer>
+                        <Content>
+                            <Back onClick={()=> onBackClick(detail)}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png" />  Back</Back>
+                            <Section>
+                                <SectionCol>
+                                    <PopImg src={detail.img} />
+                                    <SectionRow>
+                                            <NameMenu>{detail.Name}</NameMenu>
+                                        <SectionColDes>
+                                            <Description>ID:</Description>
+                                            <Description>{detail.PodID}</Description>
+                                            <Description>Price:</Description>
+                                            <Description>{detail.Price} THB</Description>
+                                        </SectionColDes>
+                                    </SectionRow>
+                                </SectionCol>
+                            </Section>
+                            <Section>
+                                <p>In stock amount: {count}</p>
+                            </Section>
+                            <Section>
+                                <SectionCol>
+                                    <ButtonM onClick={decrementCount}>-</ButtonM>
+                                    <ButtonP onClick={incrementCount}>+</ButtonP>
+                                </SectionCol>
+                            </Section>
+                        </Content>
+                    </BgContainer>
+                </Background>
+            </Post>
+        </Container>
     );
 }
 

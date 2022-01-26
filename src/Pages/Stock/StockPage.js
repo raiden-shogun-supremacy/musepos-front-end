@@ -65,7 +65,7 @@ const Button = styled.button`
     justify-content: center;
     align-items: center;
     padding: 10px;
-
+    margin-bottom: 25%;
     img {
         width: 20px;
         filter: opacity(.4);

@@ -99,7 +99,7 @@ const Order  = ({ onBgClick }) => {
             <Description>Check who going to sit in your resturant</Description>
         </Header>
         <Content>
-            <Button onClick={()=>onNewOrderClick('open')}>+ New Order!</Button>
+            <Button onClick={()=>onNewOrderClick('open')}>Create Order</Button>
             <Border>No customer sit in your resturant yet...</Border>
         {newOrderPost}
         </Content>
