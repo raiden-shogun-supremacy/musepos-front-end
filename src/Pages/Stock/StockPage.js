@@ -81,9 +81,13 @@ const StockPage = () => {
         setSelectedStockProductOpen(data)
     }
 
+    function onStockProductCloseClick() {
+        setSelectedStockProductOpen(null)
+    }
+
     let stockProductPost = null;
     if (!!selectedStockProductOpen) {
-        stockProductPost = <StockProductPost detail={selectedStockProductOpen} />
+        stockProductPost = <StockProductPost detail={selectedStockProductOpen} onBackClick={onStockProductCloseClick} />
     }
 
     const stock_display = dummy.map((data) => {

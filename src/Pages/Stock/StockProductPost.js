@@ -112,8 +112,20 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
+const PopImg = styled.img`
+    width: auto;
+`
 
-function StockProductPost({ detail }) {
+const Row = styled.div`
+display: flex;
+flex-direction: row;
+`
+
+const Col = styled.div`
+flex-direction: column;
+`
+
+function StockProductPost({ detail, onBackClick }) {
 
     const [count, setCount] = useState(detail.Amt)
 
