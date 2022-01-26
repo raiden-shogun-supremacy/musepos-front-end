@@ -120,7 +120,7 @@ const BgContainer = styled.div`
     width: inherit;
     height: initial;
     padding: 10px;
-    margin-top: 25%;
+    margin-top: 50%;
     margin-left: 12px;
     margin-right: 12px;
     margin-bottom: 25%;
@@ -131,11 +131,11 @@ const BgContainer = styled.div`
 `
 const PopImg = styled.img`
     border-radius : 15px;
-    background-size: cover;
     background-position: center;
     background-repeat : none;
+    object-fit: cover;
     width: 30vw;
-    height: auto;
+    height: 20vh;
     position: relative;
     
 `
