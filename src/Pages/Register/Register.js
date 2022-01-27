@@ -86,6 +86,7 @@ function Register() {
           
         }
       }, [formErrors]);
+      
       const validate = (values) => {
         const errors = {};
         if (!values.firstname) {
