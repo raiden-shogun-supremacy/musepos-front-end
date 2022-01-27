@@ -1,6 +1,5 @@
 import '../style.css';
 import styled from 'styled-components';
-import { useState } from 'react';
 
 
 
@@ -12,6 +11,7 @@ margin-top: auto;
 margin-right: 16px;
 `
 const Detail = styled.div`
+top:10px;
 font-weight: 300;
 `
 const MarginT34 = styled.div`
@@ -28,30 +28,31 @@ const Form = styled.form`
 display:grid;
 flex-direction: column;   
 margin:29px;
-margin-top: auto;
+margin-top: 10px;
 margin-left:16px;
-gap:0px
+gap:16px
 `
 const BackgroundHead = styled.div`
 z-index : -999;
 width:100%;
 object-fit: cover;
 `
+const InputLogin = styled.input`
 
+`
 
 
 
 function Login() {
-    const initialValues = {Username:"",password:""};
-    const [formValues, setFormValues] = useState(initialValues);
-    return (
+    
+    return(
             <Container>
             <BackgroundHead><img src="assets/img/cafe.jpg" /></BackgroundHead>       
             <img src="assets/logo/logo.png" className="logo" />
-            <Detail>Make your resturant easier</Detail>  
+            <Detail>Make your resturant easier</Detail>
             <Form>
-             <Margin29 type='text' name='Username' placeholder='Username' value={ formValues.Username} />
-             <Margin29 type='text' next='Password' placeholder='Password' value={ formValues.password} />
+             <InputLogin type='text' name="username" placeholder='username' /> 
+             <InputLogin type='password' name="Password" placeholder='password' />            
             </Form>
             <Margin64>
              <button class="button2">Log in!</button>
@@ -60,7 +61,6 @@ function Login() {
             <p> no have User ID? Register new one!</p>
             </MarginT34>
             </Container>
-            
     );
 }
 

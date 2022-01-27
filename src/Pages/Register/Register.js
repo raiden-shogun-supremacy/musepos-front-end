@@ -1,18 +1,16 @@
 import '../style.css'
 import styled from 'styled-components';
+import { useState, useEffect } from "react";
 
 
 const Form = styled.form`
 display:flex;
-flex-direction: column;
-gap: 19px;   
+flex-direction: column;  
 margin:29px;
 margin-top: auto;
 margin-bottom: 80px;
 margin-left:16px;
 `
-
-
 const Head = styled.div`
 margin-top:102px;
 display:grid;
@@ -49,7 +47,7 @@ flex-direction:row;
 gap: 20px;
 width: 100%;
 `
-
+const Div = styled.div``
 const ButtonnReg = styled.button`
 
 margin-right: 16px;
@@ -65,23 +63,87 @@ const InputReg = styled.input`
 `
 
 function Register() {
+    const initialValues = { firstname:"", lastname:"", phonenumber:"", username: "", password: ""};
+    const [formValues, setFormValues] = useState(initialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+   
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues({ ...formValues, [name]: value });
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(formValues));
+        setIsSubmit(true);
+      };
+      
+      useEffect(() => {
+        console.log(formErrors);
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+          console.log(formValues);
+        }
+      }, [formErrors]);
+      const validate = (values) => {
+        const errors = {};
+        if (!values.firstname) {
+            errors.firstname = "First name is required!";
+          }
+        if (!values.lastname) {
+            errors.lastname = "Last name is required!";
+          }
+        if (!values.phonenumber) {
+            errors.phonenumber = "Phone Number is required!";
+        }
+        if (!values.username) {
+            errors.username = "Username is required!";
+          }
+        if (!values.password) {
+          errors.password = "Password is required";
+        } else if (values.password.length < 4) {
+          errors.password = "Password must be more than 4 characters";
+        } else if (values.password.length > 10) {
+          errors.password = "Password cannot exceed more than 10 characters";
+        }
+        return errors;
+      };
+   
+   
+   
     return (
-        <Head>         
-            <RegisterF>Register</RegisterF> 
-            <Let>Let's earn money together!</Let>  
-            <Can>Can we know you?</Can> 
-            <Form>
-                <Div1>
-                    <InputReg type="text"  placeholder='Firstname' ></InputReg>
-                    <InputReg type="text"  placeholder='Lastname' ></InputReg>
-                </Div1>
-                <Div2>
-                    <InputReg type="text"  placeholder='Phone Number' />
-                    <InputReg type="text"  placeholder='Username' />
-                    <InputReg type="text"  placeholder='Password' />                
-                </Div2>                               
-            </Form>            
-            <ButtonnReg>Register</ButtonnReg>
+        <Head>
+            {Object.keys(formErrors).length === 0 && isSubmit ? (
+             <Div>Signed in successfully</Div>   
+            ) : (
+              <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
+            )}       
+            <Form onSubmit={handleSubmit}>
+                <RegisterF>Register</RegisterF> 
+                <Let>Let's earn money together!</Let>  
+                <Can>Can we know you?</Can> 
+                <Div>
+                    <InputReg type="text" name='firstname' placeholder='Firstname' value={formValues.firstname} onChange={handleChange}></InputReg>
+                </Div>
+                <p>{formErrors.firstname}</p>
+                <Div>
+                    <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
+                </Div>
+                <p>{formErrors.lastname}</p>             
+                <Div>
+                    <InputReg type="text" name='phonenumber'   placeholder='Phone Number' value={formValues.phonenumber} onChange={handleChange} />
+                </Div>
+                <p>{formErrors.phonenumber}</p>
+                <Div>
+                    <InputReg type="text" name='username' placeholder='Username' value={formValues.username} onChange={handleChange} />
+                </Div>
+                <p>{formErrors.username}</p>
+                <Div>
+                    <InputReg type="password" name='password'  placeholder='Password' value={formValues.password} onChange={handleChange}/>                
+                </Div>
+                <p>{formErrors.password}</p>                          
+                <ButtonnReg>Register</ButtonnReg>
+            </Form>           
         </Head>        
     );
 
