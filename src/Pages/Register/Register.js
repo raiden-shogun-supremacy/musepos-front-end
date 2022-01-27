@@ -4,47 +4,44 @@ import { useState, useEffect } from "react";
 
 
 const Form = styled.form`
-display:flex;
-flex-direction: column;  
-margin:29px;
-margin-top: auto;
-margin-bottom: 80px;
-margin-left:16px;
-gap:16px;
+  display:flex;
+  flex-direction: column;  
+  margin:29px;
+  margin-top: auto;
+  margin-bottom: 80px;
+  margin-left:16px;
+  gap:16px;
 `
 const Container = styled.div`
-margin-top:102px;
-display:grid;
-flex-direction:column;
-margin-left:16px;
+  margin-top:50px;
+  display:grid;
+  flex-direction:column;
+  margin-left:16px;
 `
 const Head1 = styled.h1`
-font-size: 5vm;
-border-style: none;
-margin-bottom: -30px;
-font-weight: 700;
-margin-left: 16px;
-
+  font-size: 5vm;
+  border-style: none;
+  margin-bottom: -30px;
+  font-weight: 700;
+  margin-left: 16px;
 `
 
 const Detail1 = styled.h6`
-font-size: 14px;
-line-height: 16px;
-font-weight: 500;
-margin-left: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  margin-left: 16px;
 `
 const Detail2 = styled.h6`
-font-size: 14px;
-line-height: 16px;
-font-weight: 500;
-margin-bottom: 19px;
-margin-left: 16px;
-
-
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  margin-bottom: 19px;
+  margin-left: 16px;
 `
 const Div1 = styled.div`
-color: red;
-width: 100%;
+  color: red;
+  width: 100%;
 `
 const Div = styled.div`
 width:100%;
@@ -61,6 +58,17 @@ gap: 16px;
 width: 100%;
 `
 const InputReg = styled.input`
+`
+
+const StupidCircle = styled.div`
+    z-index : -999;
+    background-color : #43A047;
+    width : 200px;
+    height : 200px;
+    position : fixed;
+    border-radius : 50%;
+    top : -120px;
+    right : -120px;
 `
 
 function Register() {
@@ -110,11 +118,10 @@ function Register() {
         }
         return errors;
       };
-   
-   
-   
+
     return (
         <Container>
+            <StupidCircle />
             {Object.keys(formErrors).length === 0 && isSubmit ? (
              <Div>Signed in successfully</Div>   
             ) : (
