@@ -92,7 +92,7 @@ const AddMenu = () => {
   return (
     <Container>
         <Header>
-            <HeaderText>New Order</HeaderText>
+            <HeaderText>Add Menu</HeaderText>
             <Description>Which one your customer wants to order?</Description>
         </Header>
         <Content>
