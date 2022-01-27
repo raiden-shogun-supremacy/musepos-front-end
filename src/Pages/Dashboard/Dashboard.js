@@ -13,13 +13,22 @@ const Container = styled.div`
 const Header = styled.div``
 
 const HeaderText = styled.h1`
-    font-weight : 600;
-    color : #43A047;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 49px;
+    color : #388E3C;
 `
 
 const Description = styled.p`
-    font-size : 14px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
     margin-top : -20px;
+    color: #000000;
 `
 
 const Content = styled.div`
