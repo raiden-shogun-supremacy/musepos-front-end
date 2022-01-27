@@ -10,14 +10,15 @@ margin:29px;
 margin-top: auto;
 margin-bottom: 80px;
 margin-left:16px;
+gap:16px;
 `
-const Head = styled.div`
+const Container = styled.div`
 margin-top:102px;
 display:grid;
 flex-direction:column;
 margin-left:16px;
 `
-const RegisterF = styled.h1`
+const Head1 = styled.h1`
 font-size: 5vm;
 border-style: none;
 margin-bottom: -30px;
@@ -26,13 +27,13 @@ margin-left: 16px;
 
 `
 
-const Let = styled.h6`
+const Detail1 = styled.h6`
 font-size: 14px;
 line-height: 16px;
 font-weight: 500;
 margin-left: 16px;
 `
-const Can = styled.h6`
+const Detail2 = styled.h6`
 font-size: 14px;
 line-height: 16px;
 font-weight: 500;
@@ -42,21 +43,21 @@ margin-left: 16px;
 
 `
 const Div1 = styled.div`
-display:flex;
-flex-direction:row;
-gap: 20px;
+color: red;
 width: 100%;
 `
-const Div = styled.div``
+const Div = styled.div`
+width:100%;
+`
 const ButtonnReg = styled.button`
 
 margin-right: 16px;
 width:inherit;
 `
 const Div2 = styled.div`
-display:flex;
-flex-direction:column;
-gap: 19px;
+display: grid;
+flex-direction: row;
+gap: 16px;
 width: 100%;
 `
 const InputReg = styled.input`
@@ -82,7 +83,7 @@ function Register() {
       useEffect(() => {
         console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-          console.log(formValues);
+          
         }
       }, [formErrors]);
       const validate = (values) => {
@@ -112,39 +113,40 @@ function Register() {
    
    
     return (
-        <Head>
+        <Container>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
              <Div>Signed in successfully</Div>   
             ) : (
-              <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
+              <pre></pre>
             )}       
             <Form onSubmit={handleSubmit}>
-                <RegisterF>Register</RegisterF> 
-                <Let>Let's earn money together!</Let>  
-                <Can>Can we know you?</Can> 
-                <Div>
+                <Head1>Register</Head1> 
+                <Detail1>Let's earn money together!</Detail1>  
+                <Detail2>Can we know you?</Detail2> 
+                
+                <Div2>   
                     <InputReg type="text" name='firstname' placeholder='Firstname' value={formValues.firstname} onChange={handleChange}></InputReg>
-                </Div>
-                <p>{formErrors.firstname}</p>
-                <Div>
+                    <Div1>{formErrors.firstname}</Div1>
                     <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
-                </Div>
-                <p>{formErrors.lastname}</p>             
+                    <Div1>{formErrors.lastname}</Div1>             
+                </Div2>                
+                
                 <Div>
                     <InputReg type="text" name='phonenumber'   placeholder='Phone Number' value={formValues.phonenumber} onChange={handleChange} />
                 </Div>
-                <p>{formErrors.phonenumber}</p>
+                
+                <Div1>{formErrors.phonenumber}</Div1>
                 <Div>
                     <InputReg type="text" name='username' placeholder='Username' value={formValues.username} onChange={handleChange} />
                 </Div>
-                <p>{formErrors.username}</p>
+                <Div1>{formErrors.username}</Div1>
                 <Div>
                     <InputReg type="password" name='password'  placeholder='Password' value={formValues.password} onChange={handleChange}/>                
                 </Div>
-                <p>{formErrors.password}</p>                          
+                <Div1>{formErrors.password}</Div1>                          
                 <ButtonnReg>Register</ButtonnReg>
             </Form>           
-        </Head>        
+        </Container>        
     );
 
 }
