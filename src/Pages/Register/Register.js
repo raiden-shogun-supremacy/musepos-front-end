@@ -10,27 +10,37 @@ const Form = styled.form`
   margin-top: auto;
   margin-bottom: 80px;
   margin-left:16px;
+  margin-right: 16px;
   gap:16px;
+  input{
+        width: 80vw;
+        height: 3.5em;
+    }
 `
 const Container = styled.div`
-  margin-top:50px;
+  margin-top:5vh;
   display:grid;
   flex-direction:column;
   margin-left:16px;
+  margin-right: 16px;
 `
 const Head1 = styled.h1`
-  font-size: 5vm;
-  border-style: none;
-  margin-bottom: -30px;
-  font-weight: 700;
   margin-left: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  margin-top: 0vh;
 `
 
 const Detail1 = styled.h6`
+  font-family: Roboto;
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
   margin-left: 16px;
+  margin-top: -20px;
 `
 const Detail2 = styled.h6`
   font-size: 14px;
@@ -39,6 +49,21 @@ const Detail2 = styled.h6`
   margin-bottom: 19px;
   margin-left: 16px;
 `
+const Cancel = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0px;
+    margin-left: 16px;
+    color: #43A047;
+    img {
+        width: 10px;
+        filter: contrast(-100);
+    }
+`
+
 const Div1 = styled.div`
   color: red;
   width: 100%;
@@ -47,9 +72,11 @@ const Div = styled.div`
 width:100%;
 `
 const ButtonnReg = styled.button`
-
+border-color: #FFFFFF;
 margin-right: 16px;
+margin-left: 16px;
 width:inherit;
+z-index: 999;
 `
 const Div2 = styled.div`
 display: grid;
@@ -60,15 +87,26 @@ width: 100%;
 const InputReg = styled.input`
 `
 
-const StupidCircle = styled.div`
+const StupidCircletTop = styled.div`
+    z-index : -999;
+    background-color : #43A047;
+    width : 300px;
+    height : 300px;
+    position : fixed;
+    border-radius : 50%;
+    top : -120px;
+    right : -120px;
+`
+
+const StupidCircletBottom = styled.div`
     z-index : -999;
     background-color : #43A047;
     width : 200px;
     height : 200px;
     position : fixed;
     border-radius : 50%;
-    top : -120px;
-    right : -120px;
+    bottom: -120px;
+    left: -120px;
 `
 
 function Register() {
@@ -119,19 +157,19 @@ function Register() {
         return errors;
       };
 
-    return (
+      return (
         <Container>
-            <StupidCircle />
+            <Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel>
+            <StupidCircletTop/>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
-             <Div>Signed in successfully</Div>   
-            ) : (
-              <pre></pre>
-            )}       
-            <Form onSubmit={handleSubmit}>
+              <Div>Signed in successfully</Div>   
+              ) : (
+                <pre></pre>
+                )}  
                 <Head1>Register</Head1> 
                 <Detail1>Let's earn money together!</Detail1>  
-                <Detail2>Can we know you?</Detail2> 
-                
+                <Detail2>Can we know you?</Detail2>     
+            <Form onSubmit={handleSubmit}>
                 <Div2>   
                     <InputReg type="text" name='firstname' placeholder='Firstname' value={formValues.firstname} onChange={handleChange}></InputReg>
                     <Div1>{formErrors.firstname}</Div1>
@@ -153,7 +191,8 @@ function Register() {
                 </Div>
                 <Div1>{formErrors.password}</Div1>                          
                 <ButtonnReg>Register</ButtonnReg>
-            </Form>           
+            </Form>
+            <StupidCircletBottom/>           
         </Container>        
     );
 
