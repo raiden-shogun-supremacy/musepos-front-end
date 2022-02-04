@@ -11,7 +11,6 @@ margin-top: auto;
 margin-right: 16px;
 `
 const Detail = styled.div`
-top:10px;
 font-weight: 300;
 `
 const MarginT34 = styled.div`
