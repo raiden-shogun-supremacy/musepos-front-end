@@ -73,17 +73,6 @@ const Button = styled.button`
     padding: 10px;
     text-decoration: none;
 `
-
-const StupidCircle = styled.div`
-    z-index : -999;
-    background-color : #43A047;
-    width : 200px;
-    height : 200px;
-    position : fixed;
-    border-radius : 50%;
-    top : -120px;
-    right : -120px;
-`
 const menu_display = dummy.map((data) => {
     return <MenuCard data={data} />
 });
@@ -111,7 +100,6 @@ const AddMenu = ({ onBackClick }) => {
             <Button>Accept</Button>
             </SectionFloat>
         </Content>
-        <StupidCircle />
     </Container>
   );
 };
