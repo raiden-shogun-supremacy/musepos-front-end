@@ -98,21 +98,6 @@ const StupidCircletTop = styled.div`
     right : -120px;
 `
 
-<<<<<<< HEAD
-const Back = styled.a`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 3vh;
-    margin-left: 5vw;
-    color: #43A047;
-    img {
-        width: 10px;
-        filter: contrast(-100);
-    }
-=======
 const StupidCircletBottom = styled.div`
     z-index : -999;
     background-color : #43A047;
@@ -122,7 +107,6 @@ const StupidCircletBottom = styled.div`
     border-radius : 50%;
     bottom: -120px;
     left: -120px;
->>>>>>> 9c462752b3df68a1de0a1626c5a532becad8e532
 `
 
 function Register() {
@@ -175,13 +159,8 @@ function Register() {
 
       return (
         <Container>
-<<<<<<< HEAD
-            <StupidCircle />
-            <Back href='./'><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
-=======
-            <Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel>
+            <a href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
             <StupidCircletTop/>
->>>>>>> 9c462752b3df68a1de0a1626c5a532becad8e532
             {Object.keys(formErrors).length === 0 && isSubmit ? (
               <Div>Signed in successfully</Div>   
               ) : (
