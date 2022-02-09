@@ -71,6 +71,21 @@ const StupidCircle = styled.div`
     right : -120px;
 `
 
+const Back = styled.a`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 3vh;
+    margin-left: 5vw;
+    color: #43A047;
+    img {
+        width: 10px;
+        filter: contrast(-100);
+    }
+`
+
 function Register() {
     const initialValues = { firstname:"", lastname:"", phonenumber:"", username: "", password: ""};
     const [formValues, setFormValues] = useState(initialValues);
@@ -122,6 +137,7 @@ function Register() {
     return (
         <Container>
             <StupidCircle />
+            <Back href='./'><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
              <Div>Signed in successfully</Div>   
             ) : (
