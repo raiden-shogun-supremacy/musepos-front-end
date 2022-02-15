@@ -2,7 +2,6 @@ import '../style.css'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
 
-
 const Form = styled.form`
   display:flex;
   flex-direction: column;  
@@ -63,7 +62,6 @@ const Cancel = styled.p`
         filter: contrast(-100);
     }
 `
-
 const Div1 = styled.div`
   color: red;
   width: 100%;
