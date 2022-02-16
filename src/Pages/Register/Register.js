@@ -2,18 +2,16 @@ import '../style.css'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
 
-
 const Form = styled.form`
   display:flex;
   flex-direction: column;  
-  margin:29px;
   margin-top: auto;
   margin-bottom: 80px;
-  margin-left:16px;
-  margin-right: 16px;
   gap:16px;
   input{
         width: 80vw;
+        margin-left: 16px;
+        margin-right: 16px;
         height: 3.5em;
     }
 `
@@ -63,20 +61,20 @@ const Cancel = styled.p`
         filter: contrast(-100);
     }
 `
-
 const Div1 = styled.div`
   color: red;
   width: 100%;
+  margin-left: 16px;
 `
 const Div = styled.div`
 width:100%;
 `
 const ButtonnReg = styled.button`
+border: 20px;
 border-color: #FFFFFF;
 margin-right: 16px;
 margin-left: 16px;
 width:inherit;
-z-index: 999;
 `
 const Div2 = styled.div`
 display: grid;
@@ -170,26 +168,26 @@ function Register() {
                 <Detail1>Let's earn money together!</Detail1>  
                 <Detail2>Can we know you?</Detail2>     
             <Form onSubmit={handleSubmit}>
-                <Div2>   
+                <Register2>   
                     <InputReg type="text" name='firstname' placeholder='Firstname' value={formValues.firstname} onChange={handleChange}></InputReg>
                     <Div1>{formErrors.firstname}</Div1>
                     <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
                     <Div1>{formErrors.lastname}</Div1>             
-                </Div2>                
+                </Register2>                
                 
-                <Div>
+                <Register1>
                     <InputReg type="text" name='phonenumber'   placeholder='Phone Number' value={formValues.phonenumber} onChange={handleChange} />
-                </Div>
+                </Register1>
                 
-                <Div1>{formErrors.phonenumber}</Div1>
-                <Div>
+                <Register1>{formErrors.phonenumber}</Register1>
+                <Register>
                     <InputReg type="text" name='username' placeholder='Username' value={formValues.username} onChange={handleChange} />
-                </Div>
-                <Div1>{formErrors.username}</Div1>
-                <Div>
+                </Register>
+                <Register1>{formErrors.username}</Register1>
+                <Register>
                     <InputReg type="password" name='password'  placeholder='Password' value={formValues.password} onChange={handleChange}/>                
-                </Div>
-                <Div1>{formErrors.password}</Div1>                          
+                </Register>
+                <Register1>{formErrors.password}</Register1>                          
                 <ButtonnReg>Register</ButtonnReg>
             </Form>
             <StupidCircletBottom/>           

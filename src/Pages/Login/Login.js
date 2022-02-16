@@ -32,7 +32,8 @@ const Form = styled.form`
 `
 const BackgroundHead = styled.div`
     z-index : -999;
-    width:100%;
+    width:50%;
+    height:50%;
     object-fit: cover;
 `
 const InputLogin = styled.input`
@@ -42,13 +43,18 @@ const InputLogin = styled.input`
 const Registerlink = styled.a`
     color: #338e3c ;
 `
-
+const Image = styled.div`
+    background-image:url("assets/img/cafe.jpg") ;
+    height: auto;
+    width:inherit;
+    
+`
 
 function Login() {
     
     return(
             <Container>
-            <BackgroundHead><img src="assets/img/cafe.jpg" /></BackgroundHead>       
+            <Image><BackgroundHead><img src="assets/img/cafe.jpg"/></BackgroundHead></Image>
             <img src="assets/logo/logo.png" className="logo" />
             <Detail>Make your resturant easier</Detail>
             <Form>
