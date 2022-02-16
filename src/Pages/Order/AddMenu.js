@@ -80,8 +80,7 @@ const Cancel = styled.p`
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    margin-top: 0px;
-    margin-left: 16px;
+    margin-top: 3vh;
     color: #43A047;
     img {
         width: 10px;

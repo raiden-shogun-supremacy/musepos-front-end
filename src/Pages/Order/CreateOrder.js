@@ -208,12 +208,8 @@ const CreateOrder = ({ onBackClick, data }) => {
                                 <Text for="2">Take away</Text>
                             </SectionGrid>
                         </Section>
-<<<<<<< HEAD
-                        <Button onClick={() => onNewOrderClick('open')} >New Order</Button>
-=======
                         {/* <a href='/AddMenu'><Button>New Order</Button></a> */}
                         <Button onClick={() => onNewOrderClick('open')}>New Order</Button>
->>>>>>> 88c96e0ae31bfe2b45a4aea09dd695d61338809e
                         {newOrderMenu}
                     </Content>
                 </BgContainer>
