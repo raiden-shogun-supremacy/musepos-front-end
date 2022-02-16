@@ -100,48 +100,12 @@ const StockPage = () => {
     if (!!selectedStockProductOpen) {
         stockProductPost = <StockProductPost detail={selectedStockProductOpen} onBackClick={onStockProductCloseClick} />
     }
+    const [optionFilter, setOptionFilter] = useState('')
 
-    let option_category = [{
-        "option": "- Choose you category -"
-    },
-    {
-        "option": "Beverage/Drink"
-    },
-    {
-        "option": "Dessert"
-    },
-    {
-        "option": "Food"
-    }
-    ]
-    // const [optionFilter, setOptionFilter] = useState('')
-    // function optionSelected(x){
-    //      setOptionFilter(x)
-    //  }
-    // let option_selected = null
-    // switch(optionFilter){
-    //     case'Beverage/Drink':
-    //         option_selected = "Beverage/Drink"
-    //         break
-    //     case'Dessert':
-    //         option_selected = "Dessert"
-    //         break
-    //     case'Food':
-    //         option_selected = "Food"
-    //         break
-    // }
-
-    const option_display = option_category.map((items) => {
-        return <option 
-        // onClick={optionSelected(items.option)}
-        >{items.option}</option>
-    })
-    const stock_display = dummy
-    // .filter((data) => data.type == {option_selected})
+    const stock_display = dummy.filter((data) => {return data.Name.includes(optionFilter)})
     .map((data) => {
         return <StockCard data={data} onStockProductClick={onStockProductOpenClick} />
     });
-
   return (
     <Container>
         {stockProductPost}
@@ -151,13 +115,13 @@ const StockPage = () => {
         </Header>
         <Content>
             <Section>
-                <select>
-                    { option_display }
-                    {/* <option>- Choose you category -</option>
-                    <option>Beverage/Drink</option>
-                    <option>Dessert</option>
-                    <option>Food</option> */}
-                </select>
+                <input value={optionFilter} onChange={(e)=> setOptionFilter(e.target.value)}></input>
+                {/* <select onChange={(e)=> setOptionFilter(e.target.value)}>
+                    <option>- Choose you category -</option>
+                    <option value='Beverage/Drink'>Beverage/Drink</option>
+                    <option value='Dessert'>Dessert</option>
+                    <option value='Food'>Food</option>
+                </select> */}
             </Section>
             <SectionGrid>
                 { stock_display }
