@@ -6,14 +6,13 @@ import { useState, useEffect } from "react";
 const Form = styled.form`
   display:flex;
   flex-direction: column;  
-  margin:29px;
   margin-top: auto;
   margin-bottom: 80px;
-  margin-left:16px;
-  margin-right: 16px;
   gap:16px;
   input{
         width: 80vw;
+        margin-left: 16px;
+        margin-right: 16px;
         height: 3.5em;
     }
 `
@@ -67,16 +66,17 @@ const Cancel = styled.p`
 const Div1 = styled.div`
   color: red;
   width: 100%;
+  margin-left: 16px;
 `
 const Div = styled.div`
 width:100%;
 `
 const ButtonnReg = styled.button`
+border: 20px;
 border-color: #FFFFFF;
 margin-right: 16px;
 margin-left: 16px;
 width:inherit;
-z-index: 999;
 `
 const Div2 = styled.div`
 display: grid;
