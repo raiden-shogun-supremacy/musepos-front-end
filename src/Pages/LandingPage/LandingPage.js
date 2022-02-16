@@ -11,7 +11,7 @@ function LandingPage() {
     const [pageIndex, setPageIndex ] = useState('');
 
     //set firstPage
-    let render_sideview = <Dashboard />
+    let render_sideview = <Order />
 
     //set change page function by using switch
     switch(pageIndex) {

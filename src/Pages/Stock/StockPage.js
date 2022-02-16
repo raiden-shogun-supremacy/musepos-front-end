@@ -86,6 +86,7 @@ const StupidCircle = styled.div`
 const StockPage = () => {
 
     const [selectedStockProductOpen, setSelectedStockProductOpen] = useState(null);
+    const [searchText, setSearchText] = useState('')
 
     function onStockProductOpenClick(data) {
         setSelectedStockProductOpen(data)
@@ -99,11 +100,12 @@ const StockPage = () => {
     if (!!selectedStockProductOpen) {
         stockProductPost = <StockProductPost detail={selectedStockProductOpen} onBackClick={onStockProductCloseClick} />
     }
+    const [optionFilter, setOptionFilter] = useState('')
 
-    const stock_display = dummy.map((data) => {
+    const stock_display = dummy.filter((data) => {return data.Name.includes(optionFilter)})
+    .map((data) => {
         return <StockCard data={data} onStockProductClick={onStockProductOpenClick} />
     });
-
   return (
     <Container>
         {stockProductPost}
@@ -113,12 +115,13 @@ const StockPage = () => {
         </Header>
         <Content>
             <Section>
-                <select>
+                <input value={optionFilter} onChange={(e)=> setOptionFilter(e.target.value)}></input>
+                {/* <select onChange={(e)=> setOptionFilter(e.target.value)}>
                     <option>- Choose you category -</option>
-                    <option>Beverage/Drink</option>
-                    <option>Dessert</option>
-                    <option>Food</option>
-                </select>
+                    <option value='Beverage/Drink'>Beverage/Drink</option>
+                    <option value='Dessert'>Dessert</option>
+                    <option value='Food'>Food</option>
+                </select> */}
             </Section>
             <SectionGrid>
                 { stock_display }

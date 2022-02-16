@@ -5,6 +5,7 @@
         "PodID": "000001",
         "Price": 0,
         "img": "/assets/img/icetea.jpg",
+        "type": "Beverage/Drink",
         "Amt": 5
     },
     {

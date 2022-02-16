@@ -26,7 +26,7 @@ const Overlay = styled.div`
 
 const MenuCard = ({ data }) => {
   return (
-      <Card bgImg={data.img}>
+      <Card bgImg={data.img} >
         <Overlay>
           <p>{data.Name}</p>
         </Overlay>
