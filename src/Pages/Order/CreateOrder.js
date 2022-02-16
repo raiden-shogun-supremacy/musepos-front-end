@@ -162,6 +162,12 @@ const SectionGrid = styled(Section)`
     grid-template-columns: 0vw 1fr;
 `
 
+const ToAddMEnu = styled.a`
+    text{
+        color: #000;
+    }
+`
+
 const CreateOrder = ({ onBackClick, data }) => {
 
     const [newOrderOpen, setNewOrderOpen] = useState('')
@@ -202,7 +208,9 @@ const CreateOrder = ({ onBackClick, data }) => {
                                 <Text for="2">Take away</Text>
                             </SectionGrid>
                         </Section>
-                        <Button onClick={() => onNewOrderClick('open')} >New Order</Button>
+                        {/* <a href='/AddMenu'><Button>New Order</Button></a> */}
+                        <Button onClick={() => onNewOrderClick('open')}>New Order</Button>
+                        {newOrderMenu}
                     </Content>
                 </BgContainer>
             </Background>

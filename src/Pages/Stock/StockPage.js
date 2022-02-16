@@ -86,6 +86,7 @@ const StupidCircle = styled.div`
 const StockPage = () => {
 
     const [selectedStockProductOpen, setSelectedStockProductOpen] = useState(null);
+    const [searchText, setSearchText] = useState('')
 
     function onStockProductOpenClick(data) {
         setSelectedStockProductOpen(data)
@@ -100,7 +101,44 @@ const StockPage = () => {
         stockProductPost = <StockProductPost detail={selectedStockProductOpen} onBackClick={onStockProductCloseClick} />
     }
 
-    const stock_display = dummy.map((data) => {
+    let option_category = [{
+        "option": "- Choose you category -"
+    },
+    {
+        "option": "Beverage/Drink"
+    },
+    {
+        "option": "Dessert"
+    },
+    {
+        "option": "Food"
+    }
+    ]
+    // const [optionFilter, setOptionFilter] = useState('')
+    // function optionSelected(x){
+    //      setOptionFilter(x)
+    //  }
+    // let option_selected = null
+    // switch(optionFilter){
+    //     case'Beverage/Drink':
+    //         option_selected = "Beverage/Drink"
+    //         break
+    //     case'Dessert':
+    //         option_selected = "Dessert"
+    //         break
+    //     case'Food':
+    //         option_selected = "Food"
+    //         break
+    // }
+
+    const option_display = option_category.map((items) => {
+        return <option 
+        // onClick={optionSelected(items.option)}
+        >{items.option}</option>
+    })
+    const stock_display = dummy
+    // .filter((data) => data.type == {option_selected})
+    .map((data) => {
         return <StockCard data={data} onStockProductClick={onStockProductOpenClick} />
     });
 
@@ -114,10 +152,11 @@ const StockPage = () => {
         <Content>
             <Section>
                 <select>
-                    <option>- Choose you category -</option>
+                    { option_display }
+                    {/* <option>- Choose you category -</option>
                     <option>Beverage/Drink</option>
                     <option>Dessert</option>
-                    <option>Food</option>
+                    <option>Food</option> */}
                 </select>
             </Section>
             <SectionGrid>

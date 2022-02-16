@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 // import data
@@ -73,14 +73,36 @@ const Button = styled.button`
     padding: 10px;
     text-decoration: none;
 `
+
+const Cancel = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0px;
+    margin-left: 16px;
+    color: #43A047;
+    img {
+        width: 10px;
+        filter: contrast(-100);
+    }
+`
 const menu_display = dummy.map((data) => {
     return <MenuCard data={data} />
 });
 
+// let selectedMenu = []
+// if (!!selectThisMenu){
+//     selectedMenu.add()
+// }
+
 const AddMenu = ({ onBackClick }) => {
+    // const [selectedThisMenu, setSelectThisMenu] = useState('')
   return (
     <Container>
         <Header>
+        <a href="/landing"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
             <HeaderText>Add Menu</HeaderText>
             <Description>Which one your customer wants to order?</Description>
         </Header>
