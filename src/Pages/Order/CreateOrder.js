@@ -203,6 +203,7 @@ const CreateOrder = ({ onBackClick, data }) => {
                             </SectionGrid>
                         </Section>
                         <Button onClick={() => onNewOrderClick('open')} >New Order</Button>
+                        {newOrderMenu}
                     </Content>
                 </BgContainer>
             </Background>
