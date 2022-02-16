@@ -124,7 +124,6 @@ const Button = styled.button`
     align-items: center;
     padding: 10px;
     text-decoration: none;
-
 `
 
 const Post = styled.div`

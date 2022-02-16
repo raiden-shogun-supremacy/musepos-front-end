@@ -12,6 +12,7 @@ import AddMenu from './Pages/Order/AddMenu.js'
 import NavBar from './Components/NavBar/NavBar.js'
 import NewShop from './Pages/Shop/NewShop.js';
 import StockPage from './Pages/Stock/StockPage.js';
+import Other from './Pages/Other/Other.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/addmenu" element={<AddMenu />} />
           <Route exact path="/stock" element={<StockPage />} />
           <Route exact path="/newshop" element={<NewShop />} />
+          <Route exact path="/other" element={<Other />} />
           <Route exact path="/navBar" element={<NavBar />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />

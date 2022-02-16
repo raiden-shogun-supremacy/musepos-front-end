@@ -34,13 +34,6 @@ const Content = styled.div`
     flex-direction : column;
 `
 
-const Section = styled.div`
-    display : flex;
-    justify-content : space-between;
-    align-items : center;
-    margin : 5px 0px;
-`
-
 const Border = styled.div`
     display : flex;
     width: inherit;
