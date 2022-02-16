@@ -9,12 +9,8 @@ const Margin64 = styled.div`
     margin-right: 16px;
 `
 const Detail = styled.div`
-<<<<<<< HEAD
-font-weight: 300;
-=======
     top:10px;
     font-weight: 300;
->>>>>>> 9c462752b3df68a1de0a1626c5a532becad8e532
 `
 const MarginT34 = styled.div`
     margin-top: 34px;
@@ -36,7 +32,8 @@ const Form = styled.form`
 `
 const BackgroundHead = styled.div`
     z-index : -999;
-    width:100%;
+    width:50%;
+    height:50%;
     object-fit: cover;
 `
 const InputLogin = styled.input`
@@ -46,13 +43,18 @@ const InputLogin = styled.input`
 const Registerlink = styled.a`
     color: #338e3c ;
 `
-
+const Image = styled.div`
+    background-image:url("assets/img/cafe.jpg") ;
+    height: auto;
+    width:inherit;
+    
+`
 
 function Login() {
     
     return(
             <Container>
-            <BackgroundHead><img src="assets/img/cafe.jpg" /></BackgroundHead>       
+            <Image><BackgroundHead><img src="assets/img/cafe.jpg"/></BackgroundHead></Image>
             <img src="assets/logo/logo.png" className="logo" />
             <Detail>Make your resturant easier</Detail>
             <Form>
