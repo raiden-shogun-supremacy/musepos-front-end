@@ -61,12 +61,12 @@ const Cancel = styled.p`
         filter: contrast(-100);
     }
 `
-const Div1 = styled.div`
+const Register1 = styled.div`
   color: red;
   width: 100%;
   margin-left: 16px;
 `
-const Div = styled.div`
+const RegisterForm = styled.div`
 width:100%;
 `
 const ButtonnReg = styled.button`
@@ -76,7 +76,7 @@ margin-right: 16px;
 margin-left: 16px;
 width:inherit;
 `
-const Div2 = styled.div`
+const Register2 = styled.div`
 display: grid;
 flex-direction: row;
 gap: 16px;
@@ -160,7 +160,7 @@ function Register() {
             <a href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
             <StupidCircletTop/>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
-              <Div>Signed in successfully</Div>   
+              <RegisterForm>Signed in successfully</RegisterForm>   
               ) : (
                 <pre></pre>
                 )}  
@@ -170,23 +170,21 @@ function Register() {
             <Form onSubmit={handleSubmit}>
                 <Register2>   
                     <InputReg type="text" name='firstname' placeholder='Firstname' value={formValues.firstname} onChange={handleChange}></InputReg>
-                    <Div1>{formErrors.firstname}</Div1>
+                    <Register1>{formErrors.firstname}</Register1>
                     <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
-                    <Div1>{formErrors.lastname}</Div1>             
+                    <Register1>{formErrors.lastname}</Register1>             
                 </Register2>                
-                
-                <Register1>
+                <Register2>
                     <InputReg type="text" name='phonenumber'   placeholder='Phone Number' value={formValues.phonenumber} onChange={handleChange} />
-                </Register1>
-                
+                </Register2>
                 <Register1>{formErrors.phonenumber}</Register1>
-                <Register>
+                <RegisterForm>
                     <InputReg type="text" name='username' placeholder='Username' value={formValues.username} onChange={handleChange} />
-                </Register>
+                </RegisterForm>
                 <Register1>{formErrors.username}</Register1>
-                <Register>
+                <RegisterForm>
                     <InputReg type="password" name='password'  placeholder='Password' value={formValues.password} onChange={handleChange}/>                
-                </Register>
+                </RegisterForm>
                 <Register1>{formErrors.password}</Register1>                          
                 <ButtonnReg>Register</ButtonnReg>
             </Form>
