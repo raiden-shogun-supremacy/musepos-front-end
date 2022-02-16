@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import AddMenu from './AddMenu'
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -161,7 +162,24 @@ const SectionGrid = styled(Section)`
     grid-template-columns: 0vw 1fr;
 `
 
-const CreateOrder = ({ onBackClick }) => {
+const CreateOrder = ({ onBackClick, data }) => {
+
+    const [newOrderOpen, setNewOrderOpen] = useState('')
+
+    function onNewOrderClick(x) {
+        setNewOrderOpen(x)
+    }
+
+    let newOrderMenu = null
+    switch(newOrderOpen){
+        case 'open':
+            newOrderMenu = <AddMenu onBackClick={() => onNewOrderClick('back') } />
+        break;
+        case 'back':
+            newOrderMenu = null
+        break;
+    }
+
   return (
     <Container>
         <Post>
@@ -184,7 +202,7 @@ const CreateOrder = ({ onBackClick }) => {
                                 <Text for="2">Take away</Text>
                             </SectionGrid>
                         </Section>
-                        <Button>New Order</Button>
+                        <Button onClick={() => onNewOrderClick('open')} >New Order</Button>
                     </Content>
                 </BgContainer>
             </Background>

@@ -77,7 +77,7 @@ const menu_display = dummy.map((data) => {
     return <MenuCard data={data} />
 });
 
-const AddMenu = () => {
+const AddMenu = ({ onBackClick }) => {
   return (
     <Container>
         <Header>

@@ -159,7 +159,7 @@ function Register() {
 
       return (
         <Container>
-            <Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel>
+            <a href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
             <StupidCircletTop/>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
               <Div>Signed in successfully</Div>   
