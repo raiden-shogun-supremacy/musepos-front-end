@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import AddMenu from './AddMenu';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -176,14 +177,22 @@ const Border = styled.div`
     box-sizing: border-box;
 `
 
-const Payment = () => {
+const Payment = ({data, onBackClicked}) => {
+    // const render_product_cost = data.map((data) => {
+    //                     <Section>
+    //                         <SectionGridMenu>
+    //                             <Text>{data[0].Name}</Text>
+    //                             <Text>{data[0].cost}</Text>
+    //                         </SectionGridMenu>
+    //                     </Section>
+    // })
   return (
     <Container>
         <Post>
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
+                        <Back onClick={onBackClicked}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <HeaderText>Order ID: 000013</HeaderText>
                         <Section>
                             <SectionGridHead>
@@ -192,6 +201,7 @@ const Payment = () => {
                                 <TitelBar>Price</TitelBar>
                             </SectionGridHead>
                         </Section>
+                        {/* {render_product_cost} */}
                         <Section>
                             <SectionGridMenu>
                                 <Text>Americano</Text>
@@ -210,7 +220,7 @@ const Payment = () => {
                                 <Total>THB</Total>
                             </SectionGridTotal>
                         </Section>
-                        <Button>Pay</Button>
+                        <a href='/landing'><Button>Pay</Button></a>
                     </Content>
                 </BgContainer>
             </Background>

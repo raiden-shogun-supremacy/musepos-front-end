@@ -170,21 +170,21 @@ const ToAddMEnu = styled.a`
 
 const CreateOrder = ({ onBackClick, data }) => {
 
-    const [newOrderOpen, setNewOrderOpen] = useState('')
+    // const [newOrderOpen, setNewOrderOpen] = useState('')
 
-    function onNewOrderClick(x) {
-        setNewOrderOpen(x)
-    }
+    // function onNewOrderClick(x) {
+    //     setNewOrderOpen(x)
+    // }
 
-    let newOrderMenu = null
-    switch(newOrderOpen){
-        case 'open':
-            newOrderMenu = <AddMenu onBackClick={() => onNewOrderClick('back') } />
-        break;
-        case 'back':
-            newOrderMenu = null
-        break;
-    }
+    // let newOrderMenu = null
+    // switch(newOrderOpen){
+    //     case 'open':
+    //         newOrderMenu = <AddMenu onBackClick={() => onNewOrderClick('back') } />
+    //     break;
+    //     case 'back':
+    //         newOrderMenu = null
+    //     break;
+    // }
 
   return (
     <Container>
@@ -208,9 +208,7 @@ const CreateOrder = ({ onBackClick, data }) => {
                                 <Text for="2">Take away</Text>
                             </SectionGrid>
                         </Section>
-                        {/* <a href='/AddMenu'><Button>New Order</Button></a> */}
-                        <Button onClick={() => onNewOrderClick('open')}>New Order</Button>
-                        {newOrderMenu}
+                        <a href='/AddMenu'><Button>New Order</Button></a>
                     </Content>
                 </BgContainer>
             </Background>

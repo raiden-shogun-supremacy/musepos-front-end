@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import styled from 'styled-components';
 
 // import data
 import dummy from '../../dummy/dummy.json';
 import MenuCard from './MenuCard.js';
+import Payment from './Payment';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -88,17 +89,37 @@ const Cancel = styled.p`
         filter: contrast(-100);
     }
 `
-const menu_display = dummy.map((data) => {
-    return <MenuCard data={data} />
-});
+const AddMenu = () => {
+    //stages
+    const [paymentPost, setPaymentPost] = useState('')
+    //map function
+    const menu_display = dummy.map((data) => {
+        return <MenuCard data={data} onMenuCardClick={()=> menuSelected(data)} />
+    });
+    //defind function
+    let selectedMenu = []
+    let popPaymentPost = null
+    const menuSelected = (data) => {
+        selectedMenu.push(data)
+        console.log(selectedMenu)
+    }
+     function buttonClicked(x) {
+        setPaymentPost(x)
+     }
+     switch(paymentPost){
+         case 'postOpen':
+            postPayment(selectedMenu)
+        break
+        case 'postClosed':
+            popPaymentPost=null;
+        break
+    }
+    function postPayment(x){
+        //  popPaymentPost = selectedMenu.map((selectedMenu) => {
+        //      return <Payment data={selectedMenu} onBackClick={() => buttonClicked('postClosed')} />}
+        //  )};
+        popPaymentPost = <Payment data={x} onBackClicked={()=> buttonClicked('postClosed')} />}
 
-// let selectedMenu = []
-// if (!!selectThisMenu){
-//     selectedMenu.add()
-// }
-
-const AddMenu = ({ onBackClick }) => {
-    // const [selectedThisMenu, setSelectThisMenu] = useState('')
   return (
     <Container>
         <Header>
@@ -119,7 +140,10 @@ const AddMenu = ({ onBackClick }) => {
                 { menu_display }
             </SectionGrid>
             <SectionFloat>
-            <Button>Accept</Button>
+            {/* <Button onClick={()=>{passingSelectedMenu(selectedMenu)}}>Accept</Button>
+            */}
+            <Button onClick={()=>buttonClicked('postOpen')}>Accept</Button>
+            { popPaymentPost }
             </SectionFloat>
         </Content>
     </Container>

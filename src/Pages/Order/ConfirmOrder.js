@@ -173,7 +173,18 @@ const Border = styled.div`
     box-sizing: border-box;
 `
 
-const ConfirmOrder = ({ onBgClick }) => {
+const ConfirmOrder = ({ onBgClick , passingSelectedMenu }) => {
+    // let data = [
+    //     {
+    //         "Name": {passingSelectedMenu.Name},
+    //         "Desc": {passingSelectedMenu.Desc},
+    //         "PodID": {passingSelectedMenu.ProdID},
+    //         "Price": {passingSelectedMenu.Price},
+    //         "img": {passingSelectedMenu.img},
+    //         "Amt": {passingSelectedMenu.Amt}
+    //     }
+    // ]
+
   return (
     <Container>
         <Post>

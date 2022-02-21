@@ -2,6 +2,7 @@ import { useState } from 'react';
 import NavBar from '../../Components/NavBar/NavBar.js'
 import Dashboard from '../Dashboard/Dashboard.js'
 import Order from '../Order/Order.js';
+import Other from '../Other/Other.js';
 import StockPage from '../Stock/StockPage.js'
 
 
@@ -24,7 +25,7 @@ function LandingPage() {
             render_sideview = <StockPage />
             break;
         case 'Others':
-            render_sideview = <Dashboard />
+            render_sideview = <Other />
             break;
     }
 
