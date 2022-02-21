@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import AddMenu from './AddMenu';
+import order_entity from '../order_entity';
+import ConfirmOrderList from './ConfirmOrderList';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
     padding : 10px;
-    overflow : scroll;
 `
 
 const Header = styled.div``
@@ -32,7 +32,7 @@ const TitelBar = styled.p`
     color: #000000;
 `
 
-const Text = styled.p`
+const P = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -54,7 +54,6 @@ const Total = styled.p`
     margin-top: 0px;
     margin-bottom: 0px;
     color: #000000;
-    
 `
 
 const Back = styled.p`
@@ -80,29 +79,28 @@ const Section = styled.div`
 
 const SectionGridHead = styled(Section)`
     display : grid;
+    grid-column-gap: 30vw;
     grid-row-gap: 0vh;
-    grid-template-columns: 45vw 25vw 0fr;
+    grid-template-columns: 100fr 0fr;
     margin-left: 5vw;
+    margin-right: 5ex;
 `
 
-const SectionGridMenu = styled(Section)`
+const SectionGrid = styled(Section)`
     display : grid;
+    grid-column-gap: 30vw;
     grid-row-gap: 0vh;
-    grid-template-columns: 51vw 18.5vw 10fr;
+    grid-template-columns: 100fr 0fr;
     margin-left: 5vw;
-`
-
-const SectionGridTotal = styled(Section)`
-    display : grid;
-    grid-row-gap: 0vh;
-    grid-template-columns: 50vw 17vw 0fr;
-    margin-left: 5vw;
+    margin-right: 3vw;
+    margin-bottom: 0vw;
+    overflow : scroll;
+    
 `
 
 const Content = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display : flex;
+    flex-direction : column;
 `
 
 
@@ -177,15 +175,22 @@ const Border = styled.div`
     box-sizing: border-box;
 `
 
-const Payment = ({data, onBackClicked}) => {
-    // const render_product_cost = data.map((data) => {
-    //                     <Section>
-    //                         <SectionGridMenu>
-    //                             <Text>{data[0].Name}</Text>
-    //                             <Text>{data[0].cost}</Text>
-    //                         </SectionGridMenu>
-    //                     </Section>
-    // })
+const ConfirmOrder = ({ onBgClick , onBackClicked }) => {
+    // let data = [
+    //     {
+    //         "Name": {passingSelectedMenu.Name},
+    //         "Desc": {passingSelectedMenu.Desc},
+    //         "PodID": {passingSelectedMenu.ProdID},
+    //         "Price": {passingSelectedMenu.Price},
+    //         "img": {passingSelectedMenu.img},
+    //         "Amt": {passingSelectedMenu.Amt}
+    //     }
+    // ]
+    const probs = order_entity.orderList;
+    const render_product_cost = probs.map((probs) => {
+        return <ConfirmOrderList data={probs} />
+    });
+
   return (
     <Container>
         <Post>
@@ -198,29 +203,17 @@ const Payment = ({data, onBackClicked}) => {
                             <SectionGridHead>
                                 <TitelBar>Product Name</TitelBar>
                                 <TitelBar>Amount</TitelBar>
-                                <TitelBar>Price</TitelBar>
                             </SectionGridHead>
                         </Section>
-                        {/* {render_product_cost} */}
-                        <Section>
-                            <SectionGridMenu>
-                                <Text>Americano</Text>
-                                <Text>1</Text>
-                                <Text>35THB</Text>
-                                <Text>Mocca</Text>
-                                <Text>2</Text>
-                                <Text>70THB</Text>
-                            </SectionGridMenu>
-                        </Section>
+                        {render_product_cost}
                         <Border></Border>
-                        <Section>
-                            <SectionGridTotal>
-                                <Total>Total</Total>
-                                <Total>105</Total>
-                                <Total>THB</Total>
-                            </SectionGridTotal>
-                        </Section>
-                        <a href='/landing'><Button>Pay</Button></a>
+                                <Section>
+                                    <SectionGrid>
+                                        <Total>Total Amount</Total>
+                                        <Total>{probs.length}</Total>
+                                    </SectionGrid>
+                                </Section>
+                        <a href='/landing'><Button>Confirm</Button></a>
                     </Content>
                 </BgContainer>
             </Background>
@@ -229,4 +222,4 @@ const Payment = ({data, onBackClicked}) => {
   );
 };
 
-export default Payment;
+export default ConfirmOrder;

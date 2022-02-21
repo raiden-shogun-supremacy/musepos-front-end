@@ -185,6 +185,9 @@ const CreateOrder = ({ onBackClick, data }) => {
     //         newOrderMenu = null
     //     break;
     // }
+    // function numberTyped(x){
+    //     console.log(x)
+    // }
 
   return (
     <Container>
@@ -197,7 +200,7 @@ const CreateOrder = ({ onBackClick, data }) => {
                         <Description>Please tell us about your customer</Description>
                         <Description2>How many people are they?</Description2>
                         <Form>
-                            <input type="number"  placeholder='Number of customer' />
+                            <input type="number" placeholder='Number of customer' />
                         </Form>
                         <Description2>Are They?</Description2>
                         <Section>

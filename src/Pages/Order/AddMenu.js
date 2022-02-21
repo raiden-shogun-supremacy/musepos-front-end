@@ -4,7 +4,9 @@ import styled from 'styled-components';
 // import data
 import dummy from '../../dummy/dummy.json';
 import MenuCard from './MenuCard.js';
-import Payment from './Payment';
+import Payment from './Payment/Payment';
+import ConfirmOrder from './ConfirmOrder/ConfirmOrder';
+import order_entity from './order_entity';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -95,30 +97,22 @@ const AddMenu = () => {
     const menu_display = dummy.map((data) => {
         return <MenuCard data={data} onMenuCardClick={()=> menuSelected(data)} />
     });
-    //defind function
-    let selectedMenu = []
-    let popPaymentPost = null
+    let payment_post = null;
     const menuSelected = (data) => {
-        selectedMenu.push(data)
-        console.log(selectedMenu)
-    }
-     function buttonClicked(x) {
+        order_entity.orderList.push(data)
+        console.log(order_entity)
+    };
+    function postOpened(x) {
         setPaymentPost(x)
-     }
-     switch(paymentPost){
-         case 'postOpen':
-            postPayment(selectedMenu)
-        break
-        case 'postClosed':
-            popPaymentPost=null;
-        break
-    }
-    function postPayment(x){
-        //  popPaymentPost = selectedMenu.map((selectedMenu) => {
-        //      return <Payment data={selectedMenu} onBackClick={() => buttonClicked('postClosed')} />}
-        //  )};
-        popPaymentPost = <Payment data={x} onBackClicked={()=> buttonClicked('postClosed')} />}
-
+     };
+    switch(paymentPost){
+        case 'on':
+            payment_post = <Payment onBackClicked={() =>postOpened('off')} />
+            break
+        case 'off':
+            payment_post = null
+            break
+    };
   return (
     <Container>
         <Header>
@@ -139,10 +133,8 @@ const AddMenu = () => {
                 { menu_display }
             </SectionGrid>
             <SectionFloat>
-            {/* <Button onClick={()=>{passingSelectedMenu(selectedMenu)}}>Accept</Button>
-            */}
-            <Button onClick={()=>buttonClicked('postOpen')}>Accept</Button>
-            { popPaymentPost }
+            <Button onClick={()=>postOpened('on')}>Accept</Button>
+            { payment_post }
             </SectionFloat>
         </Content>
     </Container>

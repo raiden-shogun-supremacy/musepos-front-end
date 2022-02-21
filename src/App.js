@@ -5,8 +5,8 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login/Login.js';
 import Register from './Pages/Register/Register.js';
 import Order from './Pages/Order/Order.js'
-import Payment from './Pages/Order/Payment.js'
-import ConfirmOrder from './Pages/Order/ConfirmOrder.js'
+import Payment from './Pages/Order/Payment/Payment.js'
+import ConfirmOrder from './Pages/Order/ConfirmOrder/ConfirmOrder.js'
 import CreateOrder from './Pages/Order/CreateOrder.js'
 import AddMenu from './Pages/Order/AddMenu.js'
 import NavBar from './Components/NavBar/NavBar.js'
