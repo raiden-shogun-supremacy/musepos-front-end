@@ -15,7 +15,7 @@ import StockPage from './Pages/Stock/StockPage.js';
 import Other from './Pages/Other/Other.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
-
+import EmptyShop from './Pages/Shop/EmptyShop.js';
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
           <Route exact path="/navBar" element={<NavBar />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />
+          <Route exact path='/emptyshop' element={<EmptyShop />} />
         </Routes>
       </BrowserRouter>    
   );
