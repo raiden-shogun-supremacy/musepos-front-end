@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import PaymentList from './PaymentList';
+import order_entity from '../order_entity';
+import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -176,14 +179,30 @@ const Border = styled.div`
     box-sizing: border-box;
 `
 
-const Payment = () => {
+const Payment = ({onBackClicked}) => {
+    const probs = order_entity.orderList;
+    let total = [];
+    for (var i = 0; i < probs.length; i++) {
+        total.push(probs[i].Price);
+    }
+    const total_price = (x) => {
+        var sum = 0
+        for (var i=0; i< x.length; i++){
+            sum += total[i]
+        }
+        return sum;
+    }
+    console.log(total);
+    const render_product_cost = probs.map((probs) => {
+        return <PaymentList data={probs} />
+    });
   return (
     <Container>
         <Post>
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
+                        <Back onClick={onBackClicked}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <HeaderText>Order ID: 000013</HeaderText>
                         <Section>
                             <SectionGridHead>
@@ -192,25 +211,16 @@ const Payment = () => {
                                 <TitelBar>Price</TitelBar>
                             </SectionGridHead>
                         </Section>
-                        <Section>
-                            <SectionGridMenu>
-                                <Text>Americano</Text>
-                                <Text>1</Text>
-                                <Text>35THB</Text>
-                                <Text>Mocca</Text>
-                                <Text>2</Text>
-                                <Text>70THB</Text>
-                            </SectionGridMenu>
-                        </Section>
+                        { render_product_cost }
                         <Border></Border>
                         <Section>
                             <SectionGridTotal>
                                 <Total>Total</Total>
-                                <Total>105</Total>
+                                <Total>{ total_price(total) }</Total>
                                 <Total>THB</Total>
                             </SectionGridTotal>
                         </Section>
-                        <Button>Pay</Button>
+                        <a href='/landing'><Button>Pay</Button></a>
                     </Content>
                 </BgContainer>
             </Background>

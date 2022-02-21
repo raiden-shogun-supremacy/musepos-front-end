@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import styled from 'styled-components';
 
 // import data
 import dummy from '../../dummy/dummy.json';
 import MenuCard from './MenuCard.js';
+import Payment from './Payment/Payment';
+import ConfirmOrder from './ConfirmOrder/ConfirmOrder';
+import order_entity from './order_entity';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -87,17 +90,29 @@ const Cancel = styled.p`
         filter: contrast(-100);
     }
 `
-const menu_display = dummy.map((data) => {
-    return <MenuCard data={data} />
-});
-
-// let selectedMenu = []
-// if (!!selectThisMenu){
-//     selectedMenu.add()
-// }
-
-const AddMenu = ({ onBackClick }) => {
-    // const [selectedThisMenu, setSelectThisMenu] = useState('')
+const AddMenu = () => {
+    //stages
+    const [paymentPost, setPaymentPost] = useState('')
+    //map function
+    const menu_display = dummy.map((data) => {
+        return <MenuCard data={data} onMenuCardClick={()=> menuSelected(data)} />
+    });
+    let payment_post = null;
+    const menuSelected = (data) => {
+        order_entity.orderList.push(data)
+        console.log(order_entity)
+    };
+    function postOpened(x) {
+        setPaymentPost(x)
+     };
+    switch(paymentPost){
+        case 'on':
+            payment_post = <Payment onBackClicked={() =>postOpened('off')} />
+            break
+        case 'off':
+            payment_post = null
+            break
+    };
   return (
     <Container>
         <Header>
@@ -118,7 +133,8 @@ const AddMenu = ({ onBackClick }) => {
                 { menu_display }
             </SectionGrid>
             <SectionFloat>
-            <Button>Accept</Button>
+            <Button onClick={()=>postOpened('on')}>Accept</Button>
+            { payment_post }
             </SectionFloat>
         </Content>
     </Container>

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import order_entity from '../order_entity';
+import ConfirmOrderList from './ConfirmOrderList';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -173,14 +175,29 @@ const Border = styled.div`
     box-sizing: border-box;
 `
 
-const ConfirmOrder = ({ onBgClick }) => {
+const ConfirmOrder = ({ onBgClick , onBackClicked }) => {
+    // let data = [
+    //     {
+    //         "Name": {passingSelectedMenu.Name},
+    //         "Desc": {passingSelectedMenu.Desc},
+    //         "PodID": {passingSelectedMenu.ProdID},
+    //         "Price": {passingSelectedMenu.Price},
+    //         "img": {passingSelectedMenu.img},
+    //         "Amt": {passingSelectedMenu.Amt}
+    //     }
+    // ]
+    const probs = order_entity.orderList;
+    const render_product_cost = probs.map((probs) => {
+        return <ConfirmOrderList data={probs} />
+    });
+
   return (
     <Container>
         <Post>
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
+                        <Back onClick={onBackClicked}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
                         <HeaderText>Order ID: 000013</HeaderText>
                         <Section>
                             <SectionGridHead>
@@ -188,22 +205,15 @@ const ConfirmOrder = ({ onBgClick }) => {
                                 <TitelBar>Amount</TitelBar>
                             </SectionGridHead>
                         </Section>
-                        <Section>
-                            <SectionGrid>
-                                <P>Americano</P>
-                                <P>1</P>
-                                <P>Mocca</P>
-                                <P>2</P>
-                            </SectionGrid>
-                        </Section>
+                        {render_product_cost}
                         <Border></Border>
-                        <Section>
-                            <SectionGrid>
-                                <Total>Total Amount</Total>
-                                <Total>3</Total>
-                            </SectionGrid>
-                        </Section>
-                        <Button>Confirm</Button>
+                                <Section>
+                                    <SectionGrid>
+                                        <Total>Total Amount</Total>
+                                        <Total>{probs.length}</Total>
+                                    </SectionGrid>
+                                </Section>
+                        <a href='/landing'><Button>Confirm</Button></a>
                     </Content>
                 </BgContainer>
             </Background>

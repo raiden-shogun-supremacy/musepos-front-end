@@ -12,6 +12,7 @@ const Card = styled.div`
     margin: 5px;
     padding: 5px;
     position: relative;
+    cursor: pointer;
 
 `
 
@@ -24,9 +25,9 @@ const Overlay = styled.div`
   }
 `
 
-const MenuCard = ({ data }) => {
+const MenuCard = ({ data, onMenuCardClick }) => {
   return (
-      <Card bgImg={data.img} >
+      <Card bgImg={data.img} onClick={onMenuCardClick}>
         <Overlay>
           <p>{data.Name}</p>
         </Overlay>

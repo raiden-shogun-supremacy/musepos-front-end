@@ -3,16 +3,15 @@
         "Name": "Lemon Iced Tea",
         "Desc": "Desc",
         "PodID": "000001",
-        "Price": 0,
+        "Price": 50,
         "img": "/assets/img/icetea.jpg",
-        "type": "Beverage/Drink",
         "Amt": 5
     },
     {
         "Name": "Americano",
         "Desc": "Desc",
         "PodID": "000002",
-        "Price": 0,
+        "Price": 40,
         "img": "/assets/img/americano.jpg",
         "Amt": 1
     },
@@ -20,7 +19,7 @@
         "Name": "Latte",
         "Desc": "Desc",
         "PodID": "000003",
-        "Price": 0,
+        "Price": 35,
         "img": "/assets/img/latte.jpg",
         "Amt": 2
     },
@@ -28,7 +27,7 @@
         "Name": "Cookie and Cream",
         "Desc": "Desc",
         "PodID": "000004",
-        "Price": 0,
+        "Price": 35,
         "img": "/assets/img/cookieandcream.jpg",
         "Amt": 4
     },
@@ -36,7 +35,7 @@
         "Name": "Lemon Iced Tea",
         "Desc": "Desc",
         "PodID": "000001",
-        "Price": 0,
+        "Price": 45,
         "img": "/assets/img/icetea.jpg",
         "Amt": 1
     },
@@ -44,7 +43,7 @@
         "Name": "Americano",
         "Desc": "Desc",
         "PodID": "000002",
-        "Price": 0,
+        "Price": 30,
         "img": "/assets/img/americano.jpg",
         "Amt": 1
     },
@@ -52,7 +51,7 @@
         "Name": "Latte",
         "Desc": "Desc",
         "PodID": "000003",
-        "Price": 0,
+        "Price": 35,
         "img": "/assets/img/latte.jpg",
         "Amt": 1
     },
@@ -60,7 +59,7 @@
         "Name": "Cookie and Cream",
         "Desc": "Desc",
         "PodID": "000004",
-        "Price": 0,
+        "Price": 40,
         "img": "/assets/img/cookieandcream.jpg",
         "Amt": 1
     },
@@ -68,7 +67,7 @@
         "Name": "Lemon Iced Tea",
         "Desc": "Desc",
         "PodID": "000001",
-        "Price": 0,
+        "Price": 25,
         "img": "/assets/img/icetea.jpg",
         "Amt": 1
     },
@@ -76,7 +75,7 @@
         "Name": "Americano",
         "Desc": "Desc",
         "PodID": "000002",
-        "Price": 0,
+        "Price": 30,
         "img": "/assets/img/americano.jpg",
         "Amt": 1
     },
@@ -84,7 +83,7 @@
         "Name": "Latte",
         "Desc": "Desc",
         "PodID": "000003",
-        "Price": 0,
+        "Price": 40,
         "img": "/assets/img/latte.jpg",
         "Amt": 1
     },
@@ -92,7 +91,7 @@
         "Name": "Cookie and Cream",
         "Desc": "Desc",
         "PodID": "000004",
-        "Price": 0,
+        "Price": 45,
         "img": "/assets/img/cookieandcream.jpg",
         "Amt": 1
     }
