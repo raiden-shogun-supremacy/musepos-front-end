@@ -177,7 +177,7 @@ const ButtonLogout = styled.button`
     background-color: #FFFFFF;
     color: #FF5252;
     margin-left: 0%;
-    margin-top: 8vh;
+    margin-top: 5vh;
     margin-bottom: 10vh;
 `
 
@@ -198,7 +198,7 @@ const Other = () => {
         <Header>
             <StupidCircletTop></StupidCircletTop>
             <HeaderText>Others</HeaderText>
-            <Description>What to need today?d</Description>
+            <Description>What to need today?</Description>
         </Header>
             <Setting>Settings</Setting>
                 <BgContainerTop>
