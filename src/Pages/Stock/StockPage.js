@@ -8,6 +8,7 @@ import StockCard from './StockCard';
 
 //import popup components
 import StockProductPost from './StockProductPost';
+import AddStock from './AddStock';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -86,21 +87,36 @@ const StupidCircle = styled.div`
 const StockPage = () => {
 
     const [selectedStockProductOpen, setSelectedStockProductOpen] = useState(null);
-    const [searchText, setSearchText] = useState('')
+    const [optionFilter, setOptionFilter] = useState('');
+    const [searchText, setSearchText] = useState('');
+    const [onAddMenuClick, setOnAddMenuClick] = useState('');
 
     function onStockProductOpenClick(data) {
-        setSelectedStockProductOpen(data)
+        setSelectedStockProductOpen(data);
     }
-
     function onStockProductCloseClick() {
-        setSelectedStockProductOpen(null)
+        setSelectedStockProductOpen(null);
+    }
+    function onAddNewMenuOpenClicked(){
+        setOnAddMenuClick('on');
+    }
+    function onAddNewMenuClosedClicked(){
+        setOnAddMenuClick('off');
     }
 
+    let addStockPost = null;
     let stockProductPost = null;
     if (!!selectedStockProductOpen) {
         stockProductPost = <StockProductPost detail={selectedStockProductOpen} onBackClick={onStockProductCloseClick} />
     }
-    const [optionFilter, setOptionFilter] = useState('')
+    switch(onAddMenuClick){
+        case 'on':
+            addStockPost = <AddStock onBackClick={onAddNewMenuClosedClicked} />
+            break
+        case 'off':
+            addStockPost = null;
+            break
+    }
 
     const stock_display = dummy.filter((data) => {return data.Name.includes(optionFilter)})
     .map((data) => {
@@ -109,6 +125,7 @@ const StockPage = () => {
   return (
     <Container>
         {stockProductPost}
+        {addStockPost}
         <Header>
             <HeaderText>Stock</HeaderText>
             <Description>Manage your menu</Description>
@@ -126,7 +143,7 @@ const StockPage = () => {
             <SectionGrid>
                 { stock_display }
             </SectionGrid>
-            <Button><img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/plus-circle-512.png" />add new menu</Button>
+            <Button onClick={onAddNewMenuOpenClicked}><img src="https://cdn1.iconfinder.com/data/icons/feather-2/24/plus-circle-512.png"/>add new menu</Button>
         </Content>
         <StupidCircle />
     </Container>

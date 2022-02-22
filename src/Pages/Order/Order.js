@@ -85,7 +85,6 @@ const Order  = ({ onBgClick }) => {
             newOrderPost = null
             break;
     }
-    console.log(order_entity);
 
   return (
     <Container>

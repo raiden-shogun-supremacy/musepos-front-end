@@ -61,11 +61,6 @@ const Cancel = styled.p`
         filter: contrast(-100);
     }
 `
-const Register1 = styled.div`
-  color: red;
-  width: 100%;
-  margin-left: 16px;
-`
 const RegisterForm = styled.div`
 width:100%;
 `
@@ -76,6 +71,7 @@ margin-right: 16px;
 margin-left: 16px;
 width:inherit;
 `
+
 const Register2 = styled.div`
 display: grid;
 flex-direction: row;
@@ -83,6 +79,12 @@ gap: 16px;
 width: 100%;
 `
 const InputReg = styled.input`
+`
+
+const Register1 = styled.div`
+  color: red;
+  width: 100%;
+  margin-left: 16px;
 `
 
 const StupidCircletTop = styled.div`
