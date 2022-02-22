@@ -51,7 +51,7 @@ const Section = styled.div`
 const SectionGrid = styled(Section)`
     display : grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 25%;
+    padding-bottom: 10%;
 `
 
 const SectionFloat = styled(Section)`
@@ -65,14 +65,13 @@ const Button = styled.button`
     font-family: 'Roboto', sans-serif;
     position: fixed;
     z-index: 999;
-    bottom: 10%;
+    bottom: 3%;
     width: 90%;
     height: 2.6em;
     border: none;
     border-radius: 5px;
     background-color: #43A047;
     color: #ffffff;
-    margin: 4px 0px;
     padding: 10px;
     text-decoration: none;
 `

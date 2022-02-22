@@ -17,14 +17,11 @@ import Other from './Pages/Other/Other.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import EmptyShop from './Pages/Shop/EmptyShop.js';
-<<<<<<< HEAD
 import Inbox from './Pages/Inbox/inbox'
 import Shopselect from './Pages/Shop/ShopSelect.js';
-=======
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
 
->>>>>>> d068acd628750cf9fbf5d73b434b35978315e940
 function App() {
   return (
       <BrowserRouter>
@@ -44,14 +41,10 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />
           <Route exact path='/emptyshop' element={<EmptyShop />} />
-<<<<<<< HEAD
           <Route exact path='/inbox' element={<Inbox />} />
           <Route exact path='/shopselect' element={<Shopselect />} />
-          
-=======
           <Route exact path='/invite' element={<Invite />} />
           <Route exact path='/addstock' element={<AddStock />} />
->>>>>>> d068acd628750cf9fbf5d73b434b35978315e940
         </Routes>
       </BrowserRouter>    
   );
