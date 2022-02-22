@@ -5,6 +5,7 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login/Login.js';
 import Register from './Pages/Register/Register.js';
 import Order from './Pages/Order/Order.js'
+import OrderList from './Pages/Order/OrderList.js'
 import Payment from './Pages/Order/Payment/Payment.js'
 import ConfirmOrder from './Pages/Order/ConfirmOrder/ConfirmOrder.js'
 import CreateOrder from './Pages/Order/CreateOrder.js'
@@ -16,6 +17,11 @@ import Other from './Pages/Other/Other.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import EmptyShop from './Pages/Shop/EmptyShop.js';
+<<<<<<< HEAD
+=======
+import Inbox from './Pages/Inbox/inbox'
+import Shopselect from './Pages/Shop/ShopSelect.js';
+>>>>>>> 78e689f03aba82fe3ee71c26735f5edce7cc9e75
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
 
@@ -26,6 +32,7 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/order" element={<Order />} />
+          <Route exact path="/orderlist" element={<OrderList />} />
           <Route exact path="/payment" element={<Payment />} />
           <Route exact path="/confirmorder" element={<ConfirmOrder />} />
           <Route exact path="/createorder" element={<CreateOrder />} />
@@ -37,6 +44,11 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />
           <Route exact path='/emptyshop' element={<EmptyShop />} />
+<<<<<<< HEAD
+=======
+          <Route exact path='/inbox' element={<Inbox />} />
+          <Route exact path='/shopselect' element={<Shopselect />} />
+>>>>>>> 78e689f03aba82fe3ee71c26735f5edce7cc9e75
           <Route exact path='/invite' element={<Invite />} />
           <Route exact path='/addstock' element={<AddStock />} />
         </Routes>
