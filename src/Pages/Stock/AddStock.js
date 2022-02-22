@@ -23,11 +23,9 @@ const Description = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: -20px;
-    margin-left: 5vw;
-    color: #4A4A4A;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
 `
 
 const Back = styled.p`
@@ -45,18 +43,6 @@ const Back = styled.p`
     }
 `
 
-const Description2 = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 3vh;
-    margin-left: 5vw;
-    margin-bottom: 3vh;
-    color: #000000;
-`
-
 const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -66,6 +52,17 @@ const Form = styled.form`
     input{
         width: 50vw;
         height: 3.5em;
+    }
+`
+
+const FormImg = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+    input{
+        width: 50vw;
     }
 `
 
@@ -169,16 +166,11 @@ const Section = styled.div`
 const SectionGrid = styled(Section)`
     display : grid;
     grid-row-gap: 1vh;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 10fr 1fr;
 `
 
-const ToAddMEnu = styled.a`
-    text{
-        color: #000;
-    }
-`
 
-const Invite = ({ onBackClick, data }) => {
+const AddStock = ({ onBackClick, data }) => {
   return (
     <Container>
         <Post>
@@ -186,23 +178,25 @@ const Invite = ({ onBackClick, data }) => {
                 <BgContainer>
                     <Content>
                         <Back onClick={onBackClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Back>
-                        <HeaderText>Invite Employee</HeaderText>
-                        <Description>Invite new employee to work with yours!</Description>
-                        <Description2>Send some invite..</Description2>
+                        <HeaderText>Add new menu!</HeaderText>
+                        <FormImg><Description for="image">What's your menu look like?</Description><input type="file" id="image" name="image" /></FormImg>
                         <Section>
                             <SectionGrid>
-                                <Text>To :</Text>
-                                <Form><input type="text" placeholder='Username' /></Form>
-                                <Text>As :</Text>
+                                <Text>Name</Text>
+                                <Form><input type="text" placeholder='Menu Name' /></Form>
+                                <Text>Category</Text>
                                 <Select>
-                                    <option>Role</option>
-                                    <option>Owner</option>
-                                    <option>Manager</option>
-                                    <option>Employee</option>
+                                    <option>-Catagory-</option>
+                                    <option>Beverage/Drink</option>
+                                    <option>Dessert</option>
+                                    <option>Food</option>
                                 </Select>
                             </SectionGrid>
                         </Section>
-                       <Button>Send</Button>
+                        <Section>
+                            <Button>Add new!</Button>
+                        </Section>
+                       
                     </Content>
                 </BgContainer>
             </Background>
@@ -211,4 +205,4 @@ const Invite = ({ onBackClick, data }) => {
   );
 };
 
-export default Invite;
+export default AddStock;
