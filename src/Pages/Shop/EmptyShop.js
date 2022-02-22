@@ -1,7 +1,13 @@
 import '../style.css';
 import styled from 'styled-components';
+import {  CgMenu } from 'react-icons/cg';
+import { IoMail } from "react-icons/io5";
 
 
+const Header = styled.div`
+margin-left: 4%;
+display: flexbox;
+`
 const Container = styled.div`
   margin-top:5vh;
   display:grid;
@@ -10,24 +16,21 @@ const Container = styled.div`
   margin-right: 16px;
 `
 const Head1 = styled.h1`
-  margin-left: 16px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 42px;
+  font-size: 250%;
   line-height: 49px;
-  margin-top: 0vh;
+  margin-top: 1vh;
   color: #FFFFFF;
-  top:2%;
 
 `
 const Detail1 = styled.h6`
   font-family: Roboto;
   font-size: 14px;
   line-height: 16px;
-  font-weight: 500;
-  margin-left: 16px;
-  margin-top: -20px;
+  font-weight: 300;
+  margin-top: -2vh;
   color: #FFFFFF;
 `
 const EmpShop = styled.div`
@@ -57,22 +60,41 @@ const StupidCircletTop = styled.div`
 const EmptyText = styled.div`
 background-color:#FFFFFF;
 position: absolute;
-width: 80%;
-height: 70%;
+width: 90%;
+height: 75%;
 size: 50px;
 top:150px;
-left:10%;
+left:5%;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
+`
 
+const Menutop = styled.div`
+display: flex;
+font-size: 4vh;
+gap: 30px;
+margin-top: 15px;
+margin-left: 45%;
+margin-right: 20px;
+`
+
+const TextHead = styled.div`
 `
 
 function NewShop(){
     return(
         <Container>
           <StupidCircletTop/>
+            <Header>
+            <TextHead>
             <Head1>Shop</Head1>
-            <Detail1>Which one is your works today?</Detail1>
+            <Detail1>Which one is your works today?</Detail1>      
+            </TextHead>
+            <Menutop>
+            <a href="/Inbox"><IoMail/></a>            
+            <a href="/shopselect"><CgMenu/></a>            
+            </Menutop>      
+            </Header>
             <EmptyText>
               <EmpShop>You no have your bussiness yet.<br/>Create new one or accept your invite.</EmpShop>         
             </EmptyText> 

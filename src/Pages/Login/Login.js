@@ -1,9 +1,13 @@
 import '../style.css';
 import styled from 'styled-components';
+import { useState, useRef } from "react";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
+import axios from "axios";
 
-const Margin29 = styled.input`
-    margin: 29px;
-`
+
+
 const Margin64 = styled.div`
     margin-top: auto;
     margin-right: 16px;
@@ -21,8 +25,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
 `
-
-const Form = styled.form`
+const FormStyled = styled.form`
     display:grid;
     flex-direction: column;   
     margin:29px;
@@ -37,9 +40,7 @@ const BackgroundHead = styled.div`
     object-fit: cover;
 `
 const InputLogin = styled.input`
-
 `
-
 const Registerlink = styled.a`
     color: #338e3c ;
 `
@@ -47,28 +48,29 @@ const Image = styled.div`
     background-image:url("assets/img/cafe.jpg") ;
     height: auto;
     width:inherit;
-    
 `
 
+
+
 function Login() {
+
     
     return(
             <Container>
             <Image><BackgroundHead><img src="assets/img/cafe.jpg"/></BackgroundHead></Image>
             <img src="assets/logo/logo.png" className="logo" />
             <Detail>Make your resturant easier</Detail>
-            <Form>
-             <InputLogin type='text' name="username" placeholder='username' /> 
-             <InputLogin type='password' name="Password" placeholder='password' />            
-            </Form>
-            <Margin64>
-             <button class="button2">Log in!</button>
-            </Margin64>
+                <Form  >
+                    <Input type='text' name="username" placeholder='username' /> 
+                    <Input type='password' name="Password" placeholder='password' />            
+                     <Margin64>
+                     <CheckButton type='submit'>Log in!</CheckButton>
+                    </Margin64>
+                 </Form>
             <MarginT34>
             <p> no have User ID? <Registerlink href="/Register">Register new one!</Registerlink></p>
             </MarginT34>
             </Container>
     );
 }
-
 export default Login;
