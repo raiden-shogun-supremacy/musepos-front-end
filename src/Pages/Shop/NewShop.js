@@ -115,17 +115,6 @@ function NewShop(){
             <Head1>Register</Head1> 
             <Detail1>Let's earn money together!</Detail1>  
             <Detail2>Let's tell us something about your new business.</Detail2>     
-        <Form >
-            <Register2>   
-                <InputReg type="text" name='firstname' placeholder='Name' ></InputReg>
-                <InputReg2>
-                  <OptionCat >Select Type</OptionCat>                   
-                  <OptionCat >Cafe</OptionCat>
-                  <OptionCat >Resturant</OptionCat>                   
-                </InputReg2>
-            </Register2>                
-            <ButtonnReg>Start!</ButtonnReg>
-        </Form>
         <StupidCircletBottom/>           
     </Container>     
 );

@@ -67,7 +67,7 @@ border-radius: 15px;
 
 `
 
-function NewShop(){
+function Shopselect(){
     return(
         <Container>
           <StupidCircletTop/>
@@ -80,4 +80,4 @@ function NewShop(){
 );
 }
 
-export default NewShop
+export default Shopselect
