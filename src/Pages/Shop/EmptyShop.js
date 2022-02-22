@@ -1,6 +1,6 @@
 import '../style.css';
 import styled from 'styled-components';
-import {  CgMenu } from 'react-icons/cg';
+import { CgMenu } from 'react-icons/cg';
 import { IoMail } from "react-icons/io5";
 
 

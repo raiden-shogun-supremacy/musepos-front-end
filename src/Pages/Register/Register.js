@@ -1,6 +1,8 @@
 import '../style.css'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
+import axios from 'axios';
+
 
 const Form = styled.form`
   display:flex;
@@ -114,6 +116,22 @@ function Register() {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    // const [name, setName] = useState('');
+    // const [username, setUsername] = useState('');
+    // const [password, setPassword] = useState('');
+
+  //   function createNewEmployee() {
+  //     axios
+  //     .post('http://localhost:3000/api/user/register', {
+  //         name: name,
+  //         username: username,
+  //         password: password
+  //     })
+  //     .then(
+  //         alert('Registeration Successful!')
+  //     )
+  //     // .catch(err => alert(err.message));
+  // }
    
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -135,7 +153,7 @@ function Register() {
       
       const validate = (values) => {
         const errors = {};
-        if (!values.firstname) {
+        if (!values.name) {
             errors.firstname = "First name is required!";
           }
         if (!values.lastname) {
@@ -171,10 +189,10 @@ function Register() {
                 <Detail2>Can we know you?</Detail2>     
             <Form onSubmit={handleSubmit}>
                 <Register2>   
-                    <InputReg type="text" name='firstname' placeholder='Firstname' value={formValues.firstname} onChange={handleChange}></InputReg>
+                    <InputReg type="text" name='name' placeholder='Name' value={formValues.name} onChange={handleChange}></InputReg>
                     <Register1>{formErrors.firstname}</Register1>
-                    <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
-                    <Register1>{formErrors.lastname}</Register1>             
+                    {/* <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
+                    <Register1>{formErrors.lastname}</Register1>              */}
                 </Register2>                
                 <Register2>
                     <InputReg type="text" name='phonenumber'   placeholder='Phone Number' value={formValues.phonenumber} onChange={handleChange} />
@@ -188,7 +206,7 @@ function Register() {
                     <InputReg type="password" name='password'  placeholder='Password' value={formValues.password} onChange={handleChange}/>                
                 </RegisterForm>
                 <Register1>{formErrors.password}</Register1>                          
-                <ButtonnReg>Register</ButtonnReg>
+                <a href='/' onClick={createNewEmployee}><ButtonnReg>Register</ButtonnReg></a>
             </Form>
             <StupidCircletBottom/>           
         </Container>        
