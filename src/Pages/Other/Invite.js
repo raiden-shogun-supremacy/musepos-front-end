@@ -186,7 +186,7 @@ const Invite = ({ onBackClick, data }) => {
                 <BgContainer>
                     <Content>
                         <Back onClick={onBackClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Back>
-                        <HeaderText>Invite Employeer</HeaderText>
+                        <HeaderText>Invite Employee</HeaderText>
                         <Description>Invite new employee to work with yours!</Description>
                         <Description2>Send some invite..</Description2>
                         <Section>
@@ -196,9 +196,9 @@ const Invite = ({ onBackClick, data }) => {
                                 <Text>As :</Text>
                                 <Select>
                                     <option>Role</option>
-                                    <option>Beverage/Drink</option>
-                                    <option>Dessert</option>
-                                    <option>Food</option>
+                                    <option>Owner</option>
+                                    <option>Manager</option>
+                                    <option>Employee</option>
                                 </Select>
                             </SectionGrid>
                         </Section>
