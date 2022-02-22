@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import order_entity from './order_entity';
 
 import CreateOrder from './CreateOrder';
 
@@ -84,6 +85,7 @@ const Order  = ({ onBgClick }) => {
             newOrderPost = null
             break;
     }
+    console.log(order_entity);
 
   return (
     <Container>

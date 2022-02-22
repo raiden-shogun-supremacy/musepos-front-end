@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import AddMenu from './AddMenu'
+import order_entity from './order_entity';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -168,27 +168,7 @@ const ToAddMEnu = styled.a`
     }
 `
 
-const CreateOrder = ({ onBackClick, data }) => {
-
-    // const [newOrderOpen, setNewOrderOpen] = useState('')
-
-    // function onNewOrderClick(x) {
-    //     setNewOrderOpen(x)
-    // }
-
-    // let newOrderMenu = null
-    // switch(newOrderOpen){
-    //     case 'open':
-    //         newOrderMenu = <AddMenu onBackClick={() => onNewOrderClick('back') } />
-    //     break;
-    //     case 'back':
-    //         newOrderMenu = null
-    //     break;
-    // }
-    // function numberTyped(x){
-    //     console.log(x)
-    // }
-
+const CreateOrder = ({ onBackClick }) => {
   return (
     <Container>
         <Post>
@@ -212,6 +192,7 @@ const CreateOrder = ({ onBackClick, data }) => {
                             </SectionGrid>
                         </Section>
                         <a href='/AddMenu'><Button>New Order</Button></a>
+                        {/* </Form> */}
                     </Content>
                 </BgContainer>
             </Background>

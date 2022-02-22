@@ -3,7 +3,7 @@ var order_entity = {
     totalPay: 0,
     peopleAmt: 0,
     typeOfAct: '',
-    orderStatus: 'unpaid'
+    orderStatus: 'paid'
 }
 
 export default order_entity

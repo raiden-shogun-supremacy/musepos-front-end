@@ -232,7 +232,7 @@ const Other = () => {
                     </SectionInvite>
                 </BgContainerBottom>
             <ButtonRemove>Remove Menu</ButtonRemove>
-            <ButtonLogout>Log Out</ButtonLogout>
+            <a href='/'><ButtonLogout>Log Out</ButtonLogout></a>
     </Container>
   );
 };

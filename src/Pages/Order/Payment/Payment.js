@@ -192,10 +192,13 @@ const Payment = ({onBackClicked}) => {
         }
         return sum;
     }
-    console.log(total);
+    const total_cost = total_price(total)
     const render_product_cost = probs.map((probs) => {
         return <PaymentList data={probs} />
     });
+    const payFinished = (y) => {
+        order_entity.totalPay.push(y)
+    }
   return (
     <Container>
         <Post>
@@ -216,11 +219,11 @@ const Payment = ({onBackClicked}) => {
                         <Section>
                             <SectionGridTotal>
                                 <Total>Total</Total>
-                                <Total>{ total_price(total) }</Total>
+                                <Total>{ total_cost }</Total>
                                 <Total>THB</Total>
                             </SectionGridTotal>
                         </Section>
-                        <a href='/landing'><Button>Pay</Button></a>
+                        <a href='/landing' onClick={()=>{payFinished(total_cost)}}><Button>Pay</Button></a>
                     </Content>
                 </BgContainer>
             </Background>
