@@ -24,6 +24,7 @@ import InviteBox from './Pages/Inbox/InviteBox.js'
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
 import RemoveMenu from './Pages/Other/RemoveMenu.js';
+import ShopList from './Pages/Shop/ShopList.js';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route exact path='/invite' element={<Invite />} />
           <Route exact path='/addstock' element={<AddStock />} />
           <Route exact path='/removemenu' element={<RemoveMenu />} />
+          <Route exact path='/shoplist' element={<ShopList />} />
         </Routes>
       </BrowserRouter>    
   );

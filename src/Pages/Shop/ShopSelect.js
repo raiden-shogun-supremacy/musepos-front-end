@@ -87,8 +87,9 @@ const SectionCol = styled(Section)`
 `
 
 const Icon = styled.img`
-    width: 40px;
+    width: 30px;
     margin-top: 10px;
+    filter: invert(1);
 `
 
 function ShopSelect(){
