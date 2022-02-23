@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Invite from './Invite';
+import dummyEmp from '../../dummy/dummyEmp.json' 
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;

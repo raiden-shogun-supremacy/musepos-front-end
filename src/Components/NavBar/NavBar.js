@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import item from './item.json';
 
 const Navbar = styled.div`
     background-color: white;
@@ -20,13 +21,14 @@ const MenuBtn = styled.button`
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 75px;
+    height: 50px;
 `
 const Icon = styled.img`
-    width: 30px;
-    height: 30px;
-    margin-top: 16px;
-    color: #AAAAAA;
+    width: 25px;
+    height: 25px;
+    margin-top: 20px;
+    opacity: 0.3;
+
 `
 
 const Text = styled.p`
@@ -56,10 +58,19 @@ const NavBar = ({passingIndex}) => {
             passingIndex(switchIndex)
             break;
     }
+    const render_menu = item.map((data) => {
+        return (
+        <MenuBtn onClick={() => getPassedIndex(data.name)}>
+            <Icon src={data.img} />
+            <Text>{data.name}</Text>       
+        </MenuBtn>
+        )
+    })
     return (
         <div>
             <Navbar>
-                <MenuBtn onClick={() => getPassedIndex('Dashboard')}>
+                { render_menu }
+                {/* <MenuBtn onClick={() => getPassedIndex('Dashboard')}>
                     <Icon src='..\assets\img\dashboard.png' />
                     <Text>Dashboard</Text>       
                 </MenuBtn>
@@ -74,7 +85,7 @@ const NavBar = ({passingIndex}) => {
                 <MenuBtn onClick={() => getPassedIndex('Others')}>
                     <Icon src='..\assets\img\other.png' />
                     <Text>Other</Text>       
-                </MenuBtn>
+                </MenuBtn> */}
             </Navbar>
         </div>
     );

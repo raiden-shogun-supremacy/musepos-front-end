@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    margin : 0px 10px 20px 10px;
-    padding : 10px;
+    margin : 20px 0px 20px 0px;
 `
 
 const HeaderText = styled.h1`
@@ -43,14 +42,12 @@ const BgContainer = styled.div`
     width: inherit;
     height: initial;
     padding: 10px;
-    margin-left: 12px;
-    margin-right: 12px;
     display: flex;
     align-items: center;
-    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     border: 2px solid #F3F3F3;
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 10px;
 `
 
 const Section = styled.div`
@@ -72,6 +69,7 @@ const SectionRow = styled(Section)`
 
 const Img = styled.img`
     width: 30px;
+    opacity: 0.3;
 `
 
 const Border = styled.div`
