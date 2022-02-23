@@ -19,7 +19,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import ShopSelect from './Pages/Shop/ShopSelect.js';
 import ShopMenu from './Pages/Shop/ShopMenu.js';
-import Inbox from './Pages/Inbox/inbox.js'
+import Inbox from './Pages/Inbox/Inbox.js'
 import InviteBox from './Pages/Inbox/InviteBox.js'
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
