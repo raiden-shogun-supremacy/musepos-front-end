@@ -14,15 +14,17 @@ import NavBar from './Components/NavBar/NavBar.js'
 import NewShop from './Pages/Shop/NewShop.js';
 import StockPage from './Pages/Stock/StockPage.js';
 import Other from './Pages/Other/Other.js';
+import ChangeRole from './Pages/Other/ChangeRole.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import ShopSelect from './Pages/Shop/ShopSelect.js';
 import ShopMenu from './Pages/Shop/ShopMenu.js';
-import Inbox from './Pages/Inbox/inbox.js'
+import Inbox from './Pages/Inbox/Inbox.js'
 import InviteBox from './Pages/Inbox/InviteBox.js'
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
 import RemoveMenu from './Pages/Other/RemoveMenu.js';
+import ShopList from './Pages/Shop/ShopList.js';
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
           <Route exact path="/stock" element={<StockPage />} />
           <Route exact path="/newshop" element={<NewShop />} />
           <Route exact path="/other" element={<Other />} />
+          <Route exact path="/changerole" element={<ChangeRole />} />
           <Route exact path="/navBar" element={<NavBar />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />
@@ -49,6 +52,7 @@ function App() {
           <Route exact path='/invite' element={<Invite />} />
           <Route exact path='/addstock' element={<AddStock />} />
           <Route exact path='/removemenu' element={<RemoveMenu />} />
+          <Route exact path='/shoplist' element={<ShopList />} />
         </Routes>
       </BrowserRouter>    
   );

@@ -69,16 +69,16 @@ const Background = styled.div`
     overflow : scroll;
 `
 
-const ShopMenu = ({ onBackClick, data }) => {
+const ShopMenu = ({ onBgClick, data }) => {
     return (
         <Container>
-            <Post>
-                <Background>
+            <Post >
+                <Background onClick={onBgClick}>
                     <BgContainer>
                         <Section>
                             <SectionRow>
-                                <Text>Create New Shop</Text>
-                                <TextRed>Log out</TextRed>
+                                <a href='/newshop'><Text>Create New Shop</Text></a>
+                                <a href='/'><TextRed>Log out</TextRed></a>
                             </SectionRow>
                         </Section>
                     </BgContainer>

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Steve Rogres",
+        "role": "Owner"
+    },
+    {
+        "name": "Bruce Banner",
+        "role": "Manager"
+    },
+    {
+        "name": "Thor Odinson",
+        "role": "Seller"
+    },
+    {
+        "name": "Clint Barton",
+        "role": "Seller"
+    },
+    {
+        "name": "Natasha Romanof",
+        "role": "Seller"
+    }
+]

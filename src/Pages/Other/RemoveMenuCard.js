@@ -30,7 +30,7 @@ const Overlay = styled.div`
 `
 const RemoveMenuCard = ({ onStockProductClick, data }) => {
   return (
-      <Card bgImg={data.img} onClick={() => onStockProductClick(data)}>
+      <Card bgImg={data.img}>
         <Overlay>
           <img src='https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Close-256.png'/><p>{data.Name}</p>
         </Overlay>
