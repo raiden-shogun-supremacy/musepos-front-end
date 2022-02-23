@@ -1,0 +1,17 @@
+[
+    {
+        "Name": "Avengers",
+        "Type": "Cafe",
+        "Role": "Owner"
+    },
+    {
+        "Name": "Justice League",
+        "Type": "Restaurant",
+        "Role": "Enployee"
+    },
+    {
+        "Name": "422",
+        "Type": "Cafe",
+        "Role": "Manager"
+    }
+]
