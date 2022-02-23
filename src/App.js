@@ -3,7 +3,6 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
 // import components
 import Login from './Pages/Login/Login.js';
-import NewLogin from './Pages/Login/NewLogin.js';
 import Register from './Pages/Register/Register.js';
 import Order from './Pages/Order/Order.js'
 import OrderList from './Pages/Order/OrderList.js'
@@ -28,7 +27,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />} />
-          <Route exact path="/newlogin" element={<NewLogin />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/order" element={<Order />} />
           <Route exact path="/orderlist" element={<OrderList />} />

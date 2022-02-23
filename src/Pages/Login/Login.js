@@ -1,75 +1,100 @@
-import '../style.css';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useState, useRef } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
-import axios from "axios";
 
-
-
-const Margin64 = styled.div`
-    margin-top: auto;
-    margin-right: 16px;
-`
-const Detail = styled.div`
-    top:10px;
-    font-weight: 300;
-`
-const MarginT34 = styled.div`
-    margin-top: 34px;
-`
 const Container = styled.div`
+    margin : 0px;
+    padding: 0%;
+`
+
+const Post = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+`
+
+const BgContainer = styled.div`
+    background: #FFFFFF;
+    width: 100vw;
+    height: 50vh;
+    margin-top: -10vh;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+
+const ImgBg = styled.img`
+    width: 100%;
+`
+
+const ImgLogo = styled.img`
+    margin-top: 5vh;
+    width: 40%;
+`
+
+const Text = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: -2vh;
+    margin-bottom: 5vh;
+    color: #000000;
+`
+
+const TextReg = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 5vh;
+`
+
+const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2vh;
+    input{
+        width: 90vw;
+        height: 3.5em;
+    }
 `
-const FormStyled = styled.form`
-    display:grid;
-    flex-direction: column;   
-    margin:29px;
-    margin-top: 10px;
-    margin-left:16px;
-    gap:16px;
+
+const Button = styled.button`
+    border: 20px;
+    border-color: #FFFFFF;
+    width: 90vw;
+    margin-top: 5vh;
 `
-const BackgroundHead = styled.div`
-    z-index : -999;
-    width:50%;
-    height:50%;
-    object-fit: cover;
-`
-const InputLogin = styled.input`
-`
+
 const Registerlink = styled.a`
     color: #338e3c ;
 `
-const Image = styled.div`
-    background-image:url("assets/img/cafe.jpg") ;
-    height: auto;
-    width:inherit;
-`
-
-
 
 function Login() {
-
-    
     return(
-            <Container>
-            <Image><BackgroundHead><img src="assets/img/cafe.jpg"/></BackgroundHead></Image>
-            <img src="assets/logo/logo.png" className="logo" />
-            <Detail>Make your resturant easier</Detail>
-                <Form  >
-                    <Input type='text' name="username" placeholder='username' /> 
-                    <Input type='password' name="Password" placeholder='password' />            
-                     <Margin64>
-                     <CheckButton type='submit'>Log in!</CheckButton>
-                    </Margin64>
-                 </Form>
-            <MarginT34>
-            <p> no have User ID? <Registerlink href="/Register">Register new one!</Registerlink></p>
-            </MarginT34>
+        <Container>
+            <ImgBg src='assets/img/cafe.jpg'></ImgBg>
+                <Post>
+                    <BgContainer>
+                        <ImgLogo src='assets/logo/logo.png'></ImgLogo>
+                        <Text>Make your resturant easier</Text>
+                        <Form><input type="text" placeholder='Username' /></Form>
+                        <Form><input type="text" placeholder='Password' /></Form>
+                        <Button>Login</Button>
+                        <TextReg>Or no have User ID? <Registerlink href="/Register">Register </Registerlink>new one!</TextReg>
+                    </BgContainer>
+                </Post>
+                
+            
             </Container>
     );
 }
