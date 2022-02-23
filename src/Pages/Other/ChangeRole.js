@@ -149,14 +149,14 @@ const SectionCol = styled(Section)`
     grid-template-columns: 0fr 100fr;
 `
 
-const ChangeRole = ({ onBackClick, data }) => {
+const ChangeRole = ({ onBClick, data }) => {
   return (
     <Container>
         <Post>
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back onClick={onBackClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Back>
+                        <Back onClick={onBClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Back>
                         <TextName>Natasha Romanoff</TextName>
                         <TextRole>Employee</TextRole>
                         <Text>Change To..</Text>

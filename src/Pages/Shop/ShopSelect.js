@@ -113,8 +113,8 @@ function ShopSelect(){
           <Section>
               <SectionCol>
                     <Head1>Shop</Head1>
-                    <a href='/inbox'><Icon src='https://cdn-icons.flaticon.com/png/512/2099/premium/2099199.png?token=exp=1645629346~hmac=898e517acd8c68cf7b40c4a39d5d615f' /></a>
-                    <Icon src='https://cdn-icons-png.flaticon.com/512/2089/2089793.png' onClick={stackClicked} />
+                    <a href='/inbox'><Icon src='https://cdn-icons.flaticon.com/png/512/666/premium/666162.png?token=exp=1645634994~hmac=65c189f18728afa8816bb6cf14c3fdca' /></a>
+                    <Icon src='https://cdn2.iconfinder.com/data/icons/user-interface-essential-solid/32/Artboard_6-512.png?fbclid=IwAR1FSODimUM23ji-nCg9v1uh1wi0Rr_b4TDeqzl9CsUyus1RTO4is2mdD5k' onClick={stackClicked} />
                     {dropdown_show}
               </SectionCol>
           </Section>
