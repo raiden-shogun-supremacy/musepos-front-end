@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Invite from './Invite';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -193,6 +194,23 @@ const StupidCircletTop = styled.div`
 `
 
 const Other = () => {
+    const [invitePostOpen, setInvitePostOpen] = useState('');
+
+    let invitePost = null;
+    function inviteClickedOpen(){
+        setInvitePostOpen('on')
+    }
+    function inviteClickedClose(){
+        setInvitePostOpen('off')
+    }
+    switch(invitePostOpen){
+        case 'on':
+            invitePost = <Invite onBackClick={inviteClickedClose} />
+            break
+        case 'off':
+            invitePost = null;
+            break
+    }
   return (
     <Container>
         <Header>
@@ -200,6 +218,7 @@ const Other = () => {
             <HeaderText>Others</HeaderText>
             <Description>What to need today?</Description>
         </Header>
+        {invitePost}
             <Setting>Settings</Setting>
                 <BgContainerTop>
                     <SectionGridHead>
@@ -227,7 +246,7 @@ const Other = () => {
                     </SectionGridEmp>
                 </Border>
                 <BgContainerBottom>
-                    <SectionInvite>
+                    <SectionInvite onClick={inviteClickedOpen}>
                         <Text>+ Invite Employee</Text>
                     </SectionInvite>
                 </BgContainerBottom>

@@ -3,7 +3,8 @@ var order_entity = {
     totalPay: 0,
     peopleAmt: 0,
     typeOfAct: '',
-    orderStatus: 'paid'
+    orderStatus: 'paid',
+    orderID:'',
 }
 
 export default order_entity

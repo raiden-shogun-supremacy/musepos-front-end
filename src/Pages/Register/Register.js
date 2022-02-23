@@ -1,7 +1,9 @@
 import '../style.css'
 import styled from 'styled-components';
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Form = styled.form`
@@ -115,20 +117,20 @@ const Register = (props) => {
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    
-    function createNewEmployee() {
+    async function createNewEmployee() {
       axios
       .post('http://localhost:5000/api/user/register', {
           name: name,
           username: username,
           password: password
       })
-      .then(
-          alert('Registeration Successful!')
-      )
+      .then()      
        .catch(err => alert(err.message));
-  }
+       await alert('Registeration Successful!')      
+       await navigate('/',{ replace: true })
+      }
   
 
       return (
