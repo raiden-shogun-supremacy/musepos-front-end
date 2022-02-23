@@ -50,6 +50,7 @@ const BgContainer = styled.div`
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
     border: 2px solid #F3F3F3;
     box-sizing: border-box;
+    border-radius: 15px;
 `
 
 const Section = styled.div`
@@ -61,7 +62,7 @@ const Section = styled.div`
 const SectionCol = styled(Section)`
     display : grid;
     grid-column-gap: 0vw;
-    grid-template-columns: 70vw 1fr;
+    grid-template-columns: 100fr 1fr;
 `
 
 const SectionRow = styled(Section)`
