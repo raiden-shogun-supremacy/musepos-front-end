@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import order_entity from './order_entity';
 
 import CreateOrder from './CreateOrder';
+import OrderList from './OrderList';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -94,7 +95,8 @@ const Order  = ({ onBgClick }) => {
         </Header>
         <Content>
             <Button onClick={()=>onNewOrderClick('open')}>Create Order</Button>
-            <Border>No customer sit in your resturant yet...</Border>
+            <OrderList data={order_entity}/>
+            {/* <Border>No customer sit in your resturant yet...</Border> */}
         {newOrderPost}
         </Content>
     </Container>

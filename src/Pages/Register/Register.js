@@ -206,7 +206,7 @@ function Register() {
                     <InputReg type="password" name='password'  placeholder='Password' value={formValues.password} onChange={handleChange}/>                
                 </RegisterForm>
                 <Register1>{formErrors.password}</Register1>                          
-                <a href='/' onClick={createNewEmployee}><ButtonnReg>Register</ButtonnReg></a>
+                <a href='/' ><ButtonnReg>Register</ButtonnReg></a>
             </Form>
             <StupidCircletBottom/>           
         </Container>        

@@ -73,25 +73,59 @@ const Img = styled.img`
     width: 30px;
 `
 
+const Border = styled.div`
+    display : flex;
+    width: inherit;
+    height: 80vh;
+    left: 16px;
+    margin-top: 20px;
+    background: #FFFFFF;
+    border: 2px solid #F3F3F3;
+    color : #AAAAAA;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+`
+
 const OrderList = ({ onBackClick, data }) => {
-  return (
-      <Container>
-            <BgContainer>
-                <Section>
-                    <SectionCol>
-                        <SectionRow>
-                            <HeaderText>ID: 000001</HeaderText>
-                            <TextMenu>Iced tea</TextMenu>
-                            <TextTotal>Total: 105 Bath</TextTotal>
-                        </SectionRow>
-                        <Img src="https://cdn-icons.flaticon.com/png/512/2311/premium/2311524.png?token=exp=1645548912~hmac=c4059c174804acf0c7362ea751022043" />
-                    </SectionCol>
-                </Section>
-                
-            </BgContainer>
-      </Container>
-    
-  );
+
+    const probs = data;
+    const list_menu = []
+    for (var i = 0; i < probs.length; i++) {
+        list_menu.push(probs[i].Name);
+    }
+    const orderMenuList = () => {
+        return list_menu;
+    }
+    if(!!probs){
+        return (
+            <Container>
+                  <BgContainer>
+                      <Section>
+                          <SectionCol>
+                              <SectionRow>
+                                  <HeaderText>{probs.orderID}</HeaderText>
+                                  <TextMenu>{orderMenuList}</TextMenu>
+                                  <TextTotal>Total: {probs.totalPay} Bath</TextTotal>
+                              </SectionRow>
+                              <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
+                          </SectionCol>
+                      </Section>
+      
+                  </BgContainer>
+            </Container>
+          
+        );
+    }
+    else{
+        return (<Border>No customer sit in your resturant yet...</Border>)
+    }
+
+
+
+
 };
 
 export default OrderList;
