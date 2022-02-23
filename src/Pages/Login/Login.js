@@ -7,30 +7,33 @@ import { useNavigate } from 'react-router-dom';
 const Container = styled.div`
     margin : 0px;
     padding: 0%;
-    overflow: scroll;
+    
 `
 
 const Post = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     z-index: 999;
+    overflow: scroll;
 `
 
 const BgContainer = styled.div`
     background: #FFFFFF;
     width: 100vw;
-    height: 50vh;
-    margin-top: -10vh;
+    height: 100%;
+    margin-top: 25vh;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; 
+    
 `
 
 const ImgBg = styled.img`
+    position: fixed;
     width: 100%;
 `
 
@@ -132,9 +135,7 @@ const Login = (props) => {
                         <TextReg>Or no have User ID? <Registerlink href="/Register">Register </Registerlink>new one!</TextReg>
                     </BgContainer>
                 </Post>
-                
-            
-            </Container>
+        </Container>
     );
 }
 export default Login;
