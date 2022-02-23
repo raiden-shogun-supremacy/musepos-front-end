@@ -250,7 +250,7 @@ const Other = () => {
                         <Text>+ Invite Employee</Text>
                     </SectionInvite>
                 </BgContainerBottom>
-            <ButtonRemove>Remove Menu</ButtonRemove>
+                <a href='/removemenu'><ButtonRemove>Remove Menu</ButtonRemove></a>
             <a href='/'><ButtonLogout>Log Out</ButtonLogout></a>
     </Container>
   );
