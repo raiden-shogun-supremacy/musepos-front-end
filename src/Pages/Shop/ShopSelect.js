@@ -1,5 +1,7 @@
 import '../style.css';
 import styled from 'styled-components';
+import { useState } from 'react';
+import ShopMenu from './ShopMenu.js'
 
 const Container = styled.div`
     margin : 0px;
@@ -90,14 +92,29 @@ const Icon = styled.img`
 `
 
 function ShopSelect(){
+    const [dropdown, setDropdown] = useState(false)
+    let dropdown_show = null;
+    if( dropdown == true ){
+        dropdown_show = <ShopMenu onBgClick={bgClick} />
+    }
+
+    function stackClicked() {
+        setDropdown(true)
+    }
+    function bgClick(){
+        dropdown_show = null;
+        setDropdown(false);
+    }
+
     return(
         <Container>
           <StupidCircletTop/>
           <Section>
               <SectionCol>
                     <Head1>Shop</Head1>
-                    <Icon src='https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/mail-512.png'></Icon>
-                    <Icon src='https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/stack-512.png'></Icon>
+                    <a href='/inbox'><Icon src='https://cdn-icons.flaticon.com/png/512/2099/premium/2099199.png?token=exp=1645629346~hmac=898e517acd8c68cf7b40c4a39d5d615f' /></a>
+                    <Icon src='https://cdn-icons-png.flaticon.com/512/2089/2089793.png' onClick={stackClicked} />
+                    {dropdown_show}
               </SectionCol>
           </Section>
                 <Detail1>Which one is your works today?</Detail1>

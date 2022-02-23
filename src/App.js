@@ -14,6 +14,7 @@ import NavBar from './Components/NavBar/NavBar.js'
 import NewShop from './Pages/Shop/NewShop.js';
 import StockPage from './Pages/Stock/StockPage.js';
 import Other from './Pages/Other/Other.js';
+import ChangeRole from './Pages/Other/ChangeRole.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import ShopSelect from './Pages/Shop/ShopSelect.js';
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/stock" element={<StockPage />} />
           <Route exact path="/newshop" element={<NewShop />} />
           <Route exact path="/other" element={<Other />} />
+          <Route exact path="/changerole" element={<ChangeRole />} />
           <Route exact path="/navBar" element={<NavBar />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />

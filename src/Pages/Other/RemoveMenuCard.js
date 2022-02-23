@@ -21,13 +21,18 @@ const Overlay = styled.div`
     bottom: 0px;
     left: 10px;
   }
+  img {
+    width: 30px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    }
 `
-
 const RemoveMenuCard = ({ onStockProductClick, data }) => {
   return (
-      <Card bgImg={data.img} onClick={() => onStockProductClick(data)}>
+      <Card bgImg={data.img}>
         <Overlay>
-          <p>{data.Name}</p>
+          <img src='https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Close-256.png'/><p>{data.Name}</p>
         </Overlay>
       </Card>
   );

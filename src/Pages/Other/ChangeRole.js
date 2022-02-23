@@ -8,7 +8,7 @@ const Container = styled.div`
 
 const Header = styled.div``
 
-const HeaderText = styled.h1`
+const TextName = styled.h1`
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -16,16 +16,18 @@ const HeaderText = styled.h1`
     line-height: 40px;
     margin-top: 1.5vh;
     margin-left: 5vw;
-    color: #388E3C;
 `
 
-const Description = styled.p`
+const TextRole = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-weight: 500;
-    font-size: 21px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: -20px;
+    margin-left: 5vw;
+    color: #43A047;
+    margin-bottom: 5vh;
 `
 
 const Back = styled.p`
@@ -43,50 +45,31 @@ const Back = styled.p`
     }
 `
 
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    input{
-        width: 50vw;
-        height: 3.5em;
-    }
-`
-
-const FormImg = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3vh;
-    input{
-        width: 50vw;
-    }
-`
-
-const Select = styled.select`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    input{
-        width: 50vw;
-        height: 3.5em;
-    }
-`
-
 const Text = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    margin-top: 15px;
-    margin-left: 20px;
-    color: #000000;
+    margin-left: 5vw;
+`
+
+const TextRed = styled(Text)`
+    color: #FF5252;
+    margin-left: 0px;
+`
+
+const Select = styled.select`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    input{
+        width: 50vw;
+        height: 3.5em;
+    }
 `
 
 const Content = styled.div`
@@ -114,6 +97,7 @@ const Button = styled.button`
     align-items: center;
     padding: 10px;
     text-decoration: none;
+    margin-top: 7vh;
 
 `
 
@@ -159,23 +143,13 @@ const Section = styled.div`
     display : flex;
     justify-content : space-between;
     align-items : center;
-    margin : 0px 5vw;
-    margin-bottom: 1vh;
 `
-
-const SectionGrid = styled(Section)`
+const SectionCol = styled(Section)`
     display : grid;
-    grid-row-gap: 1vh;
-    grid-template-columns: 10fr 1fr;
+    grid-template-columns: 0fr 100fr;
 `
 
-
-const AddStock = ({ onBackClick, data }) => {
-
-    function addMenuClicked(){
-        console.log('Add this menu')
-    }
-
+const ChangeRole = ({ onBackClick, data }) => {
   return (
     <Container>
         <Post>
@@ -183,24 +157,22 @@ const AddStock = ({ onBackClick, data }) => {
                 <BgContainer>
                     <Content>
                         <Back onClick={onBackClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Back>
-                        <HeaderText>Add new menu!</HeaderText>
-                        <FormImg><Description for="image">What's your menu look like?</Description><input type="file" id="image" name="image" /></FormImg>
-                        <Section>
-                            <SectionGrid>
-                                <Text>Name</Text>
-                                <Form><input type="text" placeholder='Menu Name' /></Form>
-                                <Text>Category</Text>
-                                <Select>
-                                    <option>-Catagory-</option>
-                                    <option>Beverage/Drink</option>
-                                    <option>Dessert</option>
-                                    <option>Food</option>
-                                </Select>
-                            </SectionGrid>
-                        </Section>
-                        <Section>
-                            <Button onClick={addMenuClicked}>Add new!</Button>
-                        </Section>
+                        <TextName>Natasha Romanoff</TextName>
+                        <TextRole>Employee</TextRole>
+                        <Text>Change To..</Text>
+                        <Select>
+                            <option>Role</option>
+                            <option>Owner</option>
+                            <option>Manager</option>
+                            <option>Employee</option>
+                        </Select>
+                       <Button>Save</Button>
+                       <Section>
+                           <SectionCol>
+                            <Text>Or..</Text>
+                            <TextRed>Fired this Employee</TextRed>
+                           </SectionCol>
+                       </Section>
                     </Content>
                 </BgContainer>
             </Background>
@@ -209,4 +181,4 @@ const AddStock = ({ onBackClick, data }) => {
   );
 };
 
-export default AddStock;
+export default ChangeRole;
