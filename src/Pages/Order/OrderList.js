@@ -86,8 +86,7 @@ const OrderList = ({ onBackClick, data }) => {
                         </SectionRow>
                         <Img src="https://cdn-icons.flaticon.com/png/512/2311/premium/2311524.png?token=exp=1645548912~hmac=c4059c174804acf0c7362ea751022043" />
                     </SectionCol>
-                </Section>
-                
+                </Section> 
             </BgContainer>
       </Container>
     
