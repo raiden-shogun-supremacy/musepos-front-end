@@ -3,7 +3,6 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
 // import components
 import Login from './Pages/Login/Login.js';
-import NewLogin from './Pages/Login/NewLogin.js';
 import Register from './Pages/Register/Register.js';
 import Order from './Pages/Order/Order.js'
 import OrderList from './Pages/Order/OrderList.js'
@@ -17,18 +16,19 @@ import StockPage from './Pages/Stock/StockPage.js';
 import Other from './Pages/Other/Other.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
-import EmptyShop from './Pages/Shop/EmptyShop.js';
-import Inbox from './Pages/Inbox/inbox'
-import Shopselect from './Pages/Shop/ShopSelect.js';
+import ShopSelect from './Pages/Shop/ShopSelect.js';
+import ShopMenu from './Pages/Shop/ShopMenu.js';
+import Inbox from './Pages/Inbox/inbox.js'
+import InviteBox from './Pages/Inbox/InviteBox.js'
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
+import RemoveMenu from './Pages/Other/RemoveMenu.js';
 
 function App() {
   return (
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />} />
-          <Route exact path="/newlogin" element={<NewLogin />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/order" element={<Order />} />
           <Route exact path="/orderlist" element={<OrderList />} />
@@ -42,11 +42,13 @@ function App() {
           <Route exact path="/navBar" element={<NavBar />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />
-          <Route exact path='/emptyshop' element={<EmptyShop />} />
+          <Route exact path='/shopselect' element={<ShopSelect />} />
           <Route exact path='/inbox' element={<Inbox />} />
-          <Route exact path='/shopselect' element={<Shopselect />} />
+          <Route exact path='/invitebox' element={<InviteBox />} />
+          <Route exact path='/shopmenu' element={<ShopMenu />} />
           <Route exact path='/invite' element={<Invite />} />
           <Route exact path='/addstock' element={<AddStock />} />
+          <Route exact path='/removemenu' element={<RemoveMenu />} />
         </Routes>
       </BrowserRouter>    
   );
