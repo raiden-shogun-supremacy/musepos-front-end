@@ -30,7 +30,7 @@ const BgContainer = styled.div`
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     flex-direction: column;
-    margin-left: 45vw;
+    margin-left: 60vw;
     margin-top: 8vh;
     margin-right: 20px;
 `
