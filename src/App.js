@@ -16,7 +16,7 @@ import StockPage from './Pages/Stock/StockPage.js';
 import Other from './Pages/Other/Other.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
-import EmptyShop from './Pages/Shop/EmptyShop.js';
+import ShopSelect from './Pages/Shop/ShopSelect.js';
 import Inbox from './Pages/Inbox/inbox'
 import Shopselect from './Pages/Shop/ShopSelect.js';
 import Invite from './Pages/Other/Invite.js';
@@ -40,7 +40,7 @@ function App() {
           <Route exact path="/navBar" element={<NavBar />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/landing" element={<LandingPage />} />
-          <Route exact path='/emptyshop' element={<EmptyShop />} />
+          <Route exact path='/shopselect' element={<ShopSelect />} />
           <Route exact path='/inbox' element={<Inbox />} />
           <Route exact path='/shopselect' element={<Shopselect />} />
           <Route exact path='/invite' element={<Invite />} />
