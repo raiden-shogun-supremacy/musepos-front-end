@@ -121,7 +121,7 @@ const Register = (props) => {
 
     async function createNewEmployee() {
       axios
-      .post('http://localhost:5000/api/user/register', {
+      .post('https://musepos-api.herokuapp.com/api/user/register', {
           name: name,
           username: username,
           password: password
@@ -143,18 +143,13 @@ const Register = (props) => {
             <Form >
                 <Register2>   
                     <InputReg type="text" name='name' placeholder='Name' value={name} onChange={e => setName(e.target.value)} required></InputReg>
-                    {/* <Register1>{formErrors.firstname}</Register1> */}
-                    {/* <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
-                    <Register1>{formErrors.lastname}</Register1>              */}
                 </Register2>                
                 <RegisterForm>
                     <InputReg type="text" name='username' placeholder='Username' value={username} onChange={e => setUsername(e.target.value)} required/>
                 </RegisterForm>
-                {/* <Register1>{formErrors.username}</Register1> */}
                 <RegisterForm>
                     <InputReg type="password" name='password'  placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required/>                
                 </RegisterForm>
-                {/* <Register1>{formErrors.password}</Register1>                           */}
                 <a href='/' onClick={createNewEmployee}><ButtonnReg>Register</ButtonnReg></a>
             </Form>
             <StupidCircletBottom/>           
