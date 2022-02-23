@@ -15,7 +15,7 @@ const HeaderText = styled.h1`
     font-size: 34px;
     line-height: 40px;
     margin-top: 1.5vh;
-    margin-left: 5vw;
+    margin-left: 10vw;
     color: #388E3C;
 `
 
@@ -35,7 +35,7 @@ const Back = styled.p`
     font-size: 14px;
     line-height: 16px;
     margin-top: 3vh;
-    margin-left: 5vw;
+    margin-left: 10vw;
     color: #43A047;
     img {
         width: 10px;
