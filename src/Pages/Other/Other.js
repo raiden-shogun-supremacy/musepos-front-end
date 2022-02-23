@@ -130,17 +130,12 @@ const Section = styled.div`
 const SectionGridHead = styled(Section)`
     display : grid;
     grid-row-gap: 0vh;
-    grid-template-columns: 50vw 20vw 0fr;
+    grid-template-columns: 100fr 1fr 2fr;
     margin-left: 5vw;
     margin-right: 5vW;
 `
 
-const SectionGridEmp = styled(Section)`
-    display : grid;
-    grid-row-gap: 0vh;
-    grid-template-columns: 50vw 20vw 0fr;
-    margin-left: 5vw;
-    margin-right: 5vW;
+const SectionGridEmp = styled(SectionGridHead)`
 `
 
 const SectionInvite = styled.div`
@@ -193,6 +188,11 @@ const StupidCircletTop = styled.div`
     right : -120px;
 `
 
+const Img = styled.img`
+    width: 15px;
+    opacity: 0.3;
+`
+
 const Other = () => {
     const [invitePostOpen, setInvitePostOpen] = useState('');
 
@@ -211,7 +211,7 @@ const Other = () => {
             invitePost = null;
             break
     }
-  return (
+return (
     <Container>
         <Header>
             <StupidCircletTop></StupidCircletTop>
@@ -230,19 +230,19 @@ const Other = () => {
                     <SectionGridEmp>
                         <Text>Steve Rogres</Text>
                         <TextRoleOwner>Owner</TextRoleOwner>
-                        <Text></Text>
+                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
                         <Text>Bruce Banner</Text>
                         <TextRoleMg>Manager</TextRoleMg>
-                        <Text>:</Text>
+                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
                         <Text>Thor Odinson</Text>
                         <TextRoleSeller>Seller</TextRoleSeller>
-                        <Text>:</Text>
+                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
                         <Text>Clint Barton</Text>
                         <TextRoleSeller>Seller</TextRoleSeller>
-                        <Text>:</Text>
+                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
                         <Text>Natasha Romanoff</Text>
                         <TextRoleSeller>Seller</TextRoleSeller>
-                        <Text>:</Text>
+                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
                     </SectionGridEmp>
                 </Border>
                 <BgContainerBottom>
