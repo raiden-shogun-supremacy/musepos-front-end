@@ -2,7 +2,8 @@ import '../style.css';
 import styled from 'styled-components';
 import { CgMenu } from 'react-icons/cg';
 import { IoMail } from "react-icons/io5";
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = styled.div`
 margin-left: 4%;
@@ -82,6 +83,16 @@ const TextHead = styled.div`
 `
 
 function EmptyShop(){
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isThereLocalStorage = localStorage.getItem('userInfo');
+
+    if(isThereLocalStorage){
+        navigate('/shopselect');
+    }
+}, [])
+
     return(
         <Container>
           <StupidCircletTop/>
