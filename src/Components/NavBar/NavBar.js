@@ -20,13 +20,14 @@ const MenuBtn = styled.button`
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 75px;
+    height: 50px;
 `
 const Icon = styled.img`
-    width: 30px;
-    height: 30px;
-    margin-top: 16px;
-    color: #AAAAAA;
+    width: 25px;
+    height: 25px;
+    margin-top: 20px;
+    opacity: 0.3;
+
 `
 
 const Text = styled.p`
