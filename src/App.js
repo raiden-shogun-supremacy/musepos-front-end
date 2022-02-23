@@ -17,7 +17,8 @@ import Other from './Pages/Other/Other.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import ShopSelect from './Pages/Shop/ShopSelect.js';
-import Inbox from './Pages/Inbox/inbox'
+import Inbox from './Pages/Inbox/inbox.js'
+import InviteBox from './Pages/Inbox/InviteBox.js'
 import Shopselect from './Pages/Shop/ShopSelect.js';
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/landing" element={<LandingPage />} />
           <Route exact path='/shopselect' element={<ShopSelect />} />
           <Route exact path='/inbox' element={<Inbox />} />
+          <Route exact path='/invitebox' element={<InviteBox />} />
           <Route exact path='/shopselect' element={<Shopselect />} />
           <Route exact path='/invite' element={<Invite />} />
           <Route exact path='/addstock' element={<AddStock />} />
