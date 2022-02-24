@@ -19,6 +19,7 @@ import ShopSelect from './Pages/Shop/ShopSelect.js';
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
 import RemoveMenu from './Pages/Other/RemoveMenu.js';
+import Inbox from './Pages/Inbox/Inbox.js';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/landing/:id" element={<LandingPage />} />
           <Route exact path='/shop' element={<ShopSelect />} />
           <Route exact path='/invite' element={<Invite />} />
+          <Route exact path='/inbox' element={<Inbox />} />
           <Route exact path='/create-menu' element={<AddStock />} />
           <Route exact path='/remove-menu' element={<RemoveMenu />} />
         </Routes>
