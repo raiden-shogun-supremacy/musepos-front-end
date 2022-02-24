@@ -148,7 +148,7 @@ const SectionInvite = styled.div`
     align-items : center;
 `
 
-const ButtonRemove = styled.button`
+const Button = styled.button`
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -159,9 +159,14 @@ const ButtonRemove = styled.button`
     border: none;
     border-radius: 5px;
     background-color: #f3f3f3;
-    color: #C62828;
+    color: black;
     margin-left: 0%;
     margin-top: 3vh;
+`
+
+const ButtonRemove = styled(Button)`
+    background-color: #f3f3f3;
+    color: #C62828;
 `
 
 const ButtonLogout = styled.button`
@@ -285,6 +290,7 @@ const Other = () => {
                             <Text>+ Invite Employee</Text>
                         </SectionInvite>
                     </BgContainerBottom>
+                    <a href='/shop'><Button>Back to Shop</Button></a>
                     <a href='/removemenu'><ButtonRemove>Remove Menu</ButtonRemove></a>
                 <ButtonLogout onClick={e => logoutHandler(e)}>Log Out</ButtonLogout>
         </Container>
