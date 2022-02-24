@@ -96,6 +96,8 @@ const Icon = styled.img`
     width: 30px;
     margin-top: 10px;
     filter: invert(1);
+    justify-content: center;
+    display: flex;
 `
 
 // const PATH = 'http://localhost:5000';
@@ -155,7 +157,7 @@ function ShopSelect(){
             <Section>
                 <SectionCol>
                     <Head1>Shop</Head1>
-                    <a href='/inbox'><Icon src='https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-58-512.png' /></a>
+                    <a href='/inbox'><Icon src='https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_email-256.png' /></a>
                     <Icon src='https://cdn2.iconfinder.com/data/icons/user-interface-essential-solid/32/Artboard_6-512.png?fbclid=IwAR1FSODimUM23ji-nCg9v1uh1wi0Rr_b4TDeqzl9CsUyus1RTO4is2mdD5k' onClick={stackClicked} />
                     {dropdown_show}
                 </SectionCol>

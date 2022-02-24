@@ -16,6 +16,7 @@ const Description = styled.p`
     line-height: 16px;
     margin-top : 0px;
     color: #000000;
+    overflow-x: scroll;
 `
 
 const NameMenu = styled.p`
@@ -149,16 +150,16 @@ const Section = styled.div`
 
 const SectionCol = styled(Section)`
     display : grid;
-    grid-column-gap: 5vw;
+    grid-column-gap: 1vw;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 3vh;
 `
 
 const SectionColDes = styled(Section)`
     display : grid;
-    grid-column-gap: 1vw;
     margin-left: 0px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 10vw 20vw;
+    width: 20vw;
 `
 
 const SectionRow = styled(Section)`
