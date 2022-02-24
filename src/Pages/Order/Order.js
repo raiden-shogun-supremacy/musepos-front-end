@@ -34,6 +34,7 @@ const Description = styled.p`
 const Content = styled.div`
     display : flex;
     flex-direction : column;
+    overflow: scroll;
 `
 
 const Border = styled.div`

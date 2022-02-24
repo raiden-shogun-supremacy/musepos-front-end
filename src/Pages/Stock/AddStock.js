@@ -189,13 +189,8 @@ const AddStock = ({ onBackClick, data }) => {
                             <SectionGrid>
                                 <Text>Name</Text>
                                 <Form><input type="text" placeholder='Menu Name' /></Form>
-                                <Text>Category</Text>
-                                <Select>
-                                    <option>-Catagory-</option>
-                                    <option>Beverage/Drink</option>
-                                    <option>Dessert</option>
-                                    <option>Food</option>
-                                </Select>
+                                <Text>Price</Text>
+                                <Form><input type="number" placeholder='Price' /></Form>
                             </SectionGrid>
                         </Section>
                         <Section>

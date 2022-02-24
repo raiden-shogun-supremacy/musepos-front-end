@@ -42,14 +42,17 @@ const TextRole = styled.p`
 `
 
 const BgContainer = styled.div`
+    flex-direction: column;
     background-color: #FFFFFF;
     width: inherit;
     height: initial;
     padding: 10px;
     display: flex;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #F3F3F3;
+    box-sizing: border-box;
     border-radius: 10px;
-    flex-direction: column;
+    overflow: scroll;
 `
 
 const Section = styled.div`

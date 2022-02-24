@@ -48,6 +48,7 @@ const BgContainer = styled.div`
     border: 2px solid #F3F3F3;
     box-sizing: border-box;
     border-radius: 10px;
+    overflow: scroll;
 `
 
 const Section = styled.div`

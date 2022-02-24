@@ -76,7 +76,7 @@ const ButtonM = styled.button`
     font-weight: normal;
     font-size: 17px;
     line-height: 20px;
-    width: 30vw;
+    width: 15vw;
     height: 2.6em;
     bottom: 20%;
     border: none;
@@ -150,7 +150,8 @@ const Section = styled.div`
 const SectionCol = styled(Section)`
     display : grid;
     grid-column-gap: 5vw;
-    grid-template-columns: 30vw 30vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 3vh;
 `
 
 const SectionColDes = styled(Section)`
@@ -174,6 +175,9 @@ function StockProductPost({ detail, onBackClick }) {
     }
     function incrementCount() {
         setCount(prevCount => prevCount+1)
+    }
+    function buttonSubmitClicked(){
+        console.log('clicked')
     }
 
     return(
@@ -203,9 +207,13 @@ function StockProductPost({ detail, onBackClick }) {
                             <Section>
                                 <SectionCol>
                                     <ButtonM onClick={decrementCount}>-</ButtonM>
-                                    <ButtonP onClick={incrementCount}>+</ButtonP>
+                                <center>
+                                        <ButtonP onClick={buttonSubmitClicked}>Submit</ButtonP>
+                                </center>
+                                    <ButtonM onClick={incrementCount}>+</ButtonM>
                                 </SectionCol>
                             </Section>
+
                         </Content>
                     </BgContainer>
                 </Background>
