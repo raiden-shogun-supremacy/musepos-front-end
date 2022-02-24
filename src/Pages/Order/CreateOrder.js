@@ -86,6 +86,10 @@ const Text = styled.p`
 const Content = styled.div`
     display : flex;
     flex-direction : column;
+
+    a {
+        text-decoration: none;
+    }
 `
 
 

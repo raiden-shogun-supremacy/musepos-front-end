@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
-import order_entity from './order_entity';
 
 import CreateOrder from './CreateOrder';
 import OrderList from './OrderList';
@@ -69,9 +69,13 @@ const Button = styled.button`
     text-decoration: none;
 `
 
-const Order  = ({ onBgClick }) => {
+// const PATH = 'http://localhost:5000';
+const PATH = 'https://musepos-api.herokuapp.com';
 
-    const [ newOrderPostOpen, setNewOrderPostOpen ] = useState('')
+const Order = ({ data }) => {
+
+    const [ newOrderPostOpen, setNewOrderPostOpen ] = useState('');
+    const [ order, setOrder ] = useState([]);
 
     function onNewOrderClick(x) {
         setNewOrderPostOpen(x)
@@ -87,20 +91,45 @@ const Order  = ({ onBgClick }) => {
             break;
     }
 
-  return (
-    <Container>
-        <Header>
-            <HeaderText>Order</HeaderText>
-            <Description>Check who going to sit in your resturant</Description>
-        </Header>
-        <Content>
-            <Button onClick={()=>onNewOrderClick('open')}>Create Order</Button>
-            <OrderList data={order_entity}/>
-            {/* <Border>No customer sit in your resturant yet...</Border> */}
-        {newOrderPost}
-        </Content>
-    </Container>
-  );
+    useEffect(() => {
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userInfo}`,
+            }
+        }
+
+        axios.get(
+            PATH + `/api/order/${data.id}`, config
+        ).then((res) => {
+            // debugger
+            // console.log(res.data);
+
+            setOrder(res.data);
+        })
+        .catch((err) => console.log(err.message));
+    },[]);
+
+    const order_list = order.map(data => {
+        return <OrderList data={data}/>;
+    });
+
+    return (
+        <Container>
+            <Header>
+                <HeaderText>Order</HeaderText>
+                <Description>Check your resturant's orders.</Description>
+            </Header>
+            <Content>
+                <Button onClick={()=>onNewOrderClick('open')}>Create Order</Button>
+                {order_list}
+                {newOrderPost}
+            </Content>
+        </Container>
+    );
 };
 
 export default Order;

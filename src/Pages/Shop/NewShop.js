@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -16,6 +18,12 @@ const Container2 = styled.div`
     align-items: center;
     margin : 0px 10px 20px 10px;
     padding : 10px;
+
+    .start-btn {
+        border-color: #FFFFFF;
+        width: 85vw;
+        margin-top: 5vh;
+    }
 `
 
 const Head1 = styled.h1`
@@ -98,13 +106,39 @@ const Form = styled.form`
     }
 `
 
-const Button = styled.button`
-    border-color: #FFFFFF;
-    width: 85vw;
-    margin-top: 5vh;
-`
+// const PATH = 'http://localhost:5000';
+const PATH = 'https://musepos-api.herokuapp.com';
 
 function NewShop(){
+
+    const [shopName, setShopName] = useState('');
+
+    const navigate = useNavigate();
+
+    function submitHandler(e){
+        e.preventDefault();
+
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${userInfo}`
+            }
+        }
+
+        axios.post(
+            PATH + '/api/shop/create-shop',
+            {
+                "shopName": shopName
+            }
+            , config
+        )
+
+        navigate('/shop');
+    }
+
     return(
         <Container>
         <a href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
@@ -112,10 +146,12 @@ function NewShop(){
             <Head1>New Shop</Head1> 
             <Detail1>Welcome new owner.</Detail1>  
             <Detail2>Let's tell us something about your new business.</Detail2>
-            <Form><input type="text" placeholder='Shop name' /></Form>
-            <Form><input type="text" placeholder='Type' /></Form>
+            <Form>
+                <input type="text" placeholder='Shop name' value={shopName} onChange={e => setShopName(e.target.value)}/>
+            </Form>
+            {/* <Form><input type="text" placeholder='Type' /></Form> */}
             <Container2>
-              <Button>Start</Button>
+              <button className='start-btn' onClick={e => submitHandler(e)}>Start!</button>
             </Container2>
             
         <StupidCircletBottom/>           
@@ -123,4 +159,4 @@ function NewShop(){
   );
 }
 
-export default NewShop
+export default NewShop;

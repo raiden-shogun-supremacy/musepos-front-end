@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+
 import Invite from './Invite';
 import ChangeRole from './ChangeRole.js';
 import dummyEmp from '../../dummy/dummyEmp.json' ;
@@ -199,6 +201,8 @@ const Other = () => {
     const [invitePostOpen, setInvitePostOpen] = useState('');
     const [changeRoleOpen, setChangeRoleOpen] = useState('');
 
+    const navigate = useNavigate();
+
     let invitePost = null;
     let changeRole = null;
     function inviteClickedOpen(){
@@ -213,6 +217,21 @@ const Other = () => {
     function changeRoleClickedClose(){
         setChangeRoleOpen('off')
     }
+
+    function logoutHandler(e){
+        e.preventDefault();
+
+        localStorage.removeItem('museUser');
+        navigate('/');
+    }
+
+
+    useEffect(() => {
+        if(!localStorage.getItem('museUser')){
+            navigate('/');
+        }
+    },[]);
+
     switch(invitePostOpen){
         case 'on':
             invitePost = <Invite onBackClick={inviteClickedClose} />
@@ -229,6 +248,7 @@ const Other = () => {
             changeRole = null;
             break
     }
+
     const emp_list = dummyEmp.map((data)=>{
         return(
             <>
@@ -237,52 +257,38 @@ const Other = () => {
                 <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" onClick={() =>changeRoleClickedOpen} />
             </>
         )
-        });
-return (
-    <Container>
-        <Header>
-            <StupidCircletTop></StupidCircletTop>
-            <HeaderText>Others</HeaderText>
-            <Description>What to need today?</Description>
-        </Header>
-        {invitePost}
-        {changeRole}
-            <Setting>Settings</Setting>
-                <BgContainerTop>
-                    <SectionGridHead>
-                        <TextHead>Employees</TextHead>
-                        <TextHead>Role</TextHead>
-                    </SectionGridHead>
-                </BgContainerTop>
-                <Border>
-                    <SectionGridEmp>
-                        { emp_list }
-                        {/* <Text>Steve Rogres</Text>
-                        <TextRoleOwner>Owner</TextRoleOwner>
-                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
-                        <Text>Bruce Banner</Text>
-                        <TextRoleMg>Manager</TextRoleMg>
-                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
-                        <Text>Thor Odinson</Text>
-                        <TextRoleSeller>Seller</TextRoleSeller>
-                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
-                        <Text>Clint Barton</Text>
-                        <TextRoleSeller>Seller</TextRoleSeller>
-                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
-                        <Text>Natasha Romanoff</Text>
-                        <TextRoleSeller>Seller</TextRoleSeller>
-                        <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" /> */}
-                    </SectionGridEmp>
-                </Border>
-                <BgContainerBottom>
-                    <SectionInvite onClick={inviteClickedOpen}>
-                        <Text>+ Invite Employee</Text>
-                    </SectionInvite>
-                </BgContainerBottom>
-                <a href='/removemenu'><ButtonRemove>Remove Menu</ButtonRemove></a>
-            <a href='/'><ButtonLogout>Log Out</ButtonLogout></a>
-    </Container>
-  );
+    });
+
+    return (
+        <Container>
+            <Header>
+                <StupidCircletTop></StupidCircletTop>
+                <HeaderText>Others</HeaderText>
+                <Description>What to need today?</Description>
+            </Header>
+            {invitePost}
+            {changeRole}
+                <Setting>Settings</Setting>
+                    <BgContainerTop>
+                        <SectionGridHead>
+                            <TextHead>Employees</TextHead>
+                            <TextHead>Role</TextHead>
+                        </SectionGridHead>
+                    </BgContainerTop>
+                    <Border>
+                        <SectionGridEmp>
+                            { emp_list }
+                        </SectionGridEmp>
+                    </Border>
+                    <BgContainerBottom>
+                        <SectionInvite onClick={inviteClickedOpen}>
+                            <Text>+ Invite Employee</Text>
+                        </SectionInvite>
+                    </BgContainerBottom>
+                    <a href='/removemenu'><ButtonRemove>Remove Menu</ButtonRemove></a>
+                <ButtonLogout onClick={e => logoutHandler(e)}>Log Out</ButtonLogout>
+        </Container>
+    );
 };
 
 export default Other;

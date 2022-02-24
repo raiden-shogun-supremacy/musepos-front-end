@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Container = styled.div`
     margin : 0px;
@@ -26,6 +28,26 @@ const BgContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column; 
+
+    .input-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2vh;
+        input{
+            width: 90vw;
+            height: 3.5em;
+            margin: 5px;
+        }
+    }
+
+    .submit-button{
+        border: 20px;
+        border-color: #FFFFFF;
+        width: 90vw;
+        margin-top: 5vh;
+    }
     
 `
 
@@ -60,30 +82,60 @@ const TextReg = styled.p`
     margin-bottom: 5vh;
 `
 
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2vh;
-    input{
-        width: 90vw;
-        height: 3.5em;
-    }
-`
-
-const Button = styled.button`
-    border: 20px;
-    border-color: #FFFFFF;
-    width: 90vw;
-    margin-top: 5vh;
-`
-
 const Registerlink = styled.a`
     color: #338e3c ;
 `
 
+// const PATH = 'http://localhost:5000';
+const PATH = 'https://musepos-api.herokuapp.com';
+
 function Login() {
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
+
+    function submitHandler(e){
+        e.preventDefault();
+
+        const config = {
+            header : {
+                // "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+                "Content-Type": "application/json"
+            }
+        };
+
+        axios.post(
+            PATH + '/api/user/login', {
+                "username" : username,
+                "password" : password
+            }, config
+        ).then((res) => {
+
+            // debugger
+            // console.log(res.data);
+
+            if(res.data.token){
+                localStorage.setItem('museUser', JSON.stringify(res.data.token));
+            }
+
+            navigate('/shop');
+        }
+        ).catch(err => {
+            console.log(err.message);
+        });
+        
+    }
+
+    useEffect(() => {
+        const isThereLocalStorage = localStorage.getItem('museUser');
+
+        if(isThereLocalStorage){
+            navigate('/shop');
+        }
+    },[]);
+
     return(
         <Container>
             <ImgBg src='assets/img/cafe.jpg'></ImgBg>
@@ -91,10 +143,12 @@ function Login() {
                     <BgContainer>
                         <ImgLogo src='assets/logo/logo.png'></ImgLogo>
                         <Text>Make your resturant easier</Text>
-                        <Form><input type="text" placeholder='Username' /></Form>
-                        <Form><input type="text" placeholder='Password' /></Form>
-                        <Button>Login</Button>
-                        <TextReg>Or no have User ID? <Registerlink href="/Register">Register </Registerlink>new one!</TextReg>
+                        <form className="input-form">
+                            <input type="text" placeholder='Username' value={username} onChange={event => setUsername(event.target.value)} />
+                            <input type="password" placeholder='Password' value={password} onChange={event => setPassword(event.target.value)} />
+                        </form>
+                        <button className="submit-button" onClick={ e => submitHandler(e) }>Login</button>
+                        <TextReg>Or no have User ID? <Registerlink href="/register">Register </Registerlink>new one!</TextReg>
                     </BgContainer>
                 </Post>
         </Container>

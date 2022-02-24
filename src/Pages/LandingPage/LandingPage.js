@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar.js'
 import Dashboard from '../Dashboard/Dashboard.js'
 import Order from '../Order/Order.js';
@@ -8,24 +9,26 @@ import StockPage from '../Stock/StockPage.js'
 
 function LandingPage() {
     //set useState
-    const [pageIndex, setPageIndex ] = useState('');
+    const [pageIndex, setPageIndex] = useState('');
+
+    const id = useParams();
 
     //set firstPage
-    let render_sideview = <Order />
+    let render_sideview = <Order data={id}/>
 
     //set change page function by using switch
     switch(pageIndex) {
         case 'Dashboard':
-            render_sideview = <Dashboard />
+            render_sideview = <Dashboard data={id}/>
             break;
         case 'Order':
-            render_sideview = <Order />
+            render_sideview = <Order data={id}/>
             break;
         case 'Stock':
-            render_sideview = <StockPage />
+            render_sideview = <StockPage data={id}/>
             break;
         case 'Others':
-            render_sideview = <Other />
+            render_sideview = <Other data={id}/>
             break;
     }
 

@@ -5,12 +5,10 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login/Login.js';
 import Register from './Pages/Register/Register.js';
 import Order from './Pages/Order/Order.js'
-import OrderList from './Pages/Order/OrderList.js'
 import Payment from './Pages/Order/Payment/Payment.js'
 import ConfirmOrder from './Pages/Order/ConfirmOrder/ConfirmOrder.js'
 import CreateOrder from './Pages/Order/CreateOrder.js'
 import AddMenu from './Pages/Order/AddMenu.js'
-import NavBar from './Components/NavBar/NavBar.js'
 import NewShop from './Pages/Shop/NewShop.js';
 import StockPage from './Pages/Stock/StockPage.js';
 import Other from './Pages/Other/Other.js';
@@ -18,13 +16,9 @@ import ChangeRole from './Pages/Other/ChangeRole.js';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import ShopSelect from './Pages/Shop/ShopSelect.js';
-import ShopMenu from './Pages/Shop/ShopMenu.js';
-import Inbox from './Pages/Inbox/Inbox.js'
-import InviteBox from './Pages/Inbox/InviteBox.js'
 import Invite from './Pages/Other/Invite.js';
 import AddStock from './Pages/Stock/AddStock.js';
 import RemoveMenu from './Pages/Other/RemoveMenu.js';
-import ShopList from './Pages/Shop/ShopList.js';
 
 function App() {
   return (
@@ -33,26 +27,20 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/order" element={<Order />} />
-          <Route exact path="/orderlist" element={<OrderList />} />
           <Route exact path="/payment" element={<Payment />} />
-          <Route exact path="/confirmorder" element={<ConfirmOrder />} />
-          <Route exact path="/createorder" element={<CreateOrder />} />
-          <Route exact path="/addmenu" element={<AddMenu />} />
+          <Route exact path="/confirm-order" element={<ConfirmOrder />} />
+          <Route exact path="/create-order" element={<CreateOrder />} />
+          <Route exact path="/select-menu" element={<AddMenu />} />
           <Route exact path="/stock" element={<StockPage />} />
-          <Route exact path="/newshop" element={<NewShop />} />
+          <Route exact path="/create-shop" element={<NewShop />} />
           <Route exact path="/other" element={<Other />} />
-          <Route exact path="/changerole" element={<ChangeRole />} />
-          <Route exact path="/navBar" element={<NavBar />} />
+          <Route exact path="/change-role" element={<ChangeRole />} />
           <Route exact path="/register" element={<Register />} />
-          <Route exact path="/landing" element={<LandingPage />} />
-          <Route exact path='/shopselect' element={<ShopSelect />} />
-          <Route exact path='/inbox' element={<Inbox />} />
-          <Route exact path='/invitebox' element={<InviteBox />} />
-          <Route exact path='/shopmenu' element={<ShopMenu />} />
+          <Route exact path="/landing/:id" element={<LandingPage />} />
+          <Route exact path='/shop' element={<ShopSelect />} />
           <Route exact path='/invite' element={<Invite />} />
-          <Route exact path='/addstock' element={<AddStock />} />
-          <Route exact path='/removemenu' element={<RemoveMenu />} />
-          <Route exact path='/shoplist' element={<ShopList />} />
+          <Route exact path='/create-menu' element={<AddStock />} />
+          <Route exact path='/remove-menu' element={<RemoveMenu />} />
         </Routes>
       </BrowserRouter>    
   );

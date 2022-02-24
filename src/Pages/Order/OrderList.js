@@ -105,9 +105,9 @@ const OrderList = ({ onBackClick, data }) => {
                       <Section>
                           <SectionCol>
                               <SectionRow>
-                                  <HeaderText>{probs.orderID}</HeaderText>
+                                  <HeaderText>{data._id}</HeaderText>
                                   <TextMenu>{orderMenuList}</TextMenu>
-                                  <TextTotal>Total: {probs.totalPay} Bath</TextTotal>
+                                  <TextTotal>Total: {data.totalPay} Bath</TextTotal>
                               </SectionRow>
                               <Img src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png" />
                           </SectionCol>

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -44,6 +45,10 @@ const Section = styled.div`
 const SectionRow = styled(Section)`
     display : grid;
     grid-template-rows: 1fr;
+
+    a {
+        text-decoration: none;
+    }
 `
 
 const Post = styled.div`
@@ -69,7 +74,25 @@ const Background = styled.div`
     overflow : scroll;
 `
 
-const ShopMenu = ({ onBgClick, data }) => {
+
+const ShopMenu = ({ onBgClick }) => {
+
+    const navigate = useNavigate();
+
+    function logoutHandler(e){
+        e.preventDefault();
+
+        localStorage.removeItem('museUser');
+        navigate('/');
+    }
+
+
+    useEffect(() => {
+        if(!localStorage.getItem('museUser')){
+            navigate('/');
+        }
+    },[]);
+
     return (
         <Container>
             <Post >
@@ -77,8 +100,8 @@ const ShopMenu = ({ onBgClick, data }) => {
                     <BgContainer>
                         <Section>
                             <SectionRow>
-                                <a href='/newshop'><Text>Create New Shop</Text></a>
-                                <a href='/'><TextRed>Log out</TextRed></a>
+                                <a href='/create-shop' ><Text>Create New Shop</Text></a>
+                                <TextRed onClick={e => logoutHandler(e) }>Log out</TextRed>
                             </SectionRow>
                         </Section>
                     </BgContainer>

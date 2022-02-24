@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -63,13 +64,16 @@ const SectionRow = styled(Section)`
 `
 
 const ShopList = ({ onBackClick, data }) => {
+
+    const navigate = useNavigate();
+    
     return (
-        <Container>
+        <Container onClick={() => navigate(`/landing/${data._id}`)}>
             <BgContainer>
                 <Section>
                     <SectionRow>
-                        <HeaderText>FERRAREE</HeaderText>
-                        <Text>Shop</Text>
+                        <HeaderText>{data.shopName}</HeaderText>
+                        {/* <Text>{data}</Text> */}
                         <TextRole>As : Employee</TextRole>
                     </SectionRow>
                 </Section>      
