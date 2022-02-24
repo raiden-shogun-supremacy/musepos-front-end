@@ -7,18 +7,17 @@ import { useNavigate } from 'react-router-dom';
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin-top: auto;
-  margin-bottom: 80px;
-  gap: 16px;
   align-items: center;
+  margin-top: 2vh;
+  gap: 1vh;
   input {
-    width: 80vw;
-    margin-left: 16px;
-    margin-right: 16px;
+    width: 85vw;
     height: 3.5em;
+    margin-bottom: 2vh;
   }
-  p{
-    justify-content: start;
+  p {
+    margin-top: -2vh;
+    margin-bottom: 3vh;
   }
 `;
 const Container = styled.div`
@@ -66,28 +65,16 @@ const Cancel = styled.p`
     width: 10px;
     filter: contrast(-100);
   }
+  
 `;
-const RegisterForm = styled.div`
-  width: 100%;
+const A = styled.a`
+  text-decoration: none;
 `;
+
 const ButtonnReg = styled.button`
   border: 20px;
   border-color: #ffffff;
   width: 85vw;
-`;
-
-const Register2 = styled.div`
-  display: grid;
-  flex-direction: row;
-  gap: 16px;
-  width: 100%;
-`;
-const InputReg = styled.input``;
-
-const Register1 = styled.div`
-  color: red;
-  width: 100%;
-  margin-left: 16px;
 `;
 
 const StupidCircletTop = styled.div`
@@ -117,8 +104,7 @@ const RegisterError = styled.p`
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
-  margin-left: 16px;
-  margin-top: 1vh;
+  margin-top: 0px;
   font-family: Roboto;
 `
   
@@ -161,24 +147,18 @@ const Register = (props) => {
 
       return (
         <Container>
-            <a href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
+            <A href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></A>
             <StupidCircletTop/>
                 <Head1>Register</Head1> 
                 <Detail1>Let's earn money together!</Detail1>  
                 <Detail2>Can we know you?</Detail2>     
             <Form >
-                <RegisterForm>   
-                    <InputReg type="text" name='name' placeholder='Name' value={name} onChange={e => setName(e.target.value)} required></InputReg>
-                    {nameRequired}
-                </RegisterForm>                
-                <RegisterForm>
-                    <InputReg type="text" name='username' placeholder='Username' value={username} onChange={e => setUsername(e.target.value)} required/>
-                    {usernameRequired}
-                </RegisterForm>
-                <RegisterForm>
-                    <InputReg type="password" name='password'  placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required/>
-                    {passwordRequired}                
-                </RegisterForm>
+                <input type="text" name='name' placeholder='Name' value={name} onChange={e => setName(e.target.value)} required></input>
+                {nameRequired}
+                <input type="text" name='username' placeholder='Username' value={username} onChange={e => setUsername(e.target.value)} required/>
+                {usernameRequired}
+                <input type="password" name='password'  placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required/>
+                {passwordRequired}                
                 <a href='/' onClick={createNewEmployee}><ButtonnReg>Register</ButtonnReg></a>
             </Form>
             <StupidCircletBottom/>           

@@ -66,11 +66,14 @@ const EmpInvite = styled.div`
     color: #AAAAAA;
 `
 
+const A = styled.a`
+    text-decoration: none;
+`
 
 function  Inbox(){
     return(
         <Container>
-        <a href="/shop"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/> Back</Cancel></a>
+        <A href="/shop"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/> Back</Cancel></A>
         <Head1>Inbox</Head1> 
         <Detail1>Have you got some invite today?</Detail1>
         <EmptyText>
