@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
+import axios from 'axios';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -171,6 +172,9 @@ const SectionGrid = styled(Section)`
 `
 
 
+// const PATH = 'http://localhost:5000';
+const PATH = 'https://musepos-api.herokuapp.com';
+
 const AddStock = ({ onBackClick, data }) => {
 
     const [item, setItem] = useState({
@@ -183,10 +187,28 @@ const AddStock = ({ onBackClick, data }) => {
         stockStatus: "Available"
     });
 
-    function addMenuClicked(){
-        console.log('Add this menu')
-    }
+    function addMenuClicked(e){
+        e.preventDefault();
 
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${userInfo}`,
+                "Access-Control-Allow-Origin": "*"
+            }
+        }
+
+        axios.post(
+            PATH + '/api/menu/add-menu', item, config
+        )
+        
+        onBackClick();
+    }
+    // console.log(item)
   return (
     <Container>
         <Post>
@@ -202,18 +224,24 @@ const AddStock = ({ onBackClick, data }) => {
                         <Section>
                             <SectionGrid>
                                 <Text>Name</Text>
-                                <Form><input type="text" placeholder='Menu Name' /></Form>
+                                <Form>
+                                    <input type="text" placeholder='Menu Name' value={item.menuName} onChange={e => setItem({...item, menuName: e.target.value})}/>
+                                </Form>
                                 <Text>Category</Text>
-                                <Select>
-                                    <option>-Catagory-</option>
+                                <Select onChange={e => setItem({...item, menuCategory: e.target.value})}>
+                                    <option>- Choose Category-</option>
                                     <option value='drinks'>Beverage/Drink</option>
                                     <option value='dessert'>Dessert</option>
                                     <option value='food'>Food</option>
                                 </Select>
+                                <Text>Unit Price</Text>
+                                <Form>
+                                    <input type="number" placeholder='Unit Price' value={item.priceUnit} onChange={e => setItem({...item, priceUnit: e.target.value})}/>
+                                </Form>
                             </SectionGrid>
                         </Section>
                         <Section>
-                            <Button onClick={addMenuClicked}>Add new!</Button>
+                            <Button onClick={e => addMenuClicked(e)}>Add new!</Button>
                         </Section>
                     </Content>
                 </BgContainer>

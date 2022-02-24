@@ -84,8 +84,8 @@ const StupidCircle = styled.div`
     right : -120px;
 `
 
-const PATH = 'http://localhost:5000';
-// const PATH = 'https://musepos-api.herokuapp.com';
+// const PATH = 'http://localhost:5000';
+const PATH = 'https://musepos-api.herokuapp.com';
 
 const StockPage = ({ data }) => {
 
