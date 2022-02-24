@@ -35,6 +35,7 @@ const Content = styled.div`
     display : flex;
     flex-direction : column;
     overflow: scroll;
+    margin-bottom: 50px;
 `
 
 const Border = styled.div`
@@ -85,7 +86,7 @@ const Order = ({ data }) => {
     let newOrderPost = null
     switch(newOrderPostOpen) {
         case 'open':
-            newOrderPost = <CreateOrder onBackClick={()=> onNewOrderClick('closed')} />
+            newOrderPost = <CreateOrder onBackClick={()=> onNewOrderClick('closed')} data={data} />
             break;
         case 'closed':
             newOrderPost = null
@@ -112,7 +113,7 @@ const Order = ({ data }) => {
             setOrder(res.data);
         })
         .catch((err) => console.log(err.message));
-    },[]);
+    });
 
     const order_list = order.map(data => {
         return <OrderList data={data}/>;

@@ -23,13 +23,13 @@ const Text = styled.p`
     color: #111111;
 `
 
-const PaymentList = ({data}) => {
+const PaymentList = ({ data }) => {
     return(
         <Section>
             <SectionGridMenu>
-                <Text>{data.Name}</Text>
-                <Text>1</Text>
-                <Text>{data.Price} THB</Text>
+                <Text>{data.menuName}</Text>
+                <Text>{data.orderAmount}</Text>
+                <Text>{data.priceUnit} THB</Text>
             </SectionGridMenu>
         </Section>
     )

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+
 import order_entity from './order_entity';
 
 const Container = styled.div`
@@ -158,6 +160,10 @@ const Section = styled.div`
     justify-content : space-between;
     align-items : center;
     margin : 0px 5vw;
+
+    select {
+        width: 100%;
+    }
 `
 
 const SectionGrid = styled(Section)`
@@ -172,7 +178,34 @@ const ToAddMEnu = styled.a`
     }
 `
 
-const CreateOrder = ({ onBackClick }) => {
+// const PATH = 'http://localhost:5000';
+const PATH = 'https://musepos-api.herokuapp.com';
+
+const CreateOrder = ({ onBackClick, data }) => {
+
+    const [item, setItem] = useState({
+        amtPeople: null,
+        typeOfAct: '',
+        orderStatus: 'unpaid',
+        parentShop: data.id,
+    });
+
+    const navigate = useNavigate();
+
+    function handlerSubmit(e){
+
+        e.preventDefault();
+
+        order_entity['amtPeople'] = item.amtPeople;
+        order_entity['typeOfAct'] = item.typeOfAct;
+        order_entity['orderStatus'] = item.orderStatus;
+        order_entity['parentShop'] = item.parentShop;
+
+        console.log(order_entity);
+        
+        navigate(`/select-menu/${data.id}`);
+    }
+
   return (
     <Container>
         <Post>
@@ -184,18 +217,19 @@ const CreateOrder = ({ onBackClick }) => {
                         <Description>Please tell us about your customer</Description>
                         <Description2>How many people are they?</Description2>
                         <Form>
-                            <input type="number" placeholder='Number of customer' />
+                            <input type="number" placeholder='Number of customer' value={item.amtPeople} onChange={e => setItem({...item, amtPeople: e.target.value})}/>
                         </Form>
                         <Description2>Are They?</Description2>
                         <Section>
-                            <SectionGrid>
-                                <input type="radio" id="1" name="style" value="Sit in"/>
-                                <Text for="1">Sit in</Text>
-                                <input type="radio" id="2" name="style" value="Take away"/>
-                                <Text for="2">Take away</Text>
-                            </SectionGrid>
+                            {/* <SectionGrid> */}
+                            <select onChange={e => setItem({...item, typeOfAct: e.target.value})}>
+                                <option>- Choose Actions-</option>
+                                <option value='sit-in'>Sit-in</option>
+                                <option value='takeaway'>Takeaway</option>
+                            </select>
+                            {/* </SectionGrid> */}
                         </Section>
-                        <a href='/AddMenu'><Button>New Order</Button></a>
+                        <Button onClick={e => handlerSubmit(e)}>New Order</Button>
                         {/* </Form> */}
                     </Content>
                 </BgContainer>

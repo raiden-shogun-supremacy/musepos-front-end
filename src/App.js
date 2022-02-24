@@ -30,7 +30,7 @@ function App() {
           <Route exact path="/payment" element={<Payment />} />
           <Route exact path="/confirm-order" element={<ConfirmOrder />} />
           <Route exact path="/create-order" element={<CreateOrder />} />
-          <Route exact path="/select-menu" element={<AddMenu />} />
+          <Route exact path="/select-menu/:id" element={<AddMenu />} />
           <Route exact path="/stock" element={<StockPage />} />
           <Route exact path="/create-shop" element={<NewShop />} />
           <Route exact path="/other" element={<Other />} />

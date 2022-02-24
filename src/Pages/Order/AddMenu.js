@@ -1,4 +1,6 @@
-import React, { useState, createContext } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 
 // import data
@@ -13,7 +15,11 @@ const Container = styled.div`
     padding : 10px;
 `
 
-const Header = styled.div``
+const Header = styled.div`
+    a {
+        text-decoration: none;
+    }
+`
 
 const HeaderText = styled.h1`
     font-family: Roboto;
@@ -89,21 +95,80 @@ const Cancel = styled.p`
         filter: contrast(-100);
     }
 `
+
+const PATH = 'http://localhost:5000';
+// const PATH = 'https://musepos-api.herokuapp.com';
+
 const AddMenu = () => {
     //stages
-    const [paymentPost, setPaymentPost] = useState('')
+    const [paymentPost, setPaymentPost] = useState('');
+    const [optionFilter, setOptionFilter] = useState('');
+    const [menus, setMenus] = useState([]);
+
+    const data = useParams();
+    const navigate = useNavigate();
+
+    // fetching data
+    useEffect(() => {
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userInfo}`,
+            }
+        }
+
+        axios.get(
+            PATH + `/api/menu/${data.id}`, config
+        ).then((res) => {
+            // debugger
+            // console.log(res.data);
+
+            setMenus(res.data);
+        })
+        .catch((err) => console.log(err.message));
+    },[]);
+
     //map function
-    const menu_display = dummy.map((data) => {
+    const menu_display = menus.map((data) => {
         return <MenuCard data={data} onMenuCardClick={()=> menuSelected(data)} />
     });
+
+
     let payment_post = null;
-    const menuSelected = (data) => {
-        order_entity.orderList.push(data)
-        console.log(order_entity)
+    function menuSelected(data) {
+        order_entity.orderList.push({
+            menuName: data.menuName,
+            menuID: data._id,
+            orderAmount: 1,
+            priceUnit: data.priceUnit
+        });
+        
+        // debugger
+        console.log(order_entity);
     };
+
+    function cancelHandler(e){
+        e.preventDefault();
+
+        order_entity = {
+            orderList: [],
+            totalPay: 0,
+            peopleAmt: 0,
+            typeOfAct: '',
+            orderStatus: 'unpaid',
+            orderID:'',
+        };
+
+        navigate(`/landing/${data.id}`);
+    }
+
     function postOpened(x) {
-        setPaymentPost(x)
-     };
+        setPaymentPost(x);
+    };
+
     switch(paymentPost){
         case 'on':
             payment_post = <Payment onBackClicked={() =>postOpened('off')} />
@@ -112,20 +177,25 @@ const AddMenu = () => {
             payment_post = null
             break
     };
+
+
   return (
     <Container>
         <Header>
-        <a href="/landing"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
+        <Cancel>
+            <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>
+            <span onClick={(e) => cancelHandler(e)}>Cancel</span>
+        </Cancel>
             <HeaderText>Add Menu</HeaderText>
             <Description>Which one your customer wants to order?</Description>
         </Header>
         <Content>
             <Section>
-                <select>
+                <select onChange={(e)=> setOptionFilter(e.target.value)}>
                     <option>- Choose you category -</option>
-                    <option>Beverage/Drink</option>
-                    <option>Dessert</option>
-                    <option>Food</option>
+                    <option value='drinks'>Beverage/Drink</option>
+                    <option value='dessert'>Dessert</option>
+                    <option value='food'>Food</option>
                 </select>
             </Section>
             <SectionGrid>

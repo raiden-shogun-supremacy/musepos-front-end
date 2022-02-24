@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
+
 import PaymentList from './PaymentList';
 import order_entity from '../order_entity';
-import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
@@ -179,26 +181,71 @@ const Border = styled.div`
     box-sizing: border-box;
 `
 
-const Payment = ({onBackClicked}) => {
-    const probs = order_entity.orderList;
+const PATH = 'http://localhost:5000';
+// const PATH = 'https://musepos-api.herokuapp.com';
+
+const Payment = ({ onBackClicked }) => {
+    const order_summary = order_entity.orderList;
+
+    const navigate = useNavigate();
+    const id = useParams();
+
+    console.log(id.id);
+
+    // accumulate total price
     let total = [];
-    for (var i = 0; i < probs.length; i++) {
-        total.push(probs[i].Price);
+    for (var i = 0; i < order_summary.length; i++) {
+        total.push(order_summary[i].priceUnit);
     }
-    const total_price = (x) => {
+
+    function total_price(x){
         var sum = 0
         for (var i=0; i< x.length; i++){
             sum += total[i]
         }
         return sum;
     }
-    const total_cost = total_price(total)
-    const render_product_cost = probs.map((probs) => {
-        return <PaymentList data={probs} />
+
+    const total_cost = total_price(total);
+
+    // mapping order
+    const render_product_cost = order_summary.map((data) => {
+        return <PaymentList data={data} />
     });
-    const payFinished = (y) => {
-        order_entity.totalPay.push(y)
+
+
+    const payFinished = (totalPay) => {
+        order_entity.totalPay = totalPay;
+        order_entity.orderStatus = 'paid';
+
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${userInfo}`,
+                "Access-Control-Allow-Origin": "*"
+            }
+        }
+
+        axios.post(
+            PATH + '/api/order/create-order', order_entity, config
+        );
+
+        // order_entity = {
+        //     orderList: [],
+        //     totalPay: 0,
+        //     peopleAmt: 0,
+        //     typeOfAct: '',
+        //     orderStatus: 'unpaid',
+        //     orderID:'',
+        // };
+
+        navigate(`/landing/${id.id}`);
     }
+
   return (
     <Container>
         <Post>
@@ -223,7 +270,7 @@ const Payment = ({onBackClicked}) => {
                                 <Total>THB</Total>
                             </SectionGridTotal>
                         </Section>
-                        <a href='/landing' onClick={()=>{payFinished(total_cost)}}><Button>Pay</Button></a>
+                        <Button onClick={()=>{payFinished(total_cost)}}>Pay</Button>
                     </Content>
                 </BgContainer>
             </Background>

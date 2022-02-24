@@ -176,19 +176,10 @@ const Border = styled.div`
 `
 
 const ConfirmOrder = ({ onBgClick , onBackClicked }) => {
-    // let data = [
-    //     {
-    //         "Name": {passingSelectedMenu.Name},
-    //         "Desc": {passingSelectedMenu.Desc},
-    //         "PodID": {passingSelectedMenu.ProdID},
-    //         "Price": {passingSelectedMenu.Price},
-    //         "img": {passingSelectedMenu.img},
-    //         "Amt": {passingSelectedMenu.Amt}
-    //     }
-    // ]
-    const probs = order_entity.orderList;
-    const render_product_cost = probs.map((probs) => {
-        return <ConfirmOrderList data={probs} />
+
+    const conclusion_menu = order_entity.orderList;
+    const render_product_cost = order_entity.map((data) => {
+        return <ConfirmOrderList data={data} />
     });
 
   return (
@@ -210,7 +201,7 @@ const ConfirmOrder = ({ onBgClick , onBackClicked }) => {
                                 <Section>
                                     <SectionGrid>
                                         <Total>Total Amount</Total>
-                                        <Total>{probs.length}</Total>
+                                        <Total>{conclusion_menu.length}</Total>
                                     </SectionGrid>
                                 </Section>
                         <a href='/landing'><Button>Confirm</Button></a>

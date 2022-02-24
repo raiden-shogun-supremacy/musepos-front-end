@@ -44,7 +44,7 @@ const ConfirmOrderList = ({data}) => {
         <>
         <Section>
             <SectionGrid>
-                <P>{data.Name}</P>
+                <P>{data.menuName}</P>
                 <P>1</P>
             </SectionGrid>
         </Section>

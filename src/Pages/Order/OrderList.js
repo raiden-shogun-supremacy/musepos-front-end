@@ -13,6 +13,8 @@ const HeaderText = styled.h1`
     line-height: 40px;
     margin-top: 1vh;
     margin-left: 2vw;
+    width: 70vw;
+    overflow: hidden;
 `
 
 const TextMenu = styled.p`
@@ -44,11 +46,10 @@ const BgContainer = styled.div`
     padding: 10px;
     display: flex;
     align-items: center;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border: 2px solid #F3F3F3;
     box-sizing: border-box;
     border-radius: 10px;
-    overflow: scroll;
 `
 
 const Section = styled.div`

@@ -27,9 +27,9 @@ const Overlay = styled.div`
 
 const MenuCard = ({ data, onMenuCardClick }) => {
   return (
-      <Card bgImg={data.img} onClick={onMenuCardClick}>
+      <Card bgImg={data.imgUrl} onClick={onMenuCardClick}>
         <Overlay>
-          <p>{data.Name}</p>
+          <p>{data.menuName}</p>
         </Overlay>
       </Card>
   );
