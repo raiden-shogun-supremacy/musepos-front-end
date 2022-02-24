@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FileBase64 from 'react-file-base64';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -172,6 +173,16 @@ const SectionGrid = styled(Section)`
 
 const AddStock = ({ onBackClick, data }) => {
 
+    const [item, setItem] = useState({
+        menuName: '',
+        parentShop: data.id,
+        imgUrl: '',
+        menuCategory: '',
+        priceUnit: 0,
+        stockAmount: 0,
+        stockStatus: "Available"
+    });
+
     function addMenuClicked(){
         console.log('Add this menu')
     }
@@ -184,7 +195,10 @@ const AddStock = ({ onBackClick, data }) => {
                     <Content>
                         <Back onClick={onBackClick}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Back>
                         <HeaderText>Add new menu!</HeaderText>
-                        <FormImg><Description for="image">What's your menu look like?</Description><input type="file" id="image" name="image" /></FormImg>
+                        <FormImg>
+                            <Description for="image">What's your menu look like?</Description>
+                            <FileBase64 multiple={false} onDone={({base64}) => setItem({...item, imgUrl: base64})} />
+                        </FormImg>
                         <Section>
                             <SectionGrid>
                                 <Text>Name</Text>
@@ -192,9 +206,9 @@ const AddStock = ({ onBackClick, data }) => {
                                 <Text>Category</Text>
                                 <Select>
                                     <option>-Catagory-</option>
-                                    <option>Beverage/Drink</option>
-                                    <option>Dessert</option>
-                                    <option>Food</option>
+                                    <option value='drinks'>Beverage/Drink</option>
+                                    <option value='dessert'>Dessert</option>
+                                    <option value='food'>Food</option>
                                 </Select>
                             </SectionGrid>
                         </Section>

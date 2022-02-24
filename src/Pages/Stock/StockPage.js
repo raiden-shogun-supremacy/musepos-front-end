@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useState } from 'react';
+import axios from 'axios';
 
 // import data
 import dummy from '../../dummy/dummy.json';
@@ -84,12 +84,15 @@ const StupidCircle = styled.div`
     right : -120px;
 `
 
-const StockPage = () => {
+const PATH = 'http://localhost:5000';
+// const PATH = 'https://musepos-api.herokuapp.com';
+
+const StockPage = ({ data }) => {
 
     const [selectedStockProductOpen, setSelectedStockProductOpen] = useState(null);
     const [optionFilter, setOptionFilter] = useState('');
-    const [searchText, setSearchText] = useState('');
     const [onAddMenuClick, setOnAddMenuClick] = useState('');
+    const [getMenu, setGetMenu] = useState([]);
 
     function onStockProductOpenClick(data) {
         setSelectedStockProductOpen(data);
@@ -111,17 +114,40 @@ const StockPage = () => {
     }
     switch(onAddMenuClick){
         case 'on':
-            addStockPost = <AddStock onBackClick={onAddNewMenuClosedClicked} />
+            addStockPost = <AddStock onBackClick={onAddNewMenuClosedClicked} data={data}/>
             break
         case 'off':
             addStockPost = null;
             break
     }
 
-    const stock_display = dummy.filter((data) => {return data.Name.includes(optionFilter)})
-    .map((data) => {
+    useEffect(() => {
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userInfo}`,
+            }
+        }
+
+        axios.get(
+            PATH + `/api/menu/${data.id}`, config
+        ).then((res) => {
+            // debugger
+            // console.log(res.data);
+
+            setGetMenu(res.data);
+        })
+        .catch((err) => console.log(err.message));
+    });
+
+    const stock_display = getMenu.map((data) => {
         return <StockCard data={data} onStockProductClick={onStockProductOpenClick} />
     });
+
+
   return (
     <Container>
         {stockProductPost}
@@ -132,13 +158,13 @@ const StockPage = () => {
         </Header>
         <Content>
             <Section>
-                <input value={optionFilter} onChange={(e)=> setOptionFilter(e.target.value)}></input>
-                {/* <select onChange={(e)=> setOptionFilter(e.target.value)}>
+                {/* <input value={optionFilter} onChange={(e)=> setOptionFilter(e.target.value)}></input> */}
+                <select onChange={(e)=> setOptionFilter(e.target.value)}>
                     <option>- Choose you category -</option>
-                    <option value='Beverage/Drink'>Beverage/Drink</option>
-                    <option value='Dessert'>Dessert</option>
-                    <option value='Food'>Food</option>
-                </select> */}
+                    <option value='drinks'>Beverage/Drink</option>
+                    <option value='dessert'>Dessert</option>
+                    <option value='food'>Food</option>
+                </select>
             </Section>
             <SectionGrid>
                 { stock_display }

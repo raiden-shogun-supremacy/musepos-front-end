@@ -99,7 +99,7 @@ const component = [
     },
     {
         topic : "Recommended Menu",
-        info : `Karee kai`,
+        info : `กะเพราไก่`,
         desc : "for this week",
         style : "green"
     },

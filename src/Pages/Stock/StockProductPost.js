@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 const Container = styled.div`
     margin : 0px 10px 20px 10px;
     padding : 10px;
 `
-
-const Header = styled.div``
 
 const Description = styled.p`
     font-family: Roboto;
@@ -165,9 +164,14 @@ const SectionRow = styled(Section)`
     grid-template-rows: 1fr;
 `
 
+
+const PATH = 'http://localhost:5000';
+// const PATH = 'https://musepos-api.herokuapp.com';
+
 function StockProductPost({ detail, onBackClick }) {
 
-    const [count, setCount] = useState(detail.Amt)
+    const [count, setCount] = useState(detail.stockAmount);
+    const [data, setData] = useState({});
 
     function decrementCount() {
         setCount(prevCount => prevCount-1)
@@ -176,23 +180,70 @@ function StockProductPost({ detail, onBackClick }) {
         setCount(prevCount => prevCount+1)
     }
 
+    function updateStockAmount(){
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userInfo}`,
+            }
+        }
+
+        axios.put(
+            PATH + `/api/menu/edit-qty/${data._id}`,
+            {
+                "stockAmount": count
+            },config
+        )
+
+        onBackClick();
+    }
+
+    useEffect(() => {
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userInfo}`,
+            }
+        }
+
+        axios.get(
+            PATH + `/api/menu/get-menu/${detail._id}`, config
+        ).then((res) => {
+            // debugger
+            // console.log(res.data);
+
+            setData(res.data);
+        })
+        .catch((err) => console.log(err.message));
+    },[]);
+
+    
+
     return(
         <Container>
             <Post>
                 <Background>
                     <BgContainer>
                         <Content>
-                            <Back onClick={()=> onBackClick(detail)}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png" />  Back</Back>
+                            <Back onClick={()=> updateStockAmount()}>
+                                <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png" />  Back
+                            </Back>
                             <Section>
                                 <SectionCol>
-                                    <PopImg src={detail.img} />
+                                    <PopImg src={data.imgUrl} />
                                     <SectionRow>
-                                            <NameMenu>{detail.Name}</NameMenu>
+                                            <NameMenu>{data.menuName}</NameMenu>
                                         <SectionColDes>
                                             <Description>ID:</Description>
-                                            <Description>{detail.PodID}</Description>
+                                            <Description>{data._id}</Description>
                                             <Description>Price:</Description>
-                                            <Description>{detail.Price} THB</Description>
+                                            <Description>{data.priceUnit} THB</Description>
                                         </SectionColDes>
                                     </SectionRow>
                                 </SectionCol>
