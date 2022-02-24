@@ -1,7 +1,10 @@
-import "../style.css";
-import styled from "styled-components";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import '../style.css'
+import styled from 'styled-components';
+import { useState} from "react";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Form = styled.form`
   display: flex;
@@ -109,142 +112,49 @@ const StupidCircletBottom = styled.div`
   left: -120px;
 `;
 
-function Register() {
-  const initialValues = {
-    firstname: "",
-    lastname: "",
-    phonenumber: "",
-    username: "",
-    password: "",
-  };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  // const [name, setName] = useState('');
-  // const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
+const Register = (props) => {
+    const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-  //   function createNewEmployee() {
-  //     axios
-  //     .post('http://localhost:3000/api/user/register', {
-  //         name: name,
-  //         username: username,
-  //         password: password
-  //     })
-  //     .then(
-  //         alert('Registeration Successful!')
-  //     )
-  //     // .catch(err => alert(err.message));
-  // }
+    async function createNewEmployee() {
+      axios
+      .post('https://musepos-api.herokuapp.com/api/user/register', {
+          name: name,
+          username: username,
+          password: password
+      })
+      .then()      
+       .catch(err => alert(err.message));
+       await alert('Registeration Successful!')      
+       await navigate('/',{ replace: true })
+      }
+  
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
+      return (
+        <Container>
+            <a href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
+            <StupidCircletTop/>
+                <Head1>Register</Head1> 
+                <Detail1>Let's earn money together!</Detail1>  
+                <Detail2>Can we know you?</Detail2>     
+            <Form >
+                <Register2>   
+                    <InputReg type="text" name='name' placeholder='Name' value={name} onChange={e => setName(e.target.value)} required></InputReg>
+                </Register2>                
+                <RegisterForm>
+                    <InputReg type="text" name='username' placeholder='Username' value={username} onChange={e => setUsername(e.target.value)} required/>
+                </RegisterForm>
+                <RegisterForm>
+                    <InputReg type="password" name='password'  placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required/>                
+                </RegisterForm>
+                <a href='/' onClick={createNewEmployee}><ButtonnReg>Register</ButtonnReg></a>
+            </Form>
+            <StupidCircletBottom/>           
+        </Container>        
+    );
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-    }
-  }, [formErrors]);
-
-  const validate = (values) => {
-    const errors = {};
-    if (!values.name) {
-      errors.firstname = "First name is required!";
-    }
-    if (!values.lastname) {
-      errors.lastname = "Last name is required!";
-    }
-    if (!values.phonenumber) {
-      errors.phonenumber = "Phone Number is required!";
-    }
-    if (!values.username) {
-      errors.username = "Username is required!";
-    }
-    if (!values.password) {
-      errors.password = "Password is required";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be more than 4 characters";
-    } else if (values.password.length > 10) {
-      errors.password = "Password cannot exceed more than 10 characters";
-    }
-    return errors;
-  };
-
-  return (
-    <Container>
-      <a href="/">
-        <Cancel>
-          <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png" />{" "}
-          Cancel
-        </Cancel>
-      </a>
-      <StupidCircletTop />
-      {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <RegisterForm>Signed in successfully</RegisterForm>
-      ) : (
-        <pre></pre>
-      )}
-      <Head1>Register</Head1>
-      <Detail1>Let's earn money together!</Detail1>
-      <Detail2>Can we know you?</Detail2>
-      <Form onSubmit={handleSubmit}>
-        <Register2>
-          <InputReg
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formValues.name}
-            onChange={handleChange}
-          ></InputReg>
-          <Register1>{formErrors.firstname}</Register1>
-          {/* <InputReg type="text" name="lastname" placeholder='Lastname' value={formValues.lastname} onChange={handleChange}></InputReg>
-                    <Register1>{formErrors.lastname}</Register1>              */}
-        </Register2>
-        <Register2>
-          <InputReg
-            type="text"
-            name="phonenumber"
-            placeholder="Phone Number"
-            value={formValues.phonenumber}
-            onChange={handleChange}
-          />
-        </Register2>
-        <Register1>{formErrors.phonenumber}</Register1>
-        <RegisterForm>
-          <InputReg
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={formValues.username}
-            onChange={handleChange}
-          />
-        </RegisterForm>
-        <Register1>{formErrors.username}</Register1>
-        <RegisterForm>
-          <InputReg
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formValues.password}
-            onChange={handleChange}
-          />
-        </RegisterForm>
-        <Register1>{formErrors.password}</Register1>
-        <a href="/">
-          <ButtonnReg>Register</ButtonnReg>
-        </a>
-      </Form>
-      <StupidCircletBottom />
-    </Container>
-  );
 }
 
 export default Register;
