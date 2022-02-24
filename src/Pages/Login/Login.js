@@ -85,46 +85,68 @@ const TextReg = styled.p`
 const Registerlink = styled.a`
     color: #338e3c ;
 `
+const RegisterError = styled.p`
+    font-family: Roboto;
+    color: #C62828;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    margin-top: 0vh;
+`
 
 // const PATH = 'http://localhost:5000';
 const PATH = 'https://musepos-api.herokuapp.com';
 
 function Login() {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [isRequried, setIsRequried] = useState(null);
+    let usernameRequired = null;
+    let passwordRequired = null;
+    switch(isRequried){
+        case 'error':
+          usernameRequired = <RegisterError>Please fill username</RegisterError>
+          passwordRequired = <RegisterError>Please fill password</RegisterError> 
+          break
+      }
 
     const navigate = useNavigate();
 
     function submitHandler(e){
-        e.preventDefault();
+        if( username == null || password == null){
+            setIsRequried('error')
+          }
+          else{
+            e.preventDefault();
 
-        const config = {
-            header : {
-                // "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-                "Content-Type": "application/json"
+            const config = {
+                header : {
+                    // "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+                    "Content-Type": "application/json"
+                }
+            };
+    
+            axios.post(
+                PATH + '/api/user/login', {
+                    "username" : username,
+                    "password" : password
+                }, config
+            ).then((res) => {
+    
+                // debugger
+                // console.log(res.data);
+    
+                if(res.data.token){
+                    localStorage.setItem('museUser', JSON.stringify(res.data.token));
+                }
+    
+                navigate('/shop');
             }
-        };
-
-        axios.post(
-            PATH + '/api/user/login', {
-                "username" : username,
-                "password" : password
-            }, config
-        ).then((res) => {
-
-            // debugger
-            // console.log(res.data);
-
-            if(res.data.token){
-                localStorage.setItem('museUser', JSON.stringify(res.data.token));
-            }
-
-            navigate('/shop');
-        }
-        ).catch(err => {
-            console.log(err.message);
-        });
+            ).catch(err => {
+                console.log(err.message);
+            });
+          }
         
     }
 
@@ -145,7 +167,9 @@ function Login() {
                         <Text>Make your resturant easier</Text>
                         <form className="input-form">
                             <input type="text" placeholder='Username' value={username} onChange={event => setUsername(event.target.value)} />
+                            {usernameRequired}
                             <input type="password" placeholder='Password' value={password} onChange={event => setPassword(event.target.value)} />
+                            {passwordRequired}
                         </form>
                         <button className="submit-button" onClick={ e => submitHandler(e) }>Login</button>
                         <TextReg>Or no have User ID? <Registerlink href="/register">Register </Registerlink>new one!</TextReg>
