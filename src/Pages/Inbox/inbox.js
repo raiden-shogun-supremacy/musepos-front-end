@@ -7,6 +7,9 @@ const Container = styled.div`
     flex-direction:column;
     margin-left:16px;
     margin-right: 16px;
+    a {
+        text-decoration: none;
+    }
 `
 const Head1 = styled.h1`
     margin-left: 16px;
@@ -66,14 +69,10 @@ const EmpInvite = styled.div`
     color: #AAAAAA;
 `
 
-const A = styled.a`
-    text-decoration: none;
-`
-
 function  Inbox(){
     return(
         <Container>
-        <A href="/shop"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/> Back</Cancel></A>
+        <a href="/shop"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/> Back</Cancel></a>
         <Head1>Inbox</Head1> 
         <Detail1>Have you got some invite today?</Detail1>
         <EmptyText>

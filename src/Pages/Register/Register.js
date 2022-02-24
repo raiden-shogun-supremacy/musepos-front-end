@@ -26,6 +26,9 @@ const Container = styled.div`
   flex-direction: column;
   margin-left: 16px;
   margin-right: 16px;
+  a{
+    text-decoration: none;
+  }
 `;
 const Head1 = styled.h1`
   margin-left: 16px;
@@ -66,9 +69,6 @@ const Cancel = styled.p`
     filter: contrast(-100);
   }
   
-`;
-const A = styled.a`
-  text-decoration: none;
 `;
 
 const ButtonnReg = styled.button`
@@ -147,7 +147,7 @@ const Register = (props) => {
 
       return (
         <Container>
-            <A href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></A>
+            <a href="/"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
             <StupidCircletTop/>
                 <Head1>Register</Head1> 
                 <Detail1>Let's earn money together!</Detail1>  
