@@ -144,7 +144,7 @@ function ShopSelect(){
             setShopList(res.data);
         })
         .catch((err) => console.log(err.message));
-    },[]);
+    });
 
     const shop_list = shopList.map(data => {
         return <ShopList data={data}/>
@@ -159,15 +159,15 @@ function ShopSelect(){
                     <Head1>Shop</Head1>
                     <a href='/inbox'><Icon src='https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_email-256.png' /></a>
                     <Icon src='https://cdn2.iconfinder.com/data/icons/user-interface-essential-solid/32/Artboard_6-512.png?fbclid=IwAR1FSODimUM23ji-nCg9v1uh1wi0Rr_b4TDeqzl9CsUyus1RTO4is2mdD5k' onClick={stackClicked} />
-                    {dropdown_show}
                 </SectionCol>
             </Section>
-            <Detail1>Which one is your works today?</Detail1>
+            <Detail1>Which one is your work today?</Detail1>
             <Container2>
                 <Box>
                 {shop_list != [] ? shop_list : <Text>You doesn't have your own business yet.<br/>Create the new one!</Text>}
                 </Box>
             </Container2>
+            {dropdown_show}
         </Container>     
     );
 }

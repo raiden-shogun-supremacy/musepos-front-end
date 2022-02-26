@@ -7,4 +7,4 @@ var order_entity = {
     orderID:'',
 }
 
-export default order_entity
+export default order_entity;

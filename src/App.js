@@ -42,7 +42,7 @@ function App() {
           <Route exact path='/invite' element={<Invite />} />
           <Route exact path='/inbox' element={<Inbox />} />
           <Route exact path='/create-menu' element={<AddStock />} />
-          <Route exact path='/remove-menu' element={<RemoveMenu />} />
+          <Route exact path='/remove-menu/:id' element={<RemoveMenu />} />
         </Routes>
       </BrowserRouter>    
   );

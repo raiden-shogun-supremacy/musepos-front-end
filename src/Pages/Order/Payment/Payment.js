@@ -184,13 +184,11 @@ const Border = styled.div`
 const PATH = 'http://localhost:5000';
 // const PATH = 'https://musepos-api.herokuapp.com';
 
-const Payment = ({ onBackClicked }) => {
+const Payment = ({ onBackClicked, data }) => {
     const order_summary = order_entity.orderList;
 
     const navigate = useNavigate();
-    const id = useParams();
-
-    console.log(id.id);
+    const { id } = useParams();
 
     // accumulate total price
     let total = [];
@@ -214,7 +212,7 @@ const Payment = ({ onBackClicked }) => {
     });
 
 
-    const payFinished = (totalPay) => {
+    function payFinished(totalPay) {
         order_entity.totalPay = totalPay;
         order_entity.orderStatus = 'paid';
 
@@ -232,18 +230,17 @@ const Payment = ({ onBackClicked }) => {
 
         axios.post(
             PATH + '/api/order/create-order', order_entity, config
-        );
+        ).then(() => {
+            order_entity.orderList = [];
+            order_entity.totalPay = 0;
+            order_entity.peopleAmt = 0;
+            order_entity.typeOfAct = '';
+            order_entity.orderStatus = 'unpaid';
+            order_entity.orderID = '';
+        });
 
-        // order_entity = {
-        //     orderList: [],
-        //     totalPay: 0,
-        //     peopleAmt: 0,
-        //     typeOfAct: '',
-        //     orderStatus: 'unpaid',
-        //     orderID:'',
-        // };
 
-        navigate(`/landing/${id.id}`);
+        navigate(`/landing/${id}`);
     }
 
   return (
@@ -252,7 +249,7 @@ const Payment = ({ onBackClicked }) => {
             <Background>
                 <BgContainer>
                     <Content>
-                        <Back onClick={onBackClicked}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Back</Back>
+                        <Back><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/><span onClick={onBackClicked}>Back</span></Back>
                         <HeaderText>Order ID: 000013</HeaderText>
                         <Section>
                             <SectionGridHead>

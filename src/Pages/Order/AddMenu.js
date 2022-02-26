@@ -4,10 +4,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 // import data
-import dummy from '../../dummy/dummy.json';
 import MenuCard from './MenuCard.js';
 import Payment from './Payment/Payment';
-import ConfirmOrder from './ConfirmOrder/ConfirmOrder';
 import order_entity from './order_entity';
 
 const Container = styled.div`
@@ -105,7 +103,7 @@ const AddMenu = () => {
     const [optionFilter, setOptionFilter] = useState('');
     const [menus, setMenus] = useState([]);
 
-    const data = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
 
     // fetching data
@@ -121,7 +119,7 @@ const AddMenu = () => {
         }
 
         axios.get(
-            PATH + `/api/menu/${data.id}`, config
+            PATH + `/api/menu/${id}`, config
         ).then((res) => {
             // debugger
             // console.log(res.data);
@@ -150,19 +148,16 @@ const AddMenu = () => {
         console.log(order_entity);
     };
 
-    function cancelHandler(e){
-        e.preventDefault();
+    function cancelHandler(){
+        order_entity.orderList = [];
+        order_entity.totalPay = 0;
+        order_entity.peopleAmt = 0;
+        order_entity.typeOfAct = '';
+        order_entity.orderStatus = 'unpaid';
+        order_entity.orderID = '';
 
-        order_entity = {
-            orderList: [],
-            totalPay: 0,
-            peopleAmt: 0,
-            typeOfAct: '',
-            orderStatus: 'unpaid',
-            orderID:'',
-        };
+        return navigate('/landing/' + id);
 
-        navigate(`/landing/${data.id}`);
     }
 
     function postOpened(x) {

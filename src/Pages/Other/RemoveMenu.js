@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // import data
 import dummy from '../../dummy/dummy.json';
@@ -83,15 +85,51 @@ const StupidCircle = styled.div`
     right : -120px;
 `
 
+const PATH = 'http://localhost:5000';
+// const PATH = 'https://musepos-api.herokuapp.com';
+
 const RemoveMenu = () => {
-    const menu_display = dummy.map((data) => {
+
+    const [getMenu, setGetMenu] = useState([]);
+    const navigate = useNavigate();
+    const { id } = useParams();
+
+    useEffect(() => {
+        const userInfo = localStorage.getItem('museUser')
+            ? JSON.parse(localStorage.getItem('museUser')) : null;
+
+    
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userInfo}`,
+            }
+        }
+
+        axios.get(
+            PATH + `/api/menu/${id}`, config
+        ).then((res) => {
+            // debugger
+            // console.log(res.data);
+
+            setGetMenu(res.data);
+        })
+        .catch((err) => console.log(err.message));
+    });
+
+    const menu_display = getMenu.map((data) => {
         return <RemoveMenuCard data={data}/>
     });
+
+    
+
+    function cancelHandler(){
+        navigate(`/landing/${id}`);
+    }
   return (
     <Container>
         <Header>
         <StupidCircle/>
-        <a href="/landing"><Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/>  Cancel</Cancel></a>
+        <Cancel><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png"/><span onClick={() => cancelHandler()}> Cancel</span></Cancel>
             <HeaderText>Remove Menu</HeaderText>
             <Description>Which one did you want to take out?</Description>
         </Header>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Invite from './Invite';
@@ -202,7 +202,7 @@ const Img = styled.img`
     opacity: 0.3;
 `
 
-const Other = () => {
+const Other = ({ data }) => {
     const [invitePostOpen, setInvitePostOpen] = useState('');
     const [changeRoleOpen, setChangeRoleOpen] = useState('');
 
@@ -254,6 +254,10 @@ const Other = () => {
             break
     }
 
+    function removeMenuHandler(){
+        navigate(`/remove-menu/${data.id}`);
+    }
+
     const emp_list = dummyEmp.map((data)=>{
         return(
             <>
@@ -291,7 +295,7 @@ const Other = () => {
                         </SectionInvite>
                     </BgContainerBottom>
                     <a href='/shop'><Button>Back to Shop</Button></a>
-                    <a href='/removemenu'><ButtonRemove>Remove Menu</ButtonRemove></a>
+                    <ButtonRemove onClick={removeMenuHandler}>Remove Menu</ButtonRemove>
                 <ButtonLogout onClick={e => logoutHandler(e)}>Log Out</ButtonLogout>
         </Container>
     );

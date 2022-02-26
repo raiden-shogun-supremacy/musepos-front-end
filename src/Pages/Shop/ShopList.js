@@ -77,7 +77,7 @@ const ShopList = ({ onBackClick, data }) => {
                     <SectionRow>
                         <HeaderText>{data.shopName}</HeaderText>
                         {/* <Text>{data}</Text> */}
-                        <TextRole>As : Employee</TextRole>
+                        <TextRole>As: Owner</TextRole>
                     </SectionRow>
                 </Section>      
               </BgContainer>
